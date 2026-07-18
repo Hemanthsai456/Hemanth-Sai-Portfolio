@@ -1,0 +1,239 @@
+// ===== SMOOTH SCROLL WITH OFFSET =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - 70,
+        behavior: "smooth"
+      });
+    }
+  });
+});
+
+// ================= ACTIVE NAV =================
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 150;
+    const sectionHeight = section.offsetHeight;
+
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+});
+
+// ================= SCROLL REVEAL =================
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll("section").forEach(sec => {
+  sec.classList.add("hidden");
+  observer.observe(sec);
+});
+
+// ================= TYPING EFFECT =================
+const roles = [
+  " AI Engineer ",
+  " Machine Learning Engineer ",
+  " Data Engineer & Analyst "
+];
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+const subtitle = document.querySelector(".subtitle");
+
+function typeEffect() {
+  const current = roles[roleIndex];
+
+  if (!isDeleting) {
+    subtitle.textContent = current.substring(0, charIndex++);
+  } else {
+    subtitle.textContent = current.substring(0, charIndex--);
+  }
+
+  let speed = isDeleting ? 50 : 100;
+
+  if (!isDeleting && charIndex === current.length) {
+    speed = 1500;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    speed = 500;
+  }
+
+  setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+
+// ================= SKILL BAR ANIMATION =================
+const bars = document.querySelectorAll(".bar span");
+
+const barObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.width = entry.target.dataset.width;
+    }
+  });
+});
+
+bars.forEach(bar => {
+  bar.style.width = "0";
+  barObserver.observe(bar);
+});
+
+// ================= 3D CARD TILT EFFECT & SPOTLIGHT =================
+document.querySelectorAll(".project-card, .glass-card, .skill-card").forEach(card => {
+  card.addEventListener("mousemove", e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    // Set custom properties for spotlight tracking
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+
+    const rotateX = (y / rect.height - 0.5) * 4;
+    const rotateY = (x / rect.width - 0.5) * -4;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "perspective(1000px) rotateX(0) rotateY(0) translateY(0)";
+  });
+});
+
+// ================= MOUSE-FOLLOW GLOW =================
+(function initMouseGlow() {
+  const glow = document.createElement('div');
+  glow.classList.add('mouse-glow');
+  document.body.appendChild(glow);
+
+  let mouseX = 0, mouseY = 0;
+  let glowX = 0, glowY = 0;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animateGlow() {
+    // Smooth lerp
+    glowX += (mouseX - glowX) * 0.08;
+    glowY += (mouseY - glowY) * 0.08;
+
+    glow.style.left = glowX + 'px';
+    glow.style.top = glowY + 'px';
+
+    requestAnimationFrame(animateGlow);
+  }
+
+  animateGlow();
+})();
+
+// ================= PARTICLES (Space Theme) =================
+tsParticles.load("particles", {
+  fpsLimit: 60,
+  particles: {
+    number: { value: 60, density: { enable: true, area: 1000 } },
+    size: { value: { min: 0.5, max: 1.8 } },
+    color: { value: ["#7C5CFF", "#3B82F6", "#A78BFA", "#60A5FA"] },
+    opacity: {
+      value: { min: 0.15, max: 0.5 },
+      animation: { enable: true, speed: 0.8, minimumValue: 0.1 }
+    },
+    move: {
+      enable: true,
+      speed: 0.4,
+      direction: "none",
+      random: true,
+      straight: false,
+      outModes: { default: "out" }
+    },
+    links: {
+      enable: true,
+      color: "#7C5CFF",
+      opacity: 0.08,
+      distance: 130,
+      width: 1
+    },
+    twinkle: {
+      particles: {
+        enable: true,
+        frequency: 0.03,
+        opacity: 0.6,
+        color: { value: "#A78BFA" }
+      }
+    }
+  },
+  interactivity: {
+    events: {
+      onHover: { enable: true, mode: "grab" },
+      resize: true
+    },
+    modes: {
+      grab: {
+        distance: 150,
+        links: { opacity: 0.15, color: "#7C5CFF" }
+      }
+    }
+  },
+  detectRetina: true
+});
+
+// ===== NAVBAR SCROLL EFFECT =====
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+// ===== STAGGERED CARD ANIMATIONS =====
+const cardObserver = new IntersectionObserver(entries => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      // Add a small stagger delay per card
+      const cards = entry.target.querySelectorAll('.glass-card, .project-card, .skill-card, .about-stat-card');
+      cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = `opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.1}s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.1}s`;
+
+        requestAnimationFrame(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        });
+      });
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.hero-bottom-cards, .about-cards-container, .project-grid, .skill-grid').forEach(container => {
+  cardObserver.observe(container);
+});
