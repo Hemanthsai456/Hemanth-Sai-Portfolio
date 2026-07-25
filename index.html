@@ -36,21 +36,30 @@
 
   <!-- NAVBAR -->
   <header id="navbar">
-    <a href="#home" class="logo">HS<span>.</span></a>
-    <nav>
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a href="https://drive.google.com/file/d/1_omIlFJ70oaUUAGOy4jkZ4MhNT5GGVoE/view?usp=sharing" target="_blank"
-      class="nav-resume">Resume ↓</a>
+    <div class="nav-inner">
+      <a href="#home" class="logo">HS<span>.</span></a>
+      <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false"
+        aria-controls="nav-menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="nav-menu" class="nav-menu">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="https://drive.google.com/file/d/1_omIlFJ70oaUUAGOy4jkZ4MhNT5GGVoE/view?usp=sharing" target="_blank"
+        class="nav-resume">Resume <i data-lucide="download"></i></a>
+    </div>
   </header>
 
   <!-- HERO -->
   <section id="home" class="hero">
+    <div class="container">
     <div class="hero-grid">
 
       <div class="hero-left">
@@ -167,10 +176,12 @@
         </div>
       </div>
     </div>
+    </div>
   </section>
 
   <!-- FEATURED TECHNOLOGIES STRIP -->
   <div class="tech-strip">
+    <div class="container tech-strip-inner">
     <p class="tech-strip-title">Featured Technologies</p>
     <div class="tech-carousel">
       <div class="tech-item"><i data-lucide="terminal"></i><span>Python</span></div>
@@ -183,10 +194,12 @@
       <div class="tech-item"><i data-lucide="code-2"></i><span>JavaScript</span></div>
       <div class="tech-item"><i data-lucide="git-branch"></i><span>Git &amp; GitHub</span></div>
     </div>
+    </div>
   </div>
 
   <!-- ABOUT -->
   <section id="about" class="about">
+    <div class="container">
     <h2>Crafting Data <span>Intelligence</span></h2>
 
     <p class="about-description">
@@ -217,10 +230,12 @@
           integrated AI recommendation models.</p>
       </div>
     </div>
+    </div>
   </section>
 
   <!-- SKILLS -->
   <section id="skills" class="skills">
+    <div class="container">
     <h2>Technical <span>Arsenal</span></h2>
 
     <div class="skill-grid">
@@ -332,10 +347,12 @@
       <span>Streamlit</span><span>Git</span><span>GitHub</span><span>Jupyter Notebook</span>
       <span>VS Code</span><span>TypeScript</span><span>React</span><span>Next.js</span>
     </div>
+    </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects" class="projects">
+    <div class="container">
     <h2>Featured <span>Solutions</span></h2>
 
     <p class="section-description">A collection of production-style AI, data engineering, analytics, and full-stack
@@ -570,10 +587,12 @@
       </div>
 
     </div>
+    </div>
   </section>
 
   <!-- EXPERIENCE -->
   <section id="experience" class="experience">
+    <div class="container">
     <h2>Work <span>Experience</span></h2>
     <div class="timeline">
       <div class="exp-item">
@@ -617,10 +636,12 @@
       </div>
       -->
     </div>
+    </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="contact">
+    <div class="container">
 
     <div class="availability-badge">
       <span>🟢</span>
@@ -695,6 +716,7 @@
         <p class="footer-tech">Built with HTML &bull; CSS &bull; JavaScript</p>
       </div>
     </footer>
+    </div>
   </section>
 
   <script src="script.js"></script>

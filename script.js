@@ -1,26 +1,46 @@
 // ===== SMOOTH SCROLL WITH OFFSET =====
+const navbar = document.getElementById("navbar");
+const navToggle = document.querySelector(".nav-toggle");
+
+function getScrollOffset() {
+  return navbar ? navbar.offsetHeight + 16 : 80;
+}
+
+function closeMobileNav() {
+  if (!navbar || !navbar.classList.contains("nav-open")) return;
+  navbar.classList.remove("nav-open");
+  document.body.classList.remove("nav-open");
+  if (navToggle) {
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Open menu");
+  }
+}
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute("href"));
     if (target) {
       window.scrollTo({
-        top: target.offsetTop - 70,
+        top: target.offsetTop - getScrollOffset(),
         behavior: "smooth"
       });
+
+      // Close mobile menu after navigation
+      closeMobileNav();
     }
   });
 });
 
 // ================= ACTIVE NAV =================
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
+const navLinks = document.querySelectorAll(".nav-menu a");
 
 window.addEventListener("scroll", () => {
   let current = "";
 
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 150;
+    const sectionTop = section.offsetTop - getScrollOffset() - 80;
     const sectionHeight = section.offsetHeight;
 
     if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
@@ -203,9 +223,7 @@ tsParticles.load("particles", {
   detectRetina: true
 });
 
-// ===== NAVBAR SCROLL EFFECT =====
-const navbar = document.getElementById("navbar");
-
+// ===== NAVBAR SCROLL EFFECT & MOBILE MENU =====
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
@@ -213,6 +231,21 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("scrolled");
   }
 });
+
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navbar.classList.toggle("nav-open");
+    document.body.classList.toggle("nav-open", isOpen);
+    navToggle.setAttribute("aria-expanded", isOpen);
+    navToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeMobileNav();
+    }
+  });
+}
 
 // ===== STAGGERED CARD ANIMATIONS =====
 const cardObserver = new IntersectionObserver(entries => {
