@@ -251,8 +251,8 @@ if (navToggle) {
 const cardObserver = new IntersectionObserver(entries => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
-      // Add a small stagger delay per card
-      const cards = entry.target.querySelectorAll('.glass-card, .project-card, .skill-card, .about-stat-card');
+      // Add a small stagger delay per card/item
+      const cards = entry.target.querySelectorAll('.glass-card, .project-card, .skill-card, .proof-item, .about-highlight-item');
       cards.forEach((card, index) => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
@@ -267,6 +267,6 @@ const cardObserver = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.hero-bottom-cards, .about-cards-container, .project-grid, .skill-grid').forEach(container => {
+document.querySelectorAll('.hero-proof-strip, .about-highlights-stack, .project-grid, .skill-grid').forEach(container => {
   cardObserver.observe(container);
 });
