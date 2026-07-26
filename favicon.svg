@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Dark background rounded square, matching portfolio bg-primary #030014 -->
+  <rect width="32" height="32" rx="7" fill="#030014"/>
+  <!-- Subtle purple border to echo the accent-purple identity -->
+  <rect width="32" height="32" rx="7" fill="none" stroke="#9e7aff" stroke-width="1" stroke-opacity="0.45"/>
+  <!-- "HS" in text-primary white, Space Grotesk-style bold condensed sans -->
+  <text
+    x="3"
+    y="22"
+    font-family="'Space Grotesk', 'Inter', Arial, sans-serif"
+    font-weight="700"
+    font-size="17"
+    fill="#f8fafc"
+    letter-spacing="-0.5"
+  >HS</text>
+  <!-- "." in accent-purple #9e7aff, matching .logo span color -->
+  <text
+    x="27"
+    y="22"
+    font-family="'Space Grotesk', 'Inter', Arial, sans-serif"
+    font-weight="700"
+    font-size="17"
+    fill="#9e7aff"
+  >.</text>
+</svg>
