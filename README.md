@@ -1,166 +1,136 @@
-# 🌐 AI & Data Science Portfolio
+# Hemanth Sai Charagundla — AI & Data Portfolio
 
-A modern, responsive personal portfolio showcasing my journey as an Artificial Intelligence & Data Science student, highlighting production-style projects in Data Engineering, Machine Learning, Data Analytics, and Full-Stack Development.
+<p align="center">
+  <img src="og-preview.png" alt="Hemanth Sai Charagundla Portfolio Preview" width="100%" />
+</p>
 
-Designed with a premium glassmorphism-inspired interface and built entirely using HTML, CSS, and JavaScript, the portfolio serves as a central hub for my projects, technical skills, experience, and professional profiles.
+<p align="center">
+  <strong>AI & Data Solutions Engineer</strong><br>
+  Data Engineering · Machine Learning · Data Analytics · Full-Stack Development
+</p>
 
----
-
-## 🚀 Live Demo
-
-**Portfolio Website:**  
-https://hemanth-sai-portfolio.vercel.app/
-
----
-
-## ✨ Features
-
-- Modern premium UI inspired by Apple, Vercel, and Linear
-- Fully responsive design for desktop, tablet, and mobile
-- Interactive animations and smooth scrolling
-- Animated particle background
-- Glassmorphism design system
-- Dynamic hero section
-- Project showcase with detailed case studies
-- Skills categorized by domain
-- Experience timeline
-- Contact section with professional links
-- Resume download
-- Optimized for performance and accessibility
+<p align="center">
+  <a href="https://hemanth-sai-portfolio.vercel.app/"><strong>Live Portfolio</strong></a>
+  &nbsp;•&nbsp;
+  <a href="https://github.com/Hemanthsai456">GitHub</a>
+  &nbsp;•&nbsp;
+  <a href="https://www.linkedin.com/in/hemanthsai456">LinkedIn</a>
+  &nbsp;•&nbsp;
+  <a href="https://leetcode.com/u/Hemanthsai456/">LeetCode</a>
+</p>
 
 ---
 
-## 🛠️ Tech Stack
+## About
 
-### Frontend
+I'm **Hemanth Sai Charagundla**, an Artificial Intelligence & Data Science student at **Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad**.
 
-- HTML5
-- CSS3
-- JavaScript (ES6)
+I build practical, end-to-end systems across **data engineering, machine learning, analytics, and full-stack development** — with a focus on turning real-world data and problems into usable technical solutions.
 
-### Libraries
+My work ranges from multi-year healthcare data warehouses and ML decision-support systems to recommendation engines and full-stack applications.
 
-- Lucide Icons
-- Font Awesome
-- tsParticles
-
-### Deployment
-
-- Vercel
+**Currently open to internship opportunities.**
 
 ---
 
-## 📂 Portfolio Sections
+## Selected Work
 
-- Hero
-- About
-- Skills
-- Featured Projects
-- Experience
-- Contact
-- Footer
+### Healthcare Analytics & Business Intelligence System
 
----
+Production-style healthcare analytics platform built around a **PostgreSQL dimensional data warehouse**, integrating **16.3M+ records across seven years** for clinical, operational, financial, and geographic analysis.
 
-## 💼 Featured Projects
+The system combines ETL pipelines, dimensional modeling, optimized analytical layers, materialized views, and Power BI reporting to transform large-scale transactional healthcare data into decision-ready intelligence.
 
-### 🏥 Healthcare Analytics & Business Intelligence System
+`PostgreSQL` `SQL` `ETL` `Dimensional Modeling` `Power BI`
 
-Production-style PostgreSQL data warehouse integrating over **16.3 million healthcare records** across seven years using dimensional modeling, ETL pipelines, and Power BI dashboards.
+[**View Repository →**](https://github.com/Hemanthsai456/sparcs-healthcare-analytics-bi)
 
 ---
 
-### 📈 Medical Inventory Forecasting & Decision Support System
+### Medical Inventory Forecasting & Decision Support System
 
-Machine Learning system that forecasts medical inventory demand using Gradient Boosting, SHAP Explainability, clustering, and an interactive Streamlit dashboard.
+End-to-end machine learning system designed to support medical inventory planning through demand forecasting and interpretable recommendations.
 
----
+The project evaluates **14 machine learning models**, with Gradient Boosting achieving **R² = 0.7988**, and extends prediction with **SHAP explainability**, K-Means demand segmentation, error analysis, and an interactive Streamlit application.
 
-### 💰 NIDHI AI Investor Super App
+`Python` `Scikit-Learn` `SHAP` `K-Means` `Pandas` `Streamlit`
 
-Full-stack AI-powered investment platform focused on portfolio analysis, financial insights, and intelligent investment recommendations.
-
----
-
-### 🤖 Additional Projects
-
-- Anime Recommendation System
-- Hate Speech Detection
-- BunkRide
-- More AI & Data projects
+[**View Repository →**](https://github.com/Hemanthsai456/Medical-Inventory-Forecasting-Decision-Support-System)
+&nbsp;•&nbsp;
+[**Live Application →**](https://hemanthsai-medical-inventory-decision-support.streamlit.app/)
 
 ---
 
-## 🎯 Purpose
+### NIDHI — AI Investor Super App
 
-This portfolio was built to:
+Full-stack investment platform designed to bring portfolio management, financial analytics, risk intelligence, education, and AI-assisted investment guidance into a unified application.
 
-- Showcase production-style software engineering projects
-- Demonstrate practical AI and Data Engineering skills
-- Present technical documentation and GitHub repositories
-- Provide recruiters with a centralized professional profile
+Built with a modern Next.js architecture and interactive financial workflows aimed at making portfolio insights and investment information easier to understand and act on.
 
----
+`Next.js` `React` `TypeScript` `AI Recommendations`
 
-## 📁 Project Structure
-
-```
-Portfolio/
-│
-├── index.html
-├── style.css
-├── script.js
-├── assets/
-│   ├── images/
-│   ├── icons/
-│   └── resume/
-└── README.md
-```
+[**View Repository →**](https://github.com/Hemanthsai456/NIDHI)
+&nbsp;•&nbsp;
+[**Live Application →**](https://nidhiapp.vercel.app)
 
 ---
 
-## 🚀 Running Locally
+## What You'll Find in the Portfolio
 
-Clone the repository
+The portfolio brings together my strongest work across:
 
-```bash
-git clone https://github.com/Hemanthsai456/your-portfolio.git
-```
+- **Data Engineering** — relational modeling, ETL pipelines, dimensional warehouses, query optimization, and analytical data layers
+- **Machine Learning** — predictive modeling, model evaluation, explainability, clustering, NLP, and recommendation systems
+- **Data Analytics** — SQL analytics, exploratory analysis, Power BI, Tableau, and interactive dashboards
+- **Full-Stack Development** — React, Next.js, TypeScript, Node.js, APIs, and real-time web applications
 
-Navigate into the project
-
-```bash
-cd your-portfolio
-```
-
-Open `index.html` in your browser.
-
-No additional setup is required.
+Each featured project links to its dedicated repository or deployed application for deeper technical details.
 
 ---
 
-## 📬 Connect With Me
+## Built With
 
-**Portfolio**  
-https://hemanth-sai-portfolio.vercel.app/
+`HTML5` `CSS3` `JavaScript` `tsParticles` `Lucide` `Font Awesome`
 
-**GitHub**  
-https://github.com/Hemanthsai456
+The portfolio is a responsive single-page website built without a frontend framework, with custom styling and interactions including:
 
-**LinkedIn**  
-https://linkedin.com/in/hemanthsai456
+- Responsive desktop, tablet, and mobile layouts
+- Smooth section navigation and active navigation tracking
+- Scroll-based reveal animations
+- Interactive project and skill cards
+- Dynamic typing and ambient particle effects
+- Accessible navigation and focus states
+- Open Graph, structured metadata, sitemap, and search-engine metadata
 
-**LeetCode**  
-https://leetcode.com/u/Hemanthsai456/
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
+Deployed on **Vercel**.
 
 ---
 
-## ⭐ If you like this project
+## Explore
 
-If you found this portfolio inspiring or helpful, consider giving the repository a ⭐.
+The website is the primary way to explore my work, projects, technical background, experience, and professional profiles.
+
+### [Visit hemanth-sai-portfolio.vercel.app →](https://hemanth-sai-portfolio.vercel.app/)
+
+---
+
+## Connect
+
+**Hemanth Sai Charagundla**  
+Hyderabad, India
+
+[LinkedIn](https://www.linkedin.com/in/hemanthsai456) ·
+[GitHub](https://github.com/Hemanthsai456) ·
+[LeetCode](https://leetcode.com/u/Hemanthsai456/)
+
+---
+
+## License
+
+This repository is licensed under the [MIT License](LICENSE).
+
+---
+
+<p align="center">
+  <sub>Designed and built by Hemanth Sai Charagundla.</sub>
+</p>
