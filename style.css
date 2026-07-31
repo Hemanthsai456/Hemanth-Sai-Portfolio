@@ -1714,6 +1714,67 @@ section.show {
   transform: translate(3px, -3px);
 }
 
+/* ─── "VIEW ALL PROJECTS" BUTTON (homepage) ─── */
+.view-all-projects-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.view-all-projects-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 13px 32px;
+  border-radius: 100px;
+  border: 1px solid rgba(158, 122, 255, 0.25);
+  background: rgba(158, 122, 255, 0.06);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.view-all-projects-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--accent-gradient);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.view-all-projects-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.view-all-projects-btn svg {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  z-index: 1;
+  transition: transform var(--transition-base);
+}
+
+.view-all-projects-btn:hover {
+  border-color: rgba(158, 122, 255, 0.55);
+  background: rgba(158, 122, 255, 0.12);
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.28),
+    0 0 30px rgba(158, 122, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.view-all-projects-btn:hover svg {
+  transform: translateX(4px);
+}
+
 
 /* ═══════════════════════════════════════════════════
    EXPERIENCE SECTION
@@ -2287,6 +2348,11 @@ section.show {
 
   .nav-resume {
     display: none;
+  }
+
+  .view-all-projects-btn {
+    padding: 12px 24px;
+    font-size: 0.85rem;
   }
 }
 

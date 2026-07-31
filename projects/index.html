@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Projects | Hemanth Sai Charagundla</title>
+  <meta name="description"
+    content="A complete archive of all projects by Hemanth Sai Charagundla — data engineering, machine learning, analytics and software development." />
+  <link rel="canonical" href="https://hemanth-sai-portfolio.vercel.app/projects/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hemanth-sai-portfolio.vercel.app/projects/" />
+  <meta property="og:title" content="All Projects | Hemanth Sai Charagundla" />
+  <meta property="og:description"
+    content="A collection of work across data engineering, machine learning, analytics and software development." />
+  <meta property="og:image" content="https://hemanth-sai-portfolio.vercel.app/og-preview.png" />
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="projects.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=geist@300,400,500,600,700,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+</head>
+
+<body>
+  <!-- Ambient Noise Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Glowing Background Orbs -->
+  <div class="glow-orb purple-orb"></div>
+  <div class="glow-orb blue-orb"></div>
+  <div class="glow-orb main-center-orb"></div>
+
+  <div id="particles"></div>
+
+  <!-- NAVBAR -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="logo">HS<span>.</span></a>
+      <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="nav-menu" class="nav-menu">
+        <a href="/#about">About</a>
+        <a href="/#skills">Skills</a>
+        <a href="/#projects">Featured</a>
+        <a href="/projects/" class="active">All Projects</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a href="../assets/Hemanth_Sai_resume.pdf" target="_blank" class="nav-resume">Resume <i
+          data-lucide="download"></i></a>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="projects-hero" id="projects-top">
+    <div class="container">
+      <a href="/" class="back-link" id="back-to-portfolio">
+        <i data-lucide="arrow-left"></i>
+        <span>Back to Portfolio</span>
+      </a>
+
+      <div class="projects-hero-content">
+        <div class="eyebrow">PROJECT ARCHIVE</div>
+        <h1>All <span class="gradient-text">Projects</span></h1>
+        <p class="projects-hero-desc">A collection of my work across data engineering, machine learning, analytics and
+          software development.</p>
+      </div>
+
+      <div class="projects-count-badge">
+        <span class="projects-count-num">9</span>
+        <span class="projects-count-label">Projects</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS ARCHIVE LIST -->
+  <main class="projects-archive" id="archive">
+    <div class="container">
+      <div class="archive-list">
+
+        <!-- Project 01 -->
+        <article class="archive-card" id="project-01">
+          <div class="card-glow"></div>
+          <div class="archive-card-inner">
+            <div class="archive-number">01</div>
+            <div class="archive-body">
+              <div class="archive-header">
+                <h2 class="archive-title">Healthcare Analytics &amp; Business Intelligence System (SPARCS)</h2>
+                <div class="archive-badges">
+                  <span class="archive-badge badge-purple">Data Engineering</span>
+                  <span class="archive-badge badge-purple">Business Intelligence</span>
+                  <span class="archive-badge badge-blue">Analytics</span>
+                </div>
+              </div>
+              <p class="archive-desc">
+                Designed a robust, multi-stage PostgreSQL data warehouse utilizing a Star Schema (8 dimensions, 1 fact
+                table) with custom materialized views and automated ETL scripts. Streamlined queries across 16.3M+
+                healthcare records spanning 7 years, reducing report latency and enabling self-service clinical
+                operations analytics via Power BI.
+              </p>
+              <div class="archive-stack">
+                <span>PostgreSQL</span>
+                <span>Power BI</span>
+                <span>ETL</span>
+                <span>Star Schema</span>
+                <span>SQL Analytics</span>
+                <span>Materialized Views</span>
+                <span>PL/pgSQL</span>
+              </div>
+              <div class="archive-links">
+                <a href="https://github.com/Hemanthsai456/sparcs-healthcare-analytics-bi" target="_blank"
+                  class="btn-icon" id="github-sparcs" aria-label="GitHub repository for SPARCS Healthcare Analytics">
+                  <i data-lucide="github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 02 -->
+        <article class="archive-card" id="project-02">
+          <div class="card-glow"></div>
+          <div class="archive-card-inner">
+            <div class="archive-number">02</div>
+            <div class="archive-body">
+              <div class="archive-header">
+                <h2 class="archive-title">Medical Inventory Forecasting &amp; Decision Support System</h2>
+                <div class="archive-badges">
+                  <span class="archive-badge badge-purple">Machine Learning</span>
+                  <span class="archive-badge badge-blue">Healthcare</span>
+                </div>
+              </div>
+              <p class="archive-desc">
+                Developed a decision support system evaluating 14 machine learning algorithms — Gradient Boosting
+                achieved R² = 0.7978 — with SHAP for model explainability and K-Means for demand clustering. Delivered a
+                Streamlit dashboard enabling real-time demand forecasting and stock optimization, transforming complex
+                ML
+                predictions into actionable clinical inventory decisions.
+              </p>
+              <div class="archive-stack">
+                <span>Python</span>
+                <span>Scikit-Learn</span>
+                <span>SHAP</span>
+                <span>Streamlit</span>
+                <span>XGBoost</span>
+                <span>K-Means</span>
+                <span>Gradient Boosting</span>
+              </div>
+              <div class="archive-links">
+                <a href="https://github.com/Hemanthsai456/Medical-Inventory-Forecasting-Decision-Support-System"
+                  target="_blank" class="btn-icon" id="github-medical-inventory"
+                  aria-label="GitHub repository for Medical Inventory Forecasting">
+                  <i data-lucide="github"></i> GitHub
+                </a>
+                <a href="https://hemanthsai-medical-inventory-decision-support.streamlit.app/" target="_blank"
+                  class="btn-icon btn-live" id="live-medical-inventory"
+                  aria-label="Live demo for Medical Inventory Forecasting">
+                  <i data-lucide="external-link"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 03 -->
+        <article class="archive-card" id="project-03">
+          <div class="card-glow"></div>
+          <div class="archive-card-inner">
+            <div class="archive-number">03</div>
+            <div class="archive-body">
+              <div class="archive-header">
+                <h2 class="archive-title">NIDHI — AI Investor Super App</h2>
+                <div class="archive-badges">
+                  <span class="archive-badge badge-purple">Full Stack</span>
+                  <span class="archive-badge badge-blue">AI</span>
+                </div>
+              </div>
+              <p class="archive-desc">
+                Engineered a comprehensive portfolio manager using Next.js with a reactive state architecture,
+                integrating AI recommendation models for real-time risk evaluation. Delivered an intuitive investor
+                cockpit with interactive dashboards, offering retail users institution-grade portfolio intelligence and
+                personalized financial education.
+              </p>
+              <div class="archive-stack">
+                <span>TypeScript</span>
+                <span>React</span>
+                <span>Next.js</span>
+                <span>AI Recommender</span>
+                <span>Authentication</span>
+                <span>Risk Intelligence</span>
+              </div>
+              <div class="archive-links">
+                <a href="https://github.com/Hemanthsai456/NIDHI" target="_blank" class="btn-icon" id="github-nidhi"
+                  aria-label="GitHub repository for NIDHI">
+                  <i data-lucide="github"></i> GitHub
+                </a>
+                <a href="https://nidhiapp.vercel.app" target="_blank" class="btn-icon btn-live" id="live-nidhi"
+                  aria-label="Live demo for NIDHI">
+                  <i data-lucide="external-link"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 04 -->
+        <article class="archive-card" id="project-04">
+          <div class="card-glow"></div>
+          <div class="archive-card-inner">
+            <div class="archive-number">04</div>
+            <div class="archive-body">
+              <div class="archive-header">
+                <h2 class="archive-title">Anime &amp; Manga Analytics &amp; Recommendation System</h2>
+                <div class="archive-badges">
+                  <span class="archive-badge badge-purple">Machine Learning</span>
+                  <span class="archive-badge badge-blue">Analytics</span>
+                </div>
+              </div>
+              <p class="archive-desc">
+                Designed a hybrid content-based recommendation engine utilizing TF-IDF, Cosine Similarity, and
+                popularity-weighted ranking algorithms. Built an interactive analytics dashboard in Power BI displaying
+                user consumption patterns and recommendation coverage, providing highly personalized titles with reduced
+                latency.
+              </p>
+              <div class="archive-stack">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>Power BI</span>
+                <span>TF-IDF</span>
+                <span>Cosine Similarity</span>
+                <span>Streamlit</span>
+                <span>Recommendation Engine</span>
+              </div>
+              <div class="archive-links">
+                <a href="https://github.com/Hemanthsai456/Anime-Manga-Analytics-Recommendation-System" target="_blank"
+                  class="btn-icon" id="github-anime"
+                  aria-label="GitHub repository for Anime and Manga Recommendation System">
+                  <i data-lucide="github"></i> GitHub
+                </a>
+                <a href="https://hemanth-anime-manga-analytics-recommendation-system.streamlit.app/" target="_blank"
+                  class="btn-icon btn-live" id="live-anime"
+                  aria-label="Live demo for Anime and Manga Recommendation System">
+                  <i data-lucide="external-link"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 05 -->
+        <article class="archive-card" id="project-05">
+          <div class="card-glow"></div>
+          <div class="archive-card-inner">
+            <div class="archive-number">05</div>
+            <div class="archive-body">
+              <div class="archive-header">
+                <h2 class="archive-title">Hate Speech Detection System</h2>
+                <div class="archive-badges">
+                  <span class="archive-badge badge-purple">NLP</span>
+                  <span class="archive-badge badge-blue">Machine Learning</span>
+                </div>
+              </div>
+              <p class="archive-desc">
+                Built an end-to-end NLP classification pipeline featuring custom regex tokenizers, TF-IDF
+                vectorization, and optimized classification models. Deployed the model via an interactive Streamlit
+                interface, allowing real-time text moderation and content filtering with high precision.
+              </p>
+              <div class="archive-stack">
+                <span>Python</span>
+                <span>NLP</span>
+                <span>TF-IDF</span>
+                <span>Scikit-Learn</span>
+                <span>Streamlit</span>
+                <span>Logistic Regression</span>
+              </div>
+              <div class="archive-links">
+                <a href="https://github.com/Hemanthsai456/Hate-Speech-Detection-System" target="_blank" class="btn-icon"
+                  id="github-hate-speech" aria-label="GitHub repository for Hate Speech Detection">
+                  <i data-lucide="github"></i> GitHub
+                </a>
+                <a href="https://hemanth-hate-speech-detection.streamlit.app/" target="_blank" class="btn-icon btn-live"
+                  id="live-hate-speech" aria-label="Live demo for Hate Speech Detection">
+                  <i data-lucide="external-link"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 06 -->
+        <article class="archive-card" id="project-06">
+          <div class="card-glow"></div>
+          <div class="archive-card-inner">
+            <div class="archive-number">06</div>
+            <div class="archive-body">
+              <div class="archive-header">
+                <h2 class="archive-title">BunkRide — Real-Time Ride-Sharing Platform</h2>
+                <div class="archive-badges">
+                  <span class="archive-badge badge-purple">Full Stack</span>
+                  <span class="archive-badge badge-blue">Real-Time</span>
+                </div>
+              </div>
+              <p class="archive-desc">
+                Developed a real-time ride-sharing web application integrated with Google Maps API and Socket.IO for
+                live driver-passenger matchmaking and interactive GPS tracking. Provided a seamless platform for
+                automated matchmaking and real-time transit coordination, reducing transit costs and improving ride
+                coordination efficiency.
+              </p>
+              <div class="archive-stack">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>Socket.IO</span>
+                <span>Google Maps API</span>
+                <span>GPS Tracking</span>
+              </div>
+              <div class="archive-links">
+                <a href="https://github.com/srujangandla/bunkride" target="_blank" class="btn-icon" id="github-bunkride"
+                  aria-label="GitHub repository for BunkRide">
+                  <i data-lucide="github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 07 -->
+        <article class="archive-card" id="project-07">
+          <div class="card-glow"></div>
+          <div class="archive-card-inner">
+            <div class="archive-number">07</div>
+            <div class="archive-body">
+              <div class="archive-header">
+                <h2 class="archive-title">Hemanth Sai Portfolio</h2>
+                <div class="archive-badges">
+                  <span class="archive-badge badge-purple">Web Development</span>
+                  <span class="archive-badge badge-blue">Design</span>
+                </div>
+              </div>
+              <p class="archive-desc">
+                Designed and built a premium personal portfolio website with a dark glassmorphism aesthetic, animated
+                particle backgrounds, 3D card tilt effects, and smooth scroll-reveal animations. Crafted to showcase
+                work in AI, data engineering, analytics, and full-stack development with production-level attention to
+                design quality and performance.
+              </p>
+              <div class="archive-stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>tsParticles</span>
+                <span>Lucide Icons</span>
+                <span>Glassmorphism</span>
+              </div>
+              <div class="archive-links">
+                <a href="https://github.com/Hemanthsai456/Hemanth-Sai-Portfolio" target="_blank" class="btn-icon"
+                  id="github-portfolio" aria-label="GitHub repository for Hemanth Sai Portfolio">
+                  <i data-lucide="github"></i> GitHub
+                </a>
+                <a href="https://hemanth-sai-portfolio.vercel.app/" target="_blank" class="btn-icon btn-live"
+                  id="live-portfolio" aria-label="Live portfolio website">
+                  <i data-lucide="external-link"></i> Live Site
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 08 -->
+        <article class="archive-card" id="project-08">
+          <div class="card-glow"></div>
+          <div class="archive-card-inner">
+            <div class="archive-number">08</div>
+            <div class="archive-body">
+              <div class="archive-header">
+                <h2 class="archive-title">Public Transport Analytics Dashboard</h2>
+                <div class="archive-badges">
+                  <span class="archive-badge badge-purple">Analytics</span>
+                  <span class="archive-badge badge-blue">Data Engineering</span>
+                </div>
+              </div>
+              <p class="archive-desc">
+                Built an interactive Power BI dashboard to analyze public transport data, uncover operational patterns,
+                track key performance indicators, and present transportation insights through clear and interactive
+                visualizations.
+              </p>
+              <div class="archive-stack">
+                <span>Power BI</span>
+                <span>Data Visualization</span>
+                <span>Dashboard Design</span>
+                <span>DAX</span>
+                <span>Power Query</span>
+              </div>
+              <div class="archive-links">
+                <a href="https://github.com/Hemanthsai456/Public-Transport-Analytics-Dashboard" target="_blank"
+                  class="btn-icon" id="github-transport" aria-label="GitHub profile for Public Transport Analytics">
+                  <i data-lucide="github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 09 -->
+        <article class="archive-card" id="project-09">
+          <div class="card-glow"></div>
+          <div class="archive-card-inner">
+            <div class="archive-number">09</div>
+            <div class="archive-body">
+              <div class="archive-header">
+                <h2 class="archive-title">StudIQ — Intelligent Study Platform</h2>
+                <div class="archive-badges">
+                  <span class="archive-badge badge-purple">Full Stack</span>
+                  <span class="archive-badge badge-blue">EdTech</span>
+                </div>
+              </div>
+              <p class="archive-desc">
+                Developed an intelligent study platform designed to help students organize, track, and optimize their
+                learning workflows. Integrated smart scheduling, progress tracking, and resource management features
+                built with a modern full-stack architecture to create a seamless academic productivity experience.
+              </p>
+              <div class="archive-stack">
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Node.js</span>
+                <span>PostgreSQL</span>
+                <span>REST APIs</span>
+                <span>Full Stack</span>
+              </div>
+              <div class="archive-links">
+                <a href="https://github.com/Hemanthsai456/StudIQ-Frontend-SIH2025" target="_blank" class="btn-icon"
+                  id="github-studiq" aria-label="GitHub profile for StudIQ">
+                  <i data-lucide="github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /.archive-list -->
+    </div><!-- /.container -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="projects-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="logo">HS<span>.</span></a>
+          <p class="footer-tagline">Engineering Intelligent Solutions for Real-World Problems.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/Hemanthsai456" target="_blank" aria-label="GitHub"><i
+              class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/hemanthsai456" target="_blank" aria-label="LinkedIn"><i
+              class="fa-brands fa-linkedin"></i></a>
+          <a href="mailto:hemanthsai.ch456@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 Ch. Hemanth Sai. All rights reserved.</p>
+        <p class="footer-tech">Built with HTML &bull; CSS &bull; JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="projects.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>
