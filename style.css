@@ -889,11 +889,17 @@ section.show {
 
 .orb-glow-inner {
   position: absolute;
-  width: 220px;
-  height: 220px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(158, 122, 255, 0.25) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 70%);
-  filter: blur(50px);
+  background: radial-gradient(
+    circle,
+    rgba(158, 122, 255, 0.42) 0%,
+    rgba(59, 130, 246, 0.18) 45%,
+    transparent 72%
+  );
+
+  filter: blur(45px);
   animation: orb-pulse 5s ease-in-out infinite;
 }
 
@@ -916,26 +922,29 @@ section.show {
   height: 64px;
   border-radius: 50%;
   background: var(--accent-gradient);
+
   box-shadow:
-    0 0 50px rgba(158, 122, 255, 0.45),
-    0 0 100px rgba(158, 122, 255, 0.2),
-    inset 0 0 20px rgba(255, 255, 255, 0.25);
+    0 0 30px rgba(158, 122, 255, 0.75),
+    0 0 70px rgba(158, 122, 255, 0.45),
+    0 0 130px rgba(59, 130, 246, 0.22),
+    inset 0 0 20px rgba(255, 255, 255, 0.35);
+
   position: relative;
   z-index: 3;
   animation: orb-pulse 5s ease-in-out infinite;
 }
 
 .orb-orbit {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px dashed rgba(255, 255, 255, 0.1);
-  transform-style: preserve-3d;
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    transform-style: preserve-3d;
 }
 
 .purple-orbit {
   width: 240px;
   height: 240px;
-  border-color: rgba(158, 122, 255, 0.22);
+  border-color: rgba(158, 122, 255, 0.40);
   animation: orbit-spin-3d-purple 18s linear infinite;
 }
 
@@ -949,14 +958,15 @@ section.show {
   border-radius: 50%;
   background: var(--accent-purple);
   box-shadow:
-    0 0 12px var(--accent-purple),
-    0 0 24px rgba(158, 122, 255, 0.5);
+    0 0 8px #9e7aff,
+    0 0 18px #9e7aff,
+    0 0 35px rgba(158, 122, 255, 0.75);
 }
 
 .blue-orbit {
   width: 340px;
   height: 340px;
-  border-color: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.28);
   animation: orbit-spin-3d-blue 24s linear infinite reverse;
 }
 
@@ -970,14 +980,15 @@ section.show {
   border-radius: 50%;
   background: var(--accent-blue);
   box-shadow:
-    0 0 10px var(--accent-blue),
-    0 0 20px rgba(59, 130, 246, 0.4);
+    0 0 8px #3b82f6,
+    0 0 18px #3b82f6,
+    0 0 32px rgba(59, 130, 246, 0.7);
 }
 
 .white-orbit {
   width: 440px;
   height: 440px;
-  border-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.14);
   animation: orbit-spin-3d-white 32s linear infinite;
 }
 
@@ -991,8 +1002,9 @@ section.show {
   border-radius: 50%;
   background: #ffffff;
   box-shadow:
-    0 0 8px #ffffff,
-    0 0 16px rgba(255, 255, 255, 0.3);
+    0 0 7px #ffffff,
+    0 0 15px #ffffff,
+    0 0 28px rgba(255, 255, 255, 0.55);
 }
 
 @keyframes orbit-spin-3d-purple {

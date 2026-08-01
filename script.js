@@ -177,7 +177,7 @@ document.querySelectorAll(".project-card, .glass-card, .skill-card").forEach(car
 tsParticles.load("particles", {
   fpsLimit: 60,
   particles: {
-    number: { value: 60, density: { enable: true, area: 1000 } },
+    number: { value: 100, density: { enable: true, area: 1000 } },
     size: { value: { min: 0.5, max: 1.8 } },
     color: { value: ["#7C5CFF", "#3B82F6", "#A78BFA", "#60A5FA"] },
     opacity: {
@@ -195,7 +195,7 @@ tsParticles.load("particles", {
     links: {
       enable: true,
       color: "#7C5CFF",
-      opacity: 0.08,
+      opacity: 0.25,
       distance: 130,
       width: 1
     },
@@ -203,7 +203,7 @@ tsParticles.load("particles", {
       particles: {
         enable: true,
         frequency: 0.03,
-        opacity: 0.6,
+        opacity: 0.5,
         color: { value: "#A78BFA" }
       }
     }
@@ -215,8 +215,8 @@ tsParticles.load("particles", {
     },
     modes: {
       grab: {
-        distance: 150,
-        links: { opacity: 0.15, color: "#7C5CFF" }
+        distance: 170,
+        links: { opacity: 0.4, color: "#7C5CFF" }
       }
     }
   },
