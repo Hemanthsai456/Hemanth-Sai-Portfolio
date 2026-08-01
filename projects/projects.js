@@ -1,6 +1,124 @@
-// ===== PROJECTS PAGE JAVASCRIPT =====
+// ===== PROJECTS ARCHIVE PAGE JAVASCRIPT =====
+
+// ─── Archive Renderer ───
+// Reads PROJECTS from ../assets/js/projects-data.js and builds the
+// archive list. Output is structurally identical to the previous static HTML.
+(function renderArchive() {
+  const list = document.getElementById("archive-list");
+  if (!list || typeof PROJECTS === "undefined") return;
+
+  const archived = PROJECTS
+    .filter(p => p.published)
+    .sort((a, b) => a.projectOrder - b.projectOrder);
+
+  // Update the count badge
+  const countEl = document.getElementById("projects-count-num");
+  if (countEl) countEl.textContent = archived.length;
+
+  archived.forEach((project, index) => {
+    const num = String(index + 1).padStart(2, "0");
+
+    // Build badge HTML
+    const badgeHtml = project.badges
+      .map(b => `<span class="archive-badge badge-${b.color}">${b.label}</span>`)
+      .join("\n                ");
+
+    // Build tech stack HTML
+    const stackHtml = project.techStack
+      .map(t => `<span>${t}</span>`)
+      .join("\n                ");
+
+    // Build link buttons
+    const links = [];
+    if (project.github) {
+      links.push(`<a href="${project.github}" target="_blank" class="btn-icon" id="github-${project.id}" aria-label="GitHub repository for ${project.title.replace(/&amp;/g, '&').replace(/<[^>]+>/g, '')}">
+                  <i data-lucide="github"></i> GitHub
+                </a>`);
+    }
+    if (project.live) {
+      const liveLabel = project.liveLabel || "Live Demo";
+      links.push(`<a href="${project.live}" target="_blank" class="btn-icon btn-live" id="live-${project.id}" aria-label="${liveLabel} for ${project.title.replace(/&amp;/g, '&').replace(/<[^>]+>/g, '')}">
+                  <i data-lucide="external-link"></i> ${liveLabel}
+                </a>`);
+    }
+
+    const article = document.createElement("article");
+    article.className = "archive-card";
+    article.id = `project-${num}`;
+    article.innerHTML = `
+          <div class="card-glow"></div>
+          <div class="archive-card-inner">
+            <div class="archive-number">${num}</div>
+            <div class="archive-body">
+              <div class="archive-header">
+                <h2 class="archive-title">${project.title}</h2>
+                <div class="archive-badges">
+                ${badgeHtml}
+                </div>
+              </div>
+              <p class="archive-desc">
+                ${project.description}
+              </p>
+              <div class="archive-stack">
+                ${stackHtml}
+              </div>
+              <div class="archive-links">
+                ${links.join("\n                ")}
+              </div>
+            </div>
+          </div>`;
+
+    list.appendChild(article);
+  });
+
+  // Re-initialise lucide icons for the freshly created elements
+  if (typeof lucide !== "undefined") lucide.createIcons();
+
+  // ─── Card Spotlight Tracking & Tilt (attached after render) ───
+  document.querySelectorAll(".archive-card").forEach(card => {
+    card.addEventListener("mousemove", e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty("--mouse-x", `${x}px`);
+      card.style.setProperty("--mouse-y", `${y}px`);
+      const rotateX = (y / rect.height - 0.5) * 2.5;
+      const rotateY = (x / rect.width - 0.5) * -2.5;
+      card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "perspective(1200px) rotateX(0) rotateY(0) translateY(0)";
+    });
+  });
+
+  // ─── Scroll Reveal for Archive Cards (attached after render) ───
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '0';
+        entry.target.style.transform = 'translateY(24px)';
+        entry.target.style.transition = `opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)`;
+        const delay = 0.05;
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, delay * 1000 * (Array.from(entry.target.parentNode.children).indexOf(entry.target) % 4));
+        });
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll(".archive-card").forEach(card => {
+    card.style.opacity = '0';
+    revealObserver.observe(card);
+  });
+})();
+
 
 // ================= PARTICLES (Space Theme) =================
+
 tsParticles.load("particles", {
   fpsLimit: 60,
   particles: {
@@ -112,49 +230,4 @@ if (navToggle) {
   animateGlow();
 })();
 
-// ─── Card Spotlight Tracking & Tilt ───
-document.querySelectorAll(".archive-card").forEach(card => {
-  card.addEventListener("mousemove", e => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
 
-    card.style.setProperty("--mouse-x", `${x}px`);
-    card.style.setProperty("--mouse-y", `${y}px`);
-
-    const rotateX = (y / rect.height - 0.5) * 2.5;
-    const rotateY = (x / rect.width - 0.5) * -2.5;
-    card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "perspective(1200px) rotateX(0) rotateY(0) translateY(0)";
-  });
-});
-
-// ─── Scroll Reveal for Archive Cards ───
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '0';
-      entry.target.style.transform = 'translateY(24px)';
-      entry.target.style.transition = `opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)`;
-
-      // Stagger slightly based on position in list
-      const delay = 0.05;
-      requestAnimationFrame(() => {
-        setTimeout(() => {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }, delay * 1000 * (Array.from(entry.target.parentNode.children).indexOf(entry.target) % 4));
-      });
-
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll(".archive-card").forEach(card => {
-  card.style.opacity = '0';
-  revealObserver.observe(card);
-});

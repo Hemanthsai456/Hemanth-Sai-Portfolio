@@ -1,3 +1,64 @@
+// ===== FEATURED PROJECTS RENDERER =====
+// Reads from PROJECTS (assets/js/projects-data.js) and builds the
+// homepage Featured Solutions grid. Output is identical to the previous
+// hardcoded HTML.
+(function renderFeaturedProjects() {
+  const grid = document.getElementById("featured-project-grid");
+  if (!grid || typeof PROJECTS === "undefined") return;
+
+  const featured = PROJECTS
+    .filter(p => p.published && p.featured && p.featuredData)
+    .sort((a, b) => a.featuredOrder - b.featuredOrder);
+
+  featured.forEach(project => {
+    const fd = project.featuredData;
+
+    // Build highlights list items
+    const highlightItems = fd.highlights
+      .map(h => `<li>${h}</li>`)
+      .join("\n            ");
+
+    // Build stack spans
+    const stackSpans = fd.stackShort
+      .map(s => `<span>${s}</span>`)
+      .join("\n            ");
+
+    // Build link elements
+    const linkEls = fd.links.map(link => {
+      const isSvgIcon = link.icon === "github" || link.icon === "external-link" || link.icon === "arrow-up-right";
+      const iconHtml = `<i data-lucide="${link.icon}"></i>`;
+      return `<a href="${link.href}" target="_blank" class="${link.cls}" aria-label="${link.ariaLabel}">${iconHtml} ${link.label}</a>`;
+    }).join("\n            ");
+
+    const card = document.createElement("div");
+    card.className = "project-card";
+    card.innerHTML = `
+          <div class="card-glow"></div>
+          <div class="project-header">
+            <div class="project-icon-box"><i data-lucide="${fd.icon}"></i></div>
+            <span class="project-metric">${fd.metric}</span>
+          </div>
+          <h3 class="project-title">${fd.titleShort}</h3>
+          <p class="project-description">
+            ${fd.descriptionHtml}
+          </p>
+          <ul class="project-highlights">
+            ${highlightItems}
+          </ul>
+          <div class="project-stack">
+            ${stackSpans}
+          </div>
+          <div class="project-links">
+            ${linkEls}
+          </div>`;
+
+    grid.appendChild(card);
+  });
+
+  // Re-initialise lucide icons for the newly created elements
+  if (typeof lucide !== "undefined") lucide.createIcons();
+})();
+
 // ===== SMOOTH SCROLL WITH OFFSET =====
 const navbar = document.getElementById("navbar");
 const navToggle = document.querySelector(".nav-toggle");
