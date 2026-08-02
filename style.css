@@ -274,17 +274,19 @@ button:focus-visible {
 }
 
 /* Mouse-follow glow */
-.mouse-glow {
-  position: fixed;
-  width: 500px;
-  height: 580px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(158, 122, 255, 0.05) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 1;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.5s ease;
-  will-change: left, top;
+.mouse-glow{
+    position:fixed;
+    width:500px;
+    aspect-ratio:1;
+    border-radius:50%;
+
+    background:radial-gradient(circle, rgba(158,122,255,.05) 0%, transparent 70%);
+    pointer-events:none;
+    z-index:1;
+    transform:translate3d(-50%,-50%,0);
+    will-change:transform;
+    contain:paint;
+    transition:opacity .5s ease;
 }
 
 
