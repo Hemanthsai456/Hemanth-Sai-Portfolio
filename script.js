@@ -185,7 +185,7 @@ bars.forEach(bar => {
 });
 
 // ================= 3D CARD TILT EFFECT & SPOTLIGHT =================
-document.querySelectorAll(".project-card, .glass-card, .skill-card").forEach(card => {
+document.querySelectorAll(".project-card, .glass-card, .skill-card, .contact-form").forEach(card => {
   card.addEventListener("mousemove", e => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -331,3 +331,89 @@ const cardObserver = new IntersectionObserver(entries => {
 document.querySelectorAll('.hero-proof-strip, .about-highlights-stack, .project-grid, .skill-grid').forEach(container => {
   cardObserver.observe(container);
 });
+
+// ===== CONTACT FORM SUBMISSION =====
+const contactForm = document.getElementById("contact-form");
+const formSubmitBtn = document.getElementById("form-submit-btn");
+const formStatus = document.getElementById("form-status");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Reset status message
+    hideStatus();
+
+    // Perform validation check
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !subject || !message) {
+      showStatus("Please fill in all fields.", "error");
+      return;
+    }
+
+    // Simple email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showStatus("Please enter a valid email address.", "error");
+      return;
+    }
+
+    // Show sending state
+    formSubmitBtn.disabled = true;
+    const originalBtnText = formSubmitBtn.innerHTML;
+    formSubmitBtn.innerHTML = `<span>Sending...</span> <i class="fa-solid fa-spinner fa-spin"></i>`;
+    showStatus("Sending your message...", "info");
+
+    const formData = new FormData(contactForm);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    })
+      .then(async (response) => {
+        let jsonRes = await response.json();
+        if (response.status === 200) {
+          showStatus("Your message has been sent successfully!", "success");
+          contactForm.reset();
+        } else {
+          console.log(response);
+          showStatus(jsonRes.message || "Something went wrong. Please try again later.", "error");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        showStatus("Failed to send message. Please check your connection and try again.", "error");
+      })
+      .then(() => {
+        // Reset button state
+        formSubmitBtn.disabled = false;
+        formSubmitBtn.innerHTML = originalBtnText;
+        if (typeof lucide !== "undefined") {
+          lucide.createIcons();
+        }
+      });
+  });
+}
+
+function showStatus(msg, type) {
+  if (!formStatus) return;
+  formStatus.textContent = msg;
+  formStatus.className = "form-status " + type;
+}
+
+function hideStatus() {
+  if (!formStatus) return;
+  formStatus.textContent = "";
+  formStatus.className = "form-status";
+}
+
