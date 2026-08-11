@@ -238,16 +238,16 @@ document.querySelectorAll(".project-card, .glass-card, .skill-card, .contact-for
 tsParticles.load("particles", {
   fpsLimit: 60,
   particles: {
-    number: { value: 100, density: { enable: true, area: 1000 } },
+    number: { value: 120, density: { enable: true, area: 1000 } },
     size: { value: { min: 0.5, max: 1.8 } },
-    color: { value: ["#7C5CFF", "#3B82F6", "#A78BFA", "#60A5FA"] },
+    color: { value: ["#00f2fe", "#005fff", "#9e7aff", "#00d2ff"] },
     opacity: {
       value: { min: 0.15, max: 0.5 },
       animation: { enable: true, speed: 0.8, minimumValue: 0.1 }
     },
     move: {
       enable: true,
-      speed: 0.4,
+      speed: 0.5,
       direction: "none",
       random: true,
       straight: false,
@@ -255,17 +255,17 @@ tsParticles.load("particles", {
     },
     links: {
       enable: true,
-      color: "#7C5CFF",
-      opacity: 0.25,
-      distance: 130,
+      color: "#00f2fe",
+      opacity: 0.35,
+      distance: 150,
       width: 1
     },
     twinkle: {
       particles: {
         enable: true,
-        frequency: 0.03,
-        opacity: 0.5,
-        color: { value: "#A78BFA" }
+        frequency: 0.08,
+        opacity: 0.4,
+        color: { value: "#00f2fe" }
       }
     }
   },
@@ -276,8 +276,8 @@ tsParticles.load("particles", {
     },
     modes: {
       grab: {
-        distance: 170,
-        links: { opacity: 0.4, color: "#7C5CFF" }
+        distance: 150,
+        links: { opacity: 0.4, color: "#00f2fe" }
       }
     }
   },
