@@ -22,6 +22,7 @@
 
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="projects.css" />
+  <link rel="stylesheet" href="../scroll-progress/goku.css">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +37,19 @@
 </head>
 
 <body>
+  <div id="kh-bar">
+    <div id="kh-goku-wrap">
+      <div id="kh-aura"></div>
+      <div id="kh-goku"></div>
+      <div id="kh-sphere"></div>
+    </div>
+
+    <div id="kh-beam-track">
+      <div id="kh-beam"></div>
+      <div id="kh-impact"></div>
+    </div>
+  </div>
+
   <!-- Ambient Noise Overlay -->
   <div class="noise-overlay"></div>
 
@@ -132,6 +146,7 @@
   <script>
     lucide.createIcons();
   </script>
+  <script src="../scroll-progress/goku.js"></script>
 </body>
 
 </html>
