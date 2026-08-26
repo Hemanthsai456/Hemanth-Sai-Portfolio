@@ -208,26 +208,32 @@ document.querySelectorAll(".project-card, .glass-card, .skill-card, .contact-for
 
 // ================= MOUSE-FOLLOW GLOW =================
 (function initMouseGlow() {
+  // Skip on touch-primary devices (no mousemove, no value, just overhead)
+  if (window.matchMedia('(hover: none)').matches) return;
+
   const glow = document.createElement('div');
   glow.classList.add('mouse-glow');
   document.body.appendChild(glow);
 
   let mouseX = 0, mouseY = 0;
   let glowX = 0, glowY = 0;
+  let rafPending = false;
 
   document.addEventListener('mousemove', e => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-  });
+  }, { passive: true });
 
   function animateGlow() {
+    rafPending = false;
     // Smooth lerp
     glowX += (mouseX - glowX) * 0.08;
     glowY += (mouseY - glowY) * 0.08;
 
-    glow.style.left = glowX + 'px';
-    glow.style.top = glowY + 'px';
+    // GPU-composited transform only — never touches top/left
+    glow.style.transform = `translate3d(calc(${glowX}px - 50%), calc(${glowY}px - 50%), 0)`;
 
+    rafPending = true;
     requestAnimationFrame(animateGlow);
   }
 

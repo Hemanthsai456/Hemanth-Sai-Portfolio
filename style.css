@@ -223,7 +223,7 @@ button:focus-visible {
 .glow-orb {
   position: fixed;
   border-radius: 50%;
-  filter: blur(140px);
+  filter: blur(70px); /* reduced from 140px — large blur is main GPU cost */
   pointer-events: none;
   z-index: 0;
   will-change: transform;
@@ -257,6 +257,13 @@ button:focus-visible {
   top: 15%;
   left: 25%;
   animation: float-orb 32s ease-in-out infinite;
+}
+
+/* Hide animated orbs on mobile — biggest lag source */
+@media (max-width: 768px) {
+  .glow-orb {
+    display: none;
+  }
 }
 
 @keyframes float-orb {
@@ -297,7 +304,7 @@ button:focus-visible {
   background: radial-gradient(circle, rgba(51, 100, 185, 0.2) 0%, transparent 70%);
   pointer-events: none;
   z-index: 1;
-  transform: translate3d(-50%, -50%, 0);
+  /* transform is fully set by JS via translate3d — no initial value here */
   will-change: transform;
   contain: paint;
   transition: opacity .1s ease;
@@ -474,7 +481,7 @@ button:focus-visible {
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-accent);
   background: var(--accent-purple-dim);
-  transition: all var(--transition-base);
+  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base);
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -616,9 +623,10 @@ section.show {
 .exp-content {
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  transition: all var(--transition-base);
+  /* backdrop-filter removed — use solid bg instead; saves a compositor layer per card */
+  background-color: rgba(6, 4, 18, 0.72);
+  transition: transform var(--transition-base), box-shadow var(--transition-base),
+              background-color var(--transition-base), border-color var(--transition-base);
 }
 
 .glass-card {
@@ -773,7 +781,7 @@ section.show {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 100px;
-  transition: all var(--transition-base);
+  transition: border-color var(--transition-base), background-color var(--transition-base), color var(--transition-base), transform var(--transition-base);
 }
 
 .chip svg {
@@ -934,7 +942,7 @@ section.show {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 50%;
   color: var(--text-tertiary);
-  transition: all var(--transition-base);
+  transition: color var(--transition-base), border-color var(--transition-base), background-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
   background: rgba(255, 255, 255, 0.02);
 }
 
@@ -1120,16 +1128,14 @@ section.show {
   }
 }
 
-/* Floating Badges - Premium Glassmorphism */
+/* Floating Badges */
 .floating-badge {
   position: absolute;
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 12px 18px;
-  background: rgba(8, 6, 20, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(8, 6, 20, 0.88); /* solid fallback; no backdrop-filter */
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--radius-md);
   z-index: 5;
@@ -1235,12 +1241,10 @@ section.show {
   width: 100%;
   margin-top: 50px;
   padding: 22px 30px;
-  background: rgba(12, 10, 32, 0.35);
+  background: rgba(12, 10, 32, 0.72); /* solid fallback; no backdrop-filter */
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: var(--radius-lg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  transition: all var(--transition-base);
+  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .hero-proof-strip:hover {
@@ -1417,7 +1421,7 @@ section.show {
   gap: 20px;
   padding: var(--space-md) var(--space-lg);
   border-left: 2px solid rgba(158, 122, 255, 0.15);
-  transition: all var(--transition-base);
+  transition: border-left-color var(--transition-base), background-color var(--transition-base), transform var(--transition-base);
 }
 
 .about-highlight-item:hover {
@@ -1499,7 +1503,7 @@ section.show {
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 10px;
   color: var(--accent-purple);
-  transition: all var(--transition-base);
+  transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .skill-card:hover .skill-icon-container {
@@ -1539,7 +1543,7 @@ section.show {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 6px;
-  transition: all var(--transition-base);
+  transition: border-color var(--transition-base), background-color var(--transition-base), color var(--transition-base);
   white-space: nowrap;
 }
 
@@ -1599,7 +1603,7 @@ section.show {
   background: rgba(255, 255, 255, 0.01);
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 100px;
-  transition: all var(--transition-base);
+  transition: border-color var(--transition-base), color var(--transition-base), background-color var(--transition-base), transform var(--transition-base);
 }
 
 .tag-cloud span:hover {
@@ -1654,7 +1658,7 @@ section.show {
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   color: var(--text-secondary);
-  transition: all var(--transition-base);
+  transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .project-icon-box svg {
@@ -1742,7 +1746,7 @@ section.show {
   background: rgba(255, 255, 255, 0.01);
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 100px;
-  transition: all var(--transition-base);
+  transition: border-color var(--transition-base), color var(--transition-base);
 }
 
 .project-card:hover .project-stack span {
@@ -1766,7 +1770,7 @@ section.show {
   font-weight: 500;
   padding: 8px 18px;
   border-radius: 100px;
-  transition: all var(--transition-base);
+  transition: color var(--transition-base), border-color var(--transition-base), background-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .btn-icon {
@@ -1829,7 +1833,7 @@ section.show {
   border: 1px solid rgba(158, 122, 255, 0.25);
   background: rgba(158, 122, 255, 0.06);
   text-decoration: none;
-  transition: all var(--transition-base);
+  transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
   position: relative;
   overflow: hidden;
 }
@@ -1913,7 +1917,7 @@ section.show {
   background: var(--bg-primary);
   border: 2px solid rgba(255, 255, 255, 0.15);
   z-index: 1;
-  transition: all var(--transition-base);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .exp-dot::after {
@@ -1922,7 +1926,7 @@ section.show {
   inset: 4px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.3);
-  transition: all var(--transition-base);
+  transition: background-color var(--transition-base), transform var(--transition-base);
 }
 
 .exp-content {
@@ -2103,7 +2107,7 @@ section.show {
 .contact-form {
   width: 100%;
   max-width: 540px;
-  background: var(--bg-card);
+  background: rgba(8, 10, 24, 0.88); /* solid fallback; no backdrop-filter */
   border: 1px solid var(--border-card);
   border-radius: var(--radius-lg);
   padding: 32px;
@@ -2111,8 +2115,6 @@ section.show {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
   box-shadow: var(--shadow-card);
   position: relative;
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
@@ -2270,7 +2272,7 @@ section.show {
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 50%;
   color: var(--text-tertiary);
-  transition: all var(--transition-base);
+  transition: color var(--transition-base), border-color var(--transition-base), background-color var(--transition-base), transform var(--transition-base);
   background: rgba(255, 255, 255, 0.01);
 }
 
@@ -2400,9 +2402,7 @@ section.show {
     align-items: stretch;
     gap: 4px;
     padding: var(--space-md) var(--container-gutter);
-    background: rgba(3, 0, 20, 0.96);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    background: rgba(3, 0, 20, 0.98); /* fully opaque on mobile — no backdrop needed */
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: var(--shadow-nav);
     transform: translateY(-110%);
