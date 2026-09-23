@@ -203,7 +203,82 @@ const PROJECTS = [
   },
 
 
-  // ── 3: NIDHI ───────────────────────────────────────────────────
+    // ── 3: Cold-Start Multimodal Movie Recommendation ────────────────
+  {
+    id: "movie-recommendation",
+    title:
+      "Cold-Start Multimodal Movie Recommendation System",
+
+    badges: [
+      { label: "Recommendation Systems", color: "purple" },
+      { label: "Multimodal AI", color: "blue" },
+    ],
+
+    techStack: [
+      "Python",
+      "TensorFlow",
+      "CLIP",
+      "VGGish",
+      "Neural Collaborative Filtering",
+      "Multimodal Learning",
+      "MovieLens",
+    ],
+
+    featured: true,
+    featuredOrder: 3,
+
+    featuredData: {
+      icon: "clapperboard",
+      metric: "Cold-Start RMSE = 0.8843",
+      titleShort: "Cold-Start Multimodal Movie Recommendation",
+
+      descriptionHtml:
+        "<strong>Problem:</strong> Traditional collaborative filtering struggles with new movies that have little or no interaction history, creating a fundamental cold-start problem in recommendation systems.<br />" +
+        "<strong>Solution:</strong> Developed a multimodal recommendation system combining Neural Collaborative Filtering with CLIP poster embeddings and VGGish trailer-audio embeddings to incorporate visual and audio content into movie recommendations.<br />" +
+        "<strong>Impact:</strong> Built and evaluated personalized Top-N recommendation and rating prediction models, including a dedicated cold-start model capable of recommending completely unseen movies using multimodal content representations.",
+
+      highlights: [
+        "19,232 Multimodal Movies",
+        "CLIP Poster Embeddings",
+        "VGGish Audio Embeddings",
+        "Neural Collaborative Filtering",
+        "Cold-Start Recommendation",
+        "Top-N Personalization",
+      ],
+
+      stackShort: [
+        "Python",
+        "TensorFlow",
+        "CLIP",
+        "VGGish",
+      ],
+
+      links: [
+        {
+          label: "GitHub",
+          href:
+            "https://github.com/Hemanthsai456/Leveraging-Poster-and-Trailer-Audio-Embeddings-for-Cold-Start-Movie-Recommendation",
+          cls: "btn-icon",
+          icon: "github",
+          ariaLabel: "GitHub",
+        },
+      ],
+    },
+
+    projectOrder: 3,
+
+    description:
+      "Developed a multimodal movie recommendation system combining Neural Collaborative Filtering with CLIP poster embeddings and VGGish trailer-audio embeddings to address the cold-start problem. Evaluated personalized Top-N recommendation and rating prediction models, including a dedicated cold-start model for completely unseen movies.",
+
+    github:
+      "https://github.com/Hemanthsai456/Leveraging-Poster-and-Trailer-Audio-Embeddings-for-Cold-Start-Movie-Recommendation",
+
+    live: null,
+
+    published: true,
+  },
+
+  // ── 4: NIDHI ───────────────────────────────────────────────────
   {
     id: "nidhi",
     title: "NIDHI \u2014 AI Investor Super App",
@@ -223,7 +298,7 @@ const PROJECTS = [
     ],
 
     featured: true,
-    featuredOrder: 3,
+    featuredOrder: 4,
 
     featuredData: {
       icon: "wallet",
@@ -269,7 +344,7 @@ const PROJECTS = [
       ],
     },
 
-    projectOrder: 3,
+    projectOrder: 4,
 
     description:
       "Engineered a comprehensive portfolio manager using Next.js with a reactive state architecture, integrating AI recommendation models for real-time risk evaluation. Delivered an intuitive investor cockpit with interactive dashboards, offering retail users institution-grade portfolio intelligence and personalized financial education.",
@@ -286,7 +361,7 @@ const PROJECTS = [
   },
 
 
-  // ── 4: Data Center Cooling, Electricity & Water Analysis ───────
+  // ── 5: Data Center Cooling, Electricity & Water Analysis ───────
   {
     id: "data-center-cooling",
 
@@ -307,7 +382,7 @@ const PROJECTS = [
     ],
 
     featured: true,
-    featuredOrder: 4,
+    featuredOrder: 5,
 
     featuredData: {
     icon: "server",
@@ -346,7 +421,7 @@ const PROJECTS = [
     ],
   },
 
-    projectOrder: 4,
+    projectOrder: 5,
 
     description:
   "Analyzed 2.75M+ data center telemetry records to understand electricity consumption, heat generation, cooling demand, and water requirements. Combined exploratory data analysis, feature engineering, physics-based thermal modeling, and predictive modeling, achieving R² = 0.9798 and RMSE = 0.0138.",
@@ -359,7 +434,7 @@ const PROJECTS = [
     published: true,
   },
 
-  // ── 5: Anime & Manga ───────────────────────────────────────────
+  // ── 6: Anime & Manga ───────────────────────────────────────────
   {
     id: "anime",
 
@@ -382,7 +457,7 @@ const PROJECTS = [
     ],
 
     featured: true,
-    featuredOrder: 5,
+    featuredOrder: 6,
 
     featuredData: {
       icon: "sparkles",
@@ -428,7 +503,7 @@ const PROJECTS = [
       ],
     },
 
-    projectOrder: 5,
+    projectOrder: 6,
 
     description:
       "Designed a hybrid content-based recommendation engine utilizing TF-IDF, Cosine Similarity, and popularity-weighted ranking algorithms. Built an interactive analytics dashboard in Power BI displaying user consumption patterns and recommendation coverage, providing highly personalized titles with reduced latency.",
@@ -445,7 +520,7 @@ const PROJECTS = [
   },
 
 
-  // ── 6: Hate Speech Detection ───────────────────────────────────
+  // ── 7: Hate Speech Detection ───────────────────────────────────
   {
     id: "hate-speech",
 
@@ -465,8 +540,8 @@ const PROJECTS = [
       "Logistic Regression"
     ],
 
-    featured: true,
-    featuredOrder: 6,
+    featured: false,
+    featuredOrder: null,
 
     featuredData: {
       icon: "shield-alert",
@@ -510,7 +585,7 @@ const PROJECTS = [
       ],
     },
 
-    projectOrder: 6,
+    projectOrder: 7,
 
     description:
       "Built an end-to-end NLP classification pipeline featuring custom regex tokenizers, TF-IDF vectorization, and optimized classification models. Deployed the model via an interactive Streamlit interface, allowing real-time text moderation and content filtering with high precision.",
@@ -527,7 +602,7 @@ const PROJECTS = [
   },
 
 
-  // ── 7: Public Transport Analytics ─────────────────────────────
+  // ── 8: Public Transport Analytics ─────────────────────────────
   {
     id: "transport",
 
@@ -550,7 +625,7 @@ const PROJECTS = [
     featuredOrder: null,
     featuredData: null,
 
-    projectOrder: 7,
+    projectOrder: 8,
 
     description:
       "Built an interactive Power BI dashboard to analyze public transport data, uncover operational patterns, track key performance indicators, and present transportation insights through clear and interactive visualizations.",
@@ -564,7 +639,7 @@ const PROJECTS = [
   },
 
 
-  // ── 8: Portfolio ───────────────────────────────────────────────
+  // ── 9: Portfolio ───────────────────────────────────────────────
   {
     id: "portfolio",
 
@@ -588,7 +663,7 @@ const PROJECTS = [
     featuredOrder: null,
     featuredData: null,
 
-    projectOrder: 8,
+    projectOrder: 9,
 
     description:
       "Designed and built a premium personal portfolio website with a dark glassmorphism aesthetic, animated particle backgrounds, 3D card tilt effects, and smooth scroll-reveal animations. Crafted to showcase work in AI, data engineering, analytics, and full-stack development with production-level attention to design quality and performance.",
@@ -605,7 +680,7 @@ const PROJECTS = [
   },
 
 
-  // ── 9: StudIQ ─────────────────────────────────────────────────
+  // ── 10: StudIQ ─────────────────────────────────────────────────
   {
     id: "studiq",
 
@@ -629,7 +704,7 @@ const PROJECTS = [
     featuredOrder: null,
     featuredData: null,
 
-    projectOrder: 9,
+    projectOrder: 10,
 
     description:
       "Developed an intelligent study platform designed to help students organize, track, and optimize their learning workflows. Integrated smart scheduling, progress tracking, and resource management features built with a modern full-stack architecture to create a seamless academic productivity experience.",
@@ -643,7 +718,7 @@ const PROJECTS = [
   },
 
 
-  // ── 10: BunkRide ───────────────────────────────────────────────
+  // ── 11: BunkRide ───────────────────────────────────────────────
   {
     id: "bunkride",
 
@@ -667,7 +742,7 @@ const PROJECTS = [
     featuredOrder: null,
     featuredData: null,
 
-    projectOrder: 10,
+    projectOrder: 11,
 
     description:
       "Developed a real-time ride-sharing web application integrated with Google Maps API and Socket.IO for live driver-passenger matchmaking and interactive GPS tracking. Provided a seamless platform for automated matchmaking and real-time transit coordination, reducing transit costs and improving ride coordination efficiency.",
