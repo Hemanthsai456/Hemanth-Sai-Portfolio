@@ -32,10 +32,10 @@
 
 const PROJECTS = [
 
-  // ── 1: Healthcare Analytics & BI ───────────────────────────────
+  // ── 1: SPARCS Healthcare & BI ───────────────────────────────
   {
     id: "sparcs",
-    title: "Healthcare Analytics &amp; Business Intelligence System (SPARCS)",
+    title: "SPARCS Healthcare &amp; Business Intelligence System",
 
     badges: [
       { label: "Data Engineering", color: "purple" },
@@ -59,7 +59,7 @@ const PROJECTS = [
     featuredData: {
       icon: "database",
       metric: "16.3M+ Records",
-      titleShort: "Healthcare Analytics &amp; BI System",
+      titleShort: "SPARCS Healthcare &amp; BI System",
 
       descriptionHtml:
         "<strong>Problem:</strong> Healthcare analysis often struggles with siloed, raw transactional data, making it difficult to extract multi-year clinical and financial trends efficiently.<br />" +
