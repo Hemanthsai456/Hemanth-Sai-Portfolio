@@ -85,14 +85,14 @@ const PROJECTS = [
       links: [
         {
           label: "GitHub",
-          href: "https://github.com/Hemanthsai456/sparcs-healthcare-analytics-bi",
+          href: "https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform",
           cls: "btn-icon",
           icon: "github",
           ariaLabel: "GitHub"
         },
         {
           label: "Case Study",
-          href: "https://github.com/Hemanthsai456/sparcs-healthcare-analytics-bi/tree/main/DOCS",
+          href: "https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform/tree/main/DOCS",
           cls: "btn-text",
           icon: "arrow-up-right",
           ariaLabel: "Case Study"
@@ -106,7 +106,7 @@ const PROJECTS = [
       "Designed a robust, multi-stage PostgreSQL data warehouse utilizing a Star Schema (8 dimensions, 1 fact table) with custom materialized views and automated ETL scripts. Streamlined queries across 16.3M+ healthcare records spanning 7 years, reducing report latency and enabling self-service clinical operations analytics via Power BI.",
 
     github:
-      "https://github.com/Hemanthsai456/sparcs-healthcare-analytics-bi",
+      "https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform",
 
     live: null,
 
