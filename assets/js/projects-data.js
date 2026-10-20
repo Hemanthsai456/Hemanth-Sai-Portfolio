@@ -203,7 +203,7 @@ const PROJECTS = [
   },
 
 
-    // ── 3: Cold-Start Multimodal Movie Recommendation ────────────────
+  // ── 3: Cold-Start Multimodal Movie Recommendation ────────────────
   {
     id: "movie-recommendation",
     title:
@@ -360,8 +360,83 @@ const PROJECTS = [
     published: true,
   },
 
+  // ── 5: Human Decision Intelligence ─────────────────────────────
+  {
+    id: "human-decision-intelligence",
 
-  // ── 5: Data Center Cooling, Electricity & Water Analysis ───────
+    title: "Human Decision Intelligence: Understanding Human Choices Under Risk &amp; Ambiguity",
+
+    badges: [
+      { label: "Statistical Analysis", color: "purple" },
+      { label: "Explainable AI", color: "blue" },
+      { label: "Behavioral Analytics", color: "purple" },
+    ],
+
+    techStack: [
+      "R",
+      "Shiny",
+      "Statistical Modeling",
+      "PCA",
+      "XGBoost",
+      "SHAP",
+      "LIME",
+      "Behavioral Clustering",
+    ],
+
+    featured: true,
+    featuredOrder: 5,
+
+    featuredData: {
+      icon: "brain-circuit",
+      metric: "ROC-AUC = 0.791",
+      titleShort: "Human Decision Intelligence",
+
+      descriptionHtml:
+        "<strong>Problem:</strong> Understanding how people make decisions under risk and ambiguity requires more than observing choices; it requires identifying behavioral patterns, evaluating predictive relationships, and interpreting the factors associated with decision outcomes.<br />" +
+        "<strong>Solution:</strong> Developed a research-driven decision intelligence system using statistical analysis, logistic modeling, PCA, behavioral clustering, and XGBoost to investigate human decision-making patterns. Integrated SHAP and LIME explainability techniques to interpret model predictions and identify influential decision-related features.<br />" +
+        "<strong>Impact:</strong> Combined statistical evidence, predictive evaluation, behavioral segmentation, and explainable machine learning into an interactive analytical workflow for investigating human choices under uncertainty.",
+
+      highlights: [
+        "70.95% Test Accuracy",
+        "ROC-AUC = 0.791",
+        "105,000 Test Observations",
+        "PCA & Behavioral Clustering",
+        "SHAP & LIME Explainability",
+        "Statistical Hypothesis Analysis",
+      ],
+
+      stackShort: [
+        "R",
+        "Statistical Modeling",
+        "XGBoost",
+        "SHAP",
+      ],
+
+      links: [
+        {
+          label: "GitHub",
+          href: "https://github.com/Hemanthsai456/Human-Decision-Intelligence",
+          cls: "btn-icon",
+          icon: "github",
+          ariaLabel: "GitHub",
+        },
+      ],
+    },
+
+    projectOrder: 5,
+
+    description:
+      "Developed a research-driven human decision intelligence system investigating choices under risk and ambiguity through statistical modeling, PCA, behavioral clustering, and XGBoost. Evaluated predictive performance using classification metrics and incorporated SHAP and LIME to interpret model predictions and identify influential decision-related features.",
+
+    github:
+      "https://github.com/Hemanthsai456/Human-Decision-Intelligence",
+
+    live: null,
+
+    published: true,
+  },
+
+  // ── 6: Data Center Cooling, Electricity & Water Analysis ───────
   {
     id: "data-center-cooling",
 
@@ -382,59 +457,59 @@ const PROJECTS = [
     ],
 
     featured: true,
-    featuredOrder: 5,
+    featuredOrder: 6,
 
     featuredData: {
-    icon: "server",
-    metric: "R² = 0.9798",
-    titleShort: "Data Center Infrastructure Analytics",
+      icon: "server",
+      metric: "R² = 0.9798",
+      titleShort: "Data Center Infrastructure Analytics",
 
-    descriptionHtml:
-      "\<strong>Problem:\</strong> Data centers consume substantial electricity and require continuous cooling, creating significant thermal and water-resource requirements that are difficult to understand from raw telemetry alone.\<br />" +
-      "\<strong>Solution:\</strong> Analyzed 2.75M+ telemetry records using data profiling, EDA, feature engineering, physics-based thermal modeling, and predictive modeling to quantify electricity, heat, cooling, and water requirements. The predictive model achieved an R&sup2; of 0.9798 with an RMSE of 0.0138.\<br />" +
-      "\<strong>Impact:\</strong> Connected computing workload with physical infrastructure requirements, providing a data-driven framework for understanding cooling demand, electricity consumption, heat load, and water requirements.",
+      descriptionHtml:
+        "\<strong>Problem:\</strong> Data centers consume substantial electricity and require continuous cooling, creating significant thermal and water-resource requirements that are difficult to understand from raw telemetry alone.\<br />" +
+        "\<strong>Solution:\</strong> Analyzed 2.75M+ telemetry records using data profiling, EDA, feature engineering, physics-based thermal modeling, and predictive modeling to quantify electricity, heat, cooling, and water requirements. The predictive model achieved an R&sup2; of 0.9798 with an RMSE of 0.0138.\<br />" +
+        "\<strong>Impact:\</strong> Connected computing workload with physical infrastructure requirements, providing a data-driven framework for understanding cooling demand, electricity consumption, heat load, and water requirements.",
 
-    highlights: [
-      "2.75M+ Telemetry Records",
-      "R&sup2; = 0.9798",
-      "RMSE = 0.0138",
-      "Electricity &amp; Heat Load Analysis",
-      "Cooling-Water Requirement Modeling",
-      "Physics-Based Modeling",
-    ],
+      highlights: [
+        "2.75M+ Telemetry Records",
+        "R&sup2; = 0.9798",
+        "RMSE = 0.0138",
+        "Electricity &amp; Heat Load Analysis",
+        "Cooling-Water Requirement Modeling",
+        "Physics-Based Modeling",
+      ],
 
-    stackShort: [
-      "Python",
-      "Pandas",
-      "Scikit-Learn",
-      "Plotly"
-    ],
+      stackShort: [
+        "Python",
+        "Pandas",
+        "Scikit-Learn",
+        "Plotly"
+      ],
 
-    links: [
-      {
-        label: "Code",
-        href: "https://github.com/Hemanthsai456/Data-Center-Cooling-Demand-Electricity-and-Water-Requirement-Analysis",
-        cls: "btn-icon",
-        icon: "github",
-        ariaLabel: "GitHub"
-      },
-    ],
-  },
+      links: [
+        {
+          label: "Code",
+          href: "https://github.com/Hemanthsai456/Data-Center-Cooling-Demand-Electricity-and-Water-Requirement-Analysis",
+          cls: "btn-icon",
+          icon: "github",
+          ariaLabel: "GitHub"
+        },
+      ],
+    },
 
-    projectOrder: 5,
+    projectOrder: 6,
 
     description:
-  "Analyzed 2.75M+ data center telemetry records to understand electricity consumption, heat generation, cooling demand, and water requirements. Combined exploratory data analysis, feature engineering, physics-based thermal modeling, and predictive modeling, achieving R² = 0.9798 and RMSE = 0.0138.",
-  
+      "Analyzed 2.75M+ data center telemetry records to understand electricity consumption, heat generation, cooling demand, and water requirements. Combined exploratory data analysis, feature engineering, physics-based thermal modeling, and predictive modeling, achieving R² = 0.9798 and RMSE = 0.0138.",
+
     github:
-  "https://github.com/Hemanthsai456/Data-Center-Cooling-Demand-Electricity-and-Water-Requirement-Analysis",
+      "https://github.com/Hemanthsai456/Data-Center-Cooling-Demand-Electricity-and-Water-Requirement-Analysis",
 
     live: null,
 
     published: true,
   },
 
-  // ── 6: Anime & Manga ───────────────────────────────────────────
+  // ── 7: Anime & Manga ───────────────────────────────────────────
   {
     id: "anime",
 
@@ -456,8 +531,8 @@ const PROJECTS = [
       "Recommendation Engine"
     ],
 
-    featured: true,
-    featuredOrder: 6,
+    featured: false,
+    featuredOrder: 7,
 
     featuredData: {
       icon: "sparkles",
@@ -503,7 +578,7 @@ const PROJECTS = [
       ],
     },
 
-    projectOrder: 6,
+    projectOrder: 7,
 
     description:
       "Designed a hybrid content-based recommendation engine utilizing TF-IDF, Cosine Similarity, and popularity-weighted ranking algorithms. Built an interactive analytics dashboard in Power BI displaying user consumption patterns and recommendation coverage, providing highly personalized titles with reduced latency.",
@@ -520,7 +595,7 @@ const PROJECTS = [
   },
 
 
-  // ── 7: Hate Speech Detection ───────────────────────────────────
+  // ── 8: Hate Speech Detection ───────────────────────────────────
   {
     id: "hate-speech",
 
@@ -585,7 +660,7 @@ const PROJECTS = [
       ],
     },
 
-    projectOrder: 7,
+    projectOrder: 8,
 
     description:
       "Built an end-to-end NLP classification pipeline featuring custom regex tokenizers, TF-IDF vectorization, and optimized classification models. Deployed the model via an interactive Streamlit interface, allowing real-time text moderation and content filtering with high precision.",
@@ -602,7 +677,7 @@ const PROJECTS = [
   },
 
 
-  // ── 8: Public Transport Analytics ─────────────────────────────
+  // ── 9: Public Transport Analytics ─────────────────────────────
   {
     id: "transport",
 
@@ -625,7 +700,7 @@ const PROJECTS = [
     featuredOrder: null,
     featuredData: null,
 
-    projectOrder: 8,
+    projectOrder: 9,
 
     description:
       "Built an interactive Power BI dashboard to analyze public transport data, uncover operational patterns, track key performance indicators, and present transportation insights through clear and interactive visualizations.",
@@ -639,7 +714,7 @@ const PROJECTS = [
   },
 
 
-  // ── 9: Portfolio ───────────────────────────────────────────────
+  // ── 10: Portfolio ───────────────────────────────────────────────
   {
     id: "portfolio",
 
@@ -663,7 +738,7 @@ const PROJECTS = [
     featuredOrder: null,
     featuredData: null,
 
-    projectOrder: 9,
+    projectOrder: 10,
 
     description:
       "Designed and built a premium personal portfolio website with a dark glassmorphism aesthetic, animated particle backgrounds, 3D card tilt effects, and smooth scroll-reveal animations. Crafted to showcase work in AI, data engineering, analytics, and full-stack development with production-level attention to design quality and performance.",
@@ -680,7 +755,7 @@ const PROJECTS = [
   },
 
 
-  // ── 10: StudIQ ─────────────────────────────────────────────────
+  // ── 11: StudIQ ─────────────────────────────────────────────────
   {
     id: "studiq",
 
@@ -704,7 +779,7 @@ const PROJECTS = [
     featuredOrder: null,
     featuredData: null,
 
-    projectOrder: 10,
+    projectOrder: 11,
 
     description:
       "Developed an intelligent study platform designed to help students organize, track, and optimize their learning workflows. Integrated smart scheduling, progress tracking, and resource management features built with a modern full-stack architecture to create a seamless academic productivity experience.",
@@ -718,7 +793,7 @@ const PROJECTS = [
   },
 
 
-  // ── 11: BunkRide ───────────────────────────────────────────────
+  // ── 12: BunkRide ───────────────────────────────────────────────
   {
     id: "bunkride",
 
@@ -742,7 +817,7 @@ const PROJECTS = [
     featuredOrder: null,
     featuredData: null,
 
-    projectOrder: 11,
+    projectOrder: 12,
 
     description:
       "Developed a real-time ride-sharing web application integrated with Google Maps API and Socket.IO for live driver-passenger matchmaking and interactive GPS tracking. Provided a seamless platform for automated matchmaking and real-time transit coordination, reducing transit costs and improving ride coordination efficiency.",
