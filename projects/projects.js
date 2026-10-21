@@ -15,61 +15,64 @@
   const countEl = document.getElementById("projects-count-num");
   if (countEl) countEl.textContent = archived.length;
 
-  archived.forEach((project, index) => {
-    const num = String(index + 1).padStart(2, "0");
+  // If cards are not already pre-rendered in HTML, generate them dynamically
+  if (!list.querySelector(".archive-card")) {
+    archived.forEach((project, index) => {
+      const num = String(index + 1).padStart(2, "0");
 
-    // Build badge HTML
-    const badgeHtml = project.badges
-      .map(b => `<span class="archive-badge badge-${b.color}">${b.label}</span>`)
-      .join("\n                ");
+      // Build badge HTML
+      const badgeHtml = project.badges
+        .map(b => `<span class="archive-badge badge-${b.color}">${b.label}</span>`)
+        .join("\n                ");
 
-    // Build tech stack HTML
-    const stackHtml = project.techStack
-      .map(t => `<span>${t}</span>`)
-      .join("\n                ");
+      // Build tech stack HTML
+      const stackHtml = project.techStack
+        .map(t => `<span>${t}</span>`)
+        .join("\n                ");
 
-    // Build link buttons
-    const links = [];
-    if (project.github) {
-      links.push(`<a href="${project.github}" target="_blank" class="btn-icon" id="github-${project.id}" aria-label="GitHub repository for ${project.title.replace(/&amp;/g, '&').replace(/<[^>]+>/g, '')}">
-                  <i data-lucide="github"></i> GitHub
-                </a>`);
-    }
-    if (project.live) {
-      const liveLabel = project.liveLabel || "Live Demo";
-      links.push(`<a href="${project.live}" target="_blank" class="btn-icon btn-live" id="live-${project.id}" aria-label="${liveLabel} for ${project.title.replace(/&amp;/g, '&').replace(/<[^>]+>/g, '')}">
-                  <i data-lucide="external-link"></i> ${liveLabel}
-                </a>`);
-    }
+      // Build link buttons
+      const links = [];
+      if (project.github) {
+        links.push(`<a href="${project.github}" target="_blank" class="btn-icon" id="github-${project.id}" aria-label="GitHub repository for ${project.title.replace(/&amp;/g, '&').replace(/<[^>]+>/g, '')}">
+                    <i data-lucide="github"></i> GitHub
+                  </a>`);
+      }
+      if (project.live) {
+        const liveLabel = project.liveLabel || "Live Demo";
+        links.push(`<a href="${project.live}" target="_blank" class="btn-icon btn-live" id="live-${project.id}" aria-label="${liveLabel} for ${project.title.replace(/&amp;/g, '&').replace(/<[^>]+>/g, '')}">
+                    <i data-lucide="external-link"></i> ${liveLabel}
+                  </a>`);
+      }
 
-    const article = document.createElement("article");
-    article.className = "archive-card";
-    article.id = `project-${num}`;
-    article.innerHTML = `
-          <div class="card-glow"></div>
-          <div class="archive-card-inner">
-            <div class="archive-number">${num}</div>
-            <div class="archive-body">
-              <div class="archive-header">
-                <h2 class="archive-title">${project.title}</h2>
-                <div class="archive-badges">
-                ${badgeHtml}
+      const article = document.createElement("article");
+      article.className = "archive-card";
+      article.id = `project-${num}`;
+      article.innerHTML = `
+            <div class="card-glow"></div>
+            <div class="archive-card-inner">
+              <div class="archive-number">${num}</div>
+              <div class="archive-body">
+                <div class="archive-header">
+                  <h2 class="archive-title">${project.title}</h2>
+                  <div class="archive-badges">
+                  ${badgeHtml}
+                  </div>
+                </div>
+                <p class="archive-desc">
+                  ${project.description}
+                </p>
+                <div class="archive-stack">
+                  ${stackHtml}
+                </div>
+                <div class="archive-links">
+                  ${links.join("\n                ")}
                 </div>
               </div>
-              <p class="archive-desc">
-                ${project.description}
-              </p>
-              <div class="archive-stack">
-                ${stackHtml}
-              </div>
-              <div class="archive-links">
-                ${links.join("\n                ")}
-              </div>
-            </div>
-          </div>`;
+            </div>`;
 
-    list.appendChild(article);
-  });
+      list.appendChild(article);
+    });
+  }
 
   // Re-initialise lucide icons for the freshly created elements
   if (typeof lucide !== "undefined") lucide.createIcons();

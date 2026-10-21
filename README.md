@@ -43,7 +43,7 @@ The system combines ETL pipelines, dimensional modeling, optimized analytical la
 
 `PostgreSQL` `SQL` `ETL` `Dimensional Modeling` `Power BI`
 
-[**View Repository →**](https://github.com/Hemanthsai456/sparcs-healthcare-analytics-bi)
+[**View Repository →**](https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform)
 
 ---
 
@@ -51,7 +51,7 @@ The system combines ETL pipelines, dimensional modeling, optimized analytical la
 
 End-to-end machine learning system designed to support medical inventory planning through demand forecasting and interpretable recommendations.
 
-The project evaluates **14 machine learning models**, with Gradient Boosting achieving **R² = 0.7988**, and extends prediction with **SHAP explainability**, K-Means demand segmentation, error analysis, and an interactive Streamlit application.
+The project evaluates **14 machine learning models**, with Gradient Boosting achieving **R² = 0.7978**, and extends prediction with **SHAP explainability**, K-Means demand segmentation, error analysis, and an interactive Streamlit application.
 
 `Python` `Scikit-Learn` `SHAP` `K-Means` `Pandas` `Streamlit`
 
