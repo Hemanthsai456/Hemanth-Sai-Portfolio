@@ -20,6 +20,8 @@ const FEATURED_START_MARKER = '<!-- PRE-RENDERED-FEATURED-PROJECTS-START -->';
 const FEATURED_END_MARKER = '<!-- PRE-RENDERED-FEATURED-PROJECTS-END -->';
 const ARCHIVE_START_MARKER = '<!-- PRE-RENDERED-ARCHIVE-PROJECTS-START -->';
 const ARCHIVE_END_MARKER = '<!-- PRE-RENDERED-ARCHIVE-PROJECTS-END -->';
+const ARCHIVE_JSONLD_START_MARKER = '<!-- PRE-RENDERED-ARCHIVE-JSONLD-START -->';
+const ARCHIVE_JSONLD_END_MARKER = '<!-- PRE-RENDERED-ARCHIVE-JSONLD-END -->';
 
 function loadProjectsData() {
   if (!fs.existsSync(DATA_FILE)) {
@@ -166,10 +168,76 @@ function preRenderIndexHtml(projects) {
   console.log(`[build.js] index.html successfully pre-rendered with ${cardCount} featured cards.`);
 }
 
+function buildArchiveJsonLd(projects) {
+  const archived = projects
+    .filter(p => p.published)
+    .sort((a, b) => a.projectOrder - b.projectOrder);
+
+  const itemListElements = archived.map((project, index) => {
+    const plainTitle = project.title
+      .replace(/&amp;/g, '&')
+      .replace(/<[^>]+>/g, '')
+      .trim();
+
+    const item = {
+      "@type": "SoftwareSourceCode",
+      "name": plainTitle,
+      "description": project.description,
+      "programmingLanguage": project.techStack
+    };
+
+    if (project.github) {
+      item.codeRepository = project.github;
+    }
+    if (project.live) {
+      item.url = project.live;
+    } else if (project.github) {
+      item.url = project.github;
+    }
+
+    return {
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": plainTitle,
+      "item": item
+    };
+  });
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "All Projects — Hemanth Sai Charagundla",
+    "description": "A full archive of machine learning, data analytics, business intelligence, and data engineering projects by Hemanth Sai Charagundla.",
+    "url": "https://hemanth-sai-portfolio.vercel.app/projects/",
+    "author": {
+      "@type": "Person",
+      "name": "Hemanth Sai Charagundla",
+      "url": "https://hemanth-sai-portfolio.vercel.app/"
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": archived.length,
+      "itemListElement": itemListElements
+    }
+  };
+
+  const jsonString = JSON.stringify(schema, null, 2);
+  return `${ARCHIVE_JSONLD_START_MARKER}\n  <script type="application/ld+json">\n${jsonString}\n  </script>\n  ${ARCHIVE_JSONLD_END_MARKER}`;
+}
+
 function preRenderArchiveHtml(projects) {
   let html = fs.readFileSync(ARCHIVE_HTML_FILE, 'utf8');
   const archivedProjects = projects.filter(p => p.published);
   const archiveContent = buildArchiveCardsHtml(projects);
+  const archiveJsonLd = buildArchiveJsonLd(projects);
+
+  // Replace or inject JSON-LD marker
+  const jsonLdMarkerRegex = new RegExp(`${ARCHIVE_JSONLD_START_MARKER}[\\s\\S]*?${ARCHIVE_JSONLD_END_MARKER}`);
+  if (jsonLdMarkerRegex.test(html)) {
+    html = html.replace(jsonLdMarkerRegex, archiveJsonLd);
+  } else if (html.includes('</head>')) {
+    html = html.replace('</head>', `  ${archiveJsonLd}\n</head>`);
+  }
 
   const containerRegex = /(<div class="archive-list" id="archive-list">)([\s\S]*?)(<\/div>)/;
   const markerRegex = new RegExp(`${ARCHIVE_START_MARKER}[\\s\\S]*?${ARCHIVE_END_MARKER}`);
@@ -196,7 +264,7 @@ function preRenderArchiveHtml(projects) {
   }
 
   fs.writeFileSync(ARCHIVE_HTML_FILE, html, 'utf8');
-  console.log(`[build.js] projects/index.html successfully pre-rendered with ${cardCount} archive cards and count badge set to ${archivedProjects.length}.`);
+  console.log(`[build.js] projects/index.html successfully pre-rendered with ${cardCount} archive cards and structured data.`);
 }
 
 function run() {
