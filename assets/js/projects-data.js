@@ -262,6 +262,13 @@ const PROJECTS = [
           icon: "github",
           ariaLabel: "GitHub",
         },
+        {
+          label: "Live Demo",
+          href: "https://hemanth-cold-start-user-based-movie-recommendation.streamlit.app/",
+          cls: "btn-icon",
+          icon: "external-link",
+          ariaLabel: "Live Demo"
+        },
       ],
     },
 
@@ -273,7 +280,10 @@ const PROJECTS = [
     github:
       "https://github.com/Hemanthsai456/Leveraging-Poster-and-Trailer-Audio-Embeddings-for-Cold-Start-Movie-Recommendation",
 
-    live: null,
+    live:
+      "https://hemanth-cold-start-user-based-movie-recommendation.streamlit.app/",
+
+    liveLabel: "Live Demo",
 
     published: true,
   },
@@ -420,6 +430,13 @@ const PROJECTS = [
           icon: "github",
           ariaLabel: "GitHub",
         },
+        {
+          label: "Case Study",
+          href: "https://github.com/Hemanthsai456/Human-Decision-Intelligence/tree/main/reports",
+          cls: "btn-text",
+          icon: "arrow-up-right",
+          ariaLabel: "Case Study"
+        },
       ],
     },
 
@@ -487,7 +504,7 @@ const PROJECTS = [
 
       links: [
         {
-          label: "Code",
+          label: "GitHub",
           href: "https://github.com/Hemanthsai456/Data-Center-Cooling-Demand-Electricity-and-Water-Requirement-Analysis",
           cls: "btn-icon",
           icon: "github",
