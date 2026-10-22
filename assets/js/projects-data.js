@@ -10,6 +10,10 @@
  *  badges        – array of { label, color: 'purple'|'blue' }
  *  techStack     – array of tech-stack label strings
  *
+ *  imageUrl      – relative asset path or valid image URL (null if none)
+ *  imageStatus   – "uploaded" | "not_uploaded"
+ *  showImage     – true | false (whether this image should appear on the homepage)
+ *
  *  featured      – true → rendered in the homepage Featured Solutions grid
  *  featuredOrder – sort key for homepage grid (lower = first)
  *  featuredData  – extra fields used only when rendering on homepage
@@ -52,6 +56,10 @@ const PROJECTS = [
       "Materialized Views",
       "PL/pgSQL"
     ],
+
+    imageUrl: "assets/project-images/SPARCS_Healthcare_BI.png",
+    imageStatus: "uploaded",
+    showImage: true,
 
     featured: true,
     featuredOrder: 1,
@@ -133,6 +141,10 @@ const PROJECTS = [
       "K-Means",
       "Gradient Boosting"
     ],
+
+    imageUrl: "assets/project-images/Medical_Inventory_DSS.png",
+    imageStatus: "uploaded",
+    showImage: true,
 
     featured: true,
     featuredOrder: 2,
@@ -224,6 +236,10 @@ const PROJECTS = [
       "MovieLens",
     ],
 
+    imageUrl: "assets/project-images/Cold Start Movie Recommendation.png",
+    imageStatus: "uploaded",
+    showImage: true,
+
     featured: true,
     featuredOrder: 3,
 
@@ -306,6 +322,10 @@ const PROJECTS = [
       "Authentication",
       "Risk Intelligence"
     ],
+
+    imageUrl: "assets/project-images/NIDHI.png",
+    imageStatus: "uploaded",
+    showImage: true,
 
     featured: true,
     featuredOrder: 4,
@@ -393,6 +413,10 @@ const PROJECTS = [
       "Behavioral Clustering",
     ],
 
+    imageUrl: "assets/project-images/Human_Decision_Intelligence Dashboard.png",
+    imageStatus: "uploaded",
+    showImage: true,
+
     featured: true,
     featuredOrder: 5,
 
@@ -473,6 +497,10 @@ const PROJECTS = [
       "Physics-Based Modeling"
     ],
 
+    imageUrl: "assets/project-images/Data_Center_Analytics.png",
+    imageStatus: "uploaded",
+    showImage: true,
+
     featured: true,
     featuredOrder: 6,
 
@@ -547,6 +575,10 @@ const PROJECTS = [
       "Streamlit",
       "Recommendation Engine"
     ],
+
+    imageUrl: null,
+    imageStatus: "not_uploaded",
+    showImage: false,
 
     featured: false,
     featuredOrder: 7,
@@ -632,6 +664,10 @@ const PROJECTS = [
       "Logistic Regression"
     ],
 
+    imageUrl: null,
+    imageStatus: "not_uploaded",
+    showImage: false,
+
     featured: false,
     featuredOrder: null,
 
@@ -713,6 +749,10 @@ const PROJECTS = [
       "Power Query"
     ],
 
+    imageUrl: null,
+    imageStatus: "not_uploaded",
+    showImage: false,
+
     featured: false,
     featuredOrder: null,
     featuredData: null,
@@ -750,6 +790,10 @@ const PROJECTS = [
       "Lucide Icons",
       "Glassmorphism"
     ],
+
+    imageUrl: null,
+    imageStatus: "not_uploaded",
+    showImage: false,
 
     featured: false,
     featuredOrder: null,
@@ -792,6 +836,10 @@ const PROJECTS = [
       "Full Stack"
     ],
 
+    imageUrl: null,
+    imageStatus: "not_uploaded",
+    showImage: false,
+
     featured: false,
     featuredOrder: null,
     featuredData: null,
@@ -829,6 +877,10 @@ const PROJECTS = [
       "Google Maps API",
       "GPS Tracking"
     ],
+
+    imageUrl: null,
+    imageStatus: "not_uploaded",
+    showImage: false,
 
     featured: false,
     featuredOrder: null,

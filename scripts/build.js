@@ -57,12 +57,24 @@ function buildFeaturedCardsHtml(projects) {
       return `<a href="${link.href}" target="_blank" class="${link.cls}" aria-label="${link.ariaLabel}">${iconHtml} ${link.label}</a>`;
     }).join('\n            ');
 
+    const plainTitle = (fd.titleShort || project.title)
+      .replace(/&amp;/g, '&')
+      .replace(/<[^>]+>/g, '')
+      .trim();
+
+    const hasImage = project.imageStatus === 'uploaded' && project.showImage === true && Boolean(project.imageUrl);
+    const imageHtml = hasImage
+      ? `\n          <div class="project-image-box">
+            <img src="${project.imageUrl}" alt="${plainTitle} preview" class="project-img" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'" />
+          </div>`
+      : '';
+
     return `        <div class="project-card">
           <div class="card-glow"></div>
           <div class="project-header">
             <div class="project-icon-box"><i data-lucide="${fd.icon}"></i></div>
             <span class="project-metric">${fd.metric}</span>
-          </div>
+          </div>${imageHtml}
           <h3 class="project-title">${fd.titleShort}</h3>
           <p class="project-description">
             ${fd.descriptionHtml}

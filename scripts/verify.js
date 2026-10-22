@@ -81,7 +81,7 @@ assert(orderCorrect, 'Featured projects appear in exact featuredOrder order');
 
 // Canonical, title, description, OG
 assert(indexHtml.includes('<link rel="canonical" href="https://hemanth-sai-portfolio.vercel.app/" />'), 'Canonical URL is correct');
-assert(indexHtml.includes('<title>Hemanth Sai Charagundla — Data Scientist &amp; AI/ML Engineer</title>'), 'Title tag is present');
+assert(indexHtml.includes('<title>Hemanth Sai Charagundla — Artificial Intelligence &amp; Data Science Student | CBIT</title>'), 'Title tag is present');
 assert(indexHtml.includes('property="og:url" content="https://hemanth-sai-portfolio.vercel.app/"'), 'OG URL tag is present');
 
 // Accurate Project Section Description
@@ -107,13 +107,14 @@ if (jsonLdStart !== -1 && jsonLdEnd !== -1) {
 
 if (personJson) {
   assert(personJson['@context'] === 'https://schema.org', 'JSON-LD context is https://schema.org');
-  assert(personJson['@type'] === 'Person', 'JSON-LD type is Person');
-  assert(personJson.name === 'Hemanth Sai Charagundla', 'JSON-LD name is Hemanth Sai Charagundla');
-  assert(personJson.jobTitle === 'Artificial Intelligence and Data Science Student', 'JSON-LD jobTitle reflects truthful student status');
-  assert(personJson.description.includes('Artificial Intelligence and Data Science student at Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad'), 'JSON-LD description identifies university and degree');
-  assert(personJson.description.includes('technical focus on machine learning, data analytics, business intelligence, and data engineering'), 'JSON-LD description highlights technical focus areas');
-  assert(personJson.affiliation && personJson.affiliation.name === 'Chaitanya Bharathi Institute of Technology', 'Affiliation to CBIT preserved');
-  assert(Array.isArray(personJson.sameAs) && personJson.sameAs.length === 3, 'All 3 social sameAs links preserved');
+  const person = (personJson['@type'] === 'ProfilePage' && personJson.mainEntity) ? personJson.mainEntity : personJson;
+  assert(person['@type'] === 'Person', 'JSON-LD entity type is Person');
+  assert(person.name === 'Hemanth Sai Charagundla', 'JSON-LD name is Hemanth Sai Charagundla');
+  assert(person.jobTitle === 'Artificial Intelligence and Data Science Student', 'JSON-LD jobTitle reflects truthful student status');
+  assert(person.description.includes('Artificial Intelligence and Data Science student at Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad'), 'JSON-LD description identifies university and degree');
+  assert(person.description.includes('technical focus on machine learning, data analytics, business intelligence, and data engineering'), 'JSON-LD description highlights technical focus areas');
+  assert(person.affiliation && person.affiliation.name === 'Chaitanya Bharathi Institute of Technology', 'Affiliation to CBIT preserved');
+  assert(Array.isArray(person.sameAs) && person.sameAs.length === 3, 'All 3 social sameAs links preserved');
 }
 
 // Footer author
@@ -151,7 +152,7 @@ assert(archiveOrderCorrect, 'Archive projects appear in exact projectOrder order
 
 // Canonical & Title
 assert(archiveHtml.includes('<link rel="canonical" href="https://hemanth-sai-portfolio.vercel.app/projects/" />'), 'Archive canonical URL is correct');
-assert(archiveHtml.includes('<title>All Projects — Hemanth Sai Charagundla | Data Scientist &amp; AI/ML Engineer</title>'), 'Archive title tag is correct');
+assert(archiveHtml.includes('<title>All Projects — Hemanth Sai Charagundla</title>'), 'Archive title tag is correct');
 
 // Footer author standardized
 assert(archiveHtml.includes('&copy; 2026 Hemanth Sai Charagundla. All rights reserved.'), 'Archive footer standardized to Hemanth Sai Charagundla');
@@ -203,6 +204,66 @@ const cname = fs.readFileSync(CNAME_FILE, 'utf8').trim();
 assert(cname === 'hemanthsai.com', 'CNAME file remains unchanged');
 const robots = fs.readFileSync(ROBOTS_FILE, 'utf8');
 assert(robots.includes('User-agent: *') && robots.includes('Allow: /'), 'robots.txt remains unchanged');
+
+// 9. Project Image Management Verification
+console.log('\n[9] Checking Project Image Management & Homepage Rendering...');
+let allHaveImageFields = true;
+let uploadedAssetsValid = true;
+let unuploadedValid = true;
+
+projects.forEach(p => {
+  if (!('imageUrl' in p) || !('imageStatus' in p) || !('showImage' in p)) {
+    allHaveImageFields = false;
+  }
+  if (p.imageStatus !== 'uploaded' && p.imageStatus !== 'not_uploaded') {
+    assert(false, `Project ${p.id} has invalid imageStatus: ${p.imageStatus}`);
+  }
+  if (p.imageStatus === 'uploaded') {
+    const fullPath = path.join(ROOT_DIR, p.imageUrl);
+    if (!fs.existsSync(fullPath)) {
+      uploadedAssetsValid = false;
+      console.error(`Missing asset for ${p.id}: ${p.imageUrl}`);
+    }
+  }
+  if (p.imageStatus === 'not_uploaded') {
+    if (p.imageUrl !== null || p.showImage !== false) {
+      unuploadedValid = false;
+    }
+  }
+});
+assert(allHaveImageFields, 'Every project in projects-data.js has imageUrl, imageStatus, and showImage fields');
+assert(uploadedAssetsValid, 'All projects marked as uploaded point to existing assets in the repository');
+assert(unuploadedValid, 'All projects marked as not_uploaded have imageUrl: null and showImage: false');
+
+// Pre-rendered featured image cards count
+const preRenderedImageBoxes = indexHtml.match(/<div class="project-image-box">/g) || [];
+const eligibleImageCount = featuredProjects.filter(p => p.imageStatus === 'uploaded' && p.showImage === true && p.imageUrl).length;
+assert(preRenderedImageBoxes.length === eligibleImageCount, `Pre-rendered exactly ${eligibleImageCount} project images for eligible featured projects (found: ${preRenderedImageBoxes.length})`);
+
+// Ensure non-eligible projects on homepage have NO image boxes
+featuredProjects.forEach(p => {
+  const isEligible = p.imageStatus === 'uploaded' && p.showImage === true && p.imageUrl;
+  if (!isEligible) {
+    const cardRegex = new RegExp(`<h3 class="project-title">${p.featuredData.titleShort}</h3>`);
+    assert(cardRegex.test(indexHtml), `Project ${p.id} without image still renders title`);
+  }
+});
+
+// Image attributes: alt, loading, decoding, onerror fallback
+const imgTags = indexHtml.match(/<img[^>]+class="project-img"[^>]*>/g) || [];
+assert(imgTags.length === eligibleImageCount, `Found ${eligibleImageCount} img elements with class project-img`);
+
+let allImgsHaveAlt = imgTags.length > 0;
+let allImgsHaveOnError = imgTags.length > 0;
+let allImgsHaveLazyLoading = imgTags.length > 0;
+imgTags.forEach(tag => {
+  if (!tag.includes('alt=') || tag.includes('alt=""')) allImgsHaveAlt = false;
+  if (!tag.includes('onerror="this.parentElement.style.display=\'none\'"')) allImgsHaveOnError = false;
+  if (!tag.includes('loading="lazy"')) allImgsHaveLazyLoading = false;
+});
+assert(allImgsHaveAlt, 'All rendered project images have descriptive alt attributes');
+assert(allImgsHaveOnError, 'All rendered project images have graceful onerror fallback handlers');
+assert(allImgsHaveLazyLoading, 'All rendered project images have loading="lazy" attribute');
 
 console.log('\n====================================================');
 console.log(`SUMMARY: ${passes} PASSED, ${failures} FAILED`);
