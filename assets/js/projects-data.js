@@ -219,7 +219,7 @@ const PROJECTS = [
   {
     id: "movie-recommendation",
     title:
-      "Cold-Start Multimodal Movie Recommendation System",
+      "Multimodal Cold-Start Movie Recommender",
 
     badges: [
       { label: "Recommendation Systems", color: "purple" },
@@ -246,7 +246,7 @@ const PROJECTS = [
     featuredData: {
       icon: "clapperboard",
       metric: "Cold-Start RMSE = 0.8843",
-      titleShort: "Cold-Start Multimodal Movie Recommendation",
+      titleShort: "Multimodal Cold-Start Movie Recommender",
 
       descriptionHtml:
         "<strong>Problem:</strong> Traditional collaborative filtering struggles with new movies that have little or no interaction history, creating a fundamental cold-start problem in recommendation systems.<br />" +
@@ -273,7 +273,7 @@ const PROJECTS = [
         {
           label: "GitHub",
           href:
-            "https://github.com/Hemanthsai456/Leveraging-Poster-and-Trailer-Audio-Embeddings-for-Cold-Start-Movie-Recommendation",
+            "https://github.com/Hemanthsai456/Multimodal-Cold-Start-Movie-Recommender",
           cls: "btn-icon",
           icon: "github",
           ariaLabel: "GitHub",
@@ -294,7 +294,7 @@ const PROJECTS = [
       "Developed a multimodal movie recommendation system combining Neural Collaborative Filtering with CLIP poster embeddings and VGGish trailer-audio embeddings to address the cold-start problem. Evaluated personalized Top-N recommendation and rating prediction models, including a dedicated cold-start model for completely unseen movies.",
 
     github:
-      "https://github.com/Hemanthsai456/Leveraging-Poster-and-Trailer-Audio-Embeddings-for-Cold-Start-Movie-Recommendation",
+      "https://github.com/Hemanthsai456/Multimodal-Cold-Start-Movie-Recommender",
 
     live:
       "https://hemanth-cold-start-user-based-movie-recommendation.streamlit.app/",
