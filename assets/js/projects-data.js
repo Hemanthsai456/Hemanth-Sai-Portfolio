@@ -482,7 +482,7 @@ const PROJECTS = [
     id: "data-center-cooling",
 
     title:
-      "Data Center Cooling Demand, Electricity &amp; Water Requirement Analysis",
+      "Data Center Resource Analytics: Cooling Demand, Electricity &amp; Water Requirement Analysis",
 
     badges: [
       { label: "Data Analytics", color: "purple" },
@@ -507,7 +507,7 @@ const PROJECTS = [
     featuredData: {
       icon: "server",
       metric: "R² = 0.9798",
-      titleShort: "Data Center Infrastructure Analytics",
+      titleShort: "Data Center Resource Analytics",
 
       descriptionHtml:
         "\<strong>Problem:\</strong> Data centers consume substantial electricity and require continuous cooling, creating significant thermal and water-resource requirements that are difficult to understand from raw telemetry alone.\<br />" +
@@ -533,7 +533,7 @@ const PROJECTS = [
       links: [
         {
           label: "GitHub",
-          href: "https://github.com/Hemanthsai456/Data-Center-Cooling-Demand-Electricity-and-Water-Requirement-Analysis",
+          href: "https://github.com/Hemanthsai456/Data-Center-Resource-Analytics",
           cls: "btn-icon",
           icon: "github",
           ariaLabel: "GitHub"
@@ -547,7 +547,7 @@ const PROJECTS = [
       "Analyzed 2.75M+ data center telemetry records to understand electricity consumption, heat generation, cooling demand, and water requirements. Combined exploratory data analysis, feature engineering, physics-based thermal modeling, and predictive modeling, achieving R² = 0.9798 and RMSE = 0.0138.",
 
     github:
-      "https://github.com/Hemanthsai456/Data-Center-Cooling-Demand-Electricity-and-Water-Requirement-Analysis",
+      "https://github.com/Hemanthsai456/Data-Center-Resource-Analytics",
 
     live: null,
 
