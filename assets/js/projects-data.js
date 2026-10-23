@@ -559,7 +559,7 @@ const PROJECTS = [
     id: "anime",
 
     title:
-      "Anime &amp; Manga Analytics &amp; Recommendation System",
+      "Anime &amp; Manga Recommendation Analytics",
 
     badges: [
       { label: "Machine Learning", color: "purple" },
@@ -612,7 +612,7 @@ const PROJECTS = [
       links: [
         {
           label: "Code",
-          href: "https://github.com/Hemanthsai456/Anime-Manga-Analytics-Recommendation-System",
+          href: "https://github.com/Hemanthsai456/Anime-Manga-Recommendation-Analytics",
           cls: "btn-icon",
           icon: "github",
           ariaLabel: "GitHub"
@@ -633,7 +633,7 @@ const PROJECTS = [
       "Designed a hybrid content-based recommendation engine utilizing TF-IDF, Cosine Similarity, and popularity-weighted ranking algorithms. Built an interactive analytics dashboard in Power BI displaying user consumption patterns and recommendation coverage, providing highly personalized titles with reduced latency.",
 
     github:
-      "https://github.com/Hemanthsai456/Anime-Manga-Analytics-Recommendation-System",
+      "https://github.com/Hemanthsai456/Anime-Manga-Recommendation-Analytics",
 
     live:
       "https://hemanth-anime-manga-analytics-recommendation-system.streamlit.app/",
@@ -648,7 +648,7 @@ const PROJECTS = [
   {
     id: "hate-speech",
 
-    title: "Hate Speech Detection System",
+    title: "NLP Hate Speech Classifier",
 
     badges: [
       { label: "NLP", color: "purple" },
@@ -674,7 +674,7 @@ const PROJECTS = [
     featuredData: {
       icon: "shield-alert",
       metric: "NLP Classify",
-      titleShort: "Hate Speech Detection System",
+      titleShort: "NLP Hate Speech Classifier",
 
       descriptionHtml:
         "<strong>Problem:</strong> Online platforms struggle with toxic behavior and hate speech, requiring automated, low-latency moderating solutions.<br />" +
@@ -698,7 +698,7 @@ const PROJECTS = [
       links: [
         {
           label: "Code",
-          href: "https://github.com/Hemanthsai456/Hate-Speech-Detection-System",
+          href: "https://github.com/Hemanthsai456/NLP-Hate-Speech-Classifier",
           cls: "btn-icon",
           icon: "github",
           ariaLabel: "GitHub"
@@ -719,7 +719,7 @@ const PROJECTS = [
       "Built an end-to-end NLP classification pipeline featuring custom regex tokenizers, TF-IDF vectorization, and optimized classification models. Deployed the model via an interactive Streamlit interface, allowing real-time text moderation and content filtering with high precision.",
 
     github:
-      "https://github.com/Hemanthsai456/Hate-Speech-Detection-System",
+      "https://github.com/Hemanthsai456/NLP-Hate-Speech-Classifier",
 
     live:
       "https://hemanth-hate-speech-detection.streamlit.app/",
