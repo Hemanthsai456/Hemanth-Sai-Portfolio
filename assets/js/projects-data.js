@@ -57,7 +57,7 @@ const PROJECTS = [
       "PL/pgSQL"
     ],
 
-    imageUrl: "assets/project-images/SPARCS_Healthcare_BI.png",
+    imageUrl: "assets/project-images/SPARCS_Healthcare_BI.webp",
     imageStatus: "uploaded",
     showImage: true,
 
@@ -142,7 +142,7 @@ const PROJECTS = [
       "Gradient Boosting"
     ],
 
-    imageUrl: "assets/project-images/Medical_Inventory_DSS.png",
+    imageUrl: "assets/project-images/Medical_Inventory_DSS.webp",
     imageStatus: "uploaded",
     showImage: true,
 
@@ -236,7 +236,7 @@ const PROJECTS = [
       "MovieLens",
     ],
 
-    imageUrl: "assets/project-images/Cold Start Movie Recommendation.png",
+    imageUrl: "assets/project-images/Cold Start Movie Recommendation.webp",
     imageStatus: "uploaded",
     showImage: true,
 
@@ -323,7 +323,7 @@ const PROJECTS = [
       "Risk Intelligence"
     ],
 
-    imageUrl: "assets/project-images/NIDHI.png",
+    imageUrl: "assets/project-images/NIDHI.webp",
     imageStatus: "uploaded",
     showImage: true,
 
@@ -413,7 +413,7 @@ const PROJECTS = [
       "Behavioral Clustering",
     ],
 
-    imageUrl: "assets/project-images/Human_Decision_Intelligence Dashboard.png",
+    imageUrl: "assets/project-images/Human_Decision_Intelligence Dashboard.webp",
     imageStatus: "uploaded",
     showImage: true,
 
@@ -497,7 +497,7 @@ const PROJECTS = [
       "Physics-Based Modeling"
     ],
 
-    imageUrl: "assets/project-images/Data_Center_Analytics.png",
+    imageUrl: "assets/project-images/Data_Center_Analytics.webp",
     imageStatus: "uploaded",
     showImage: true,
 
