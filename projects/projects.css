@@ -39,9 +39,22 @@
   transition: color var(--transition-base), gap var(--transition-base);
 }
 
-.back-link svg {
+/* ─── ICON LAYOUT RESERVATION ─── */
+/* Reserve space for icons prior to Lucide SVG replacement to eliminate layout shift */
+.back-link i[data-lucide],
+.back-link svg,
+.btn-icon i[data-lucide],
+.btn-icon svg,
+.nav-resume i[data-lucide],
+.nav-resume svg {
   width: 14px;
   height: 14px;
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.back-link svg {
   transition: transform var(--transition-base);
 }
 
@@ -90,6 +103,9 @@
   justify-content: center;
   width: 100px;
   height: 100px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  contain: layout size style;
   border-radius: 50%;
   border: 1px solid rgba(158, 122, 255, 0.2);
   background: rgba(158, 122, 255, 0.05);
@@ -110,6 +126,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-variant-numeric: tabular-nums;
+  display: block;
 }
 
 .projects-count-label {
@@ -151,7 +169,8 @@
   border-radius: var(--radius-lg);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
-  transition: all var(--transition-base);
+  transition: transform var(--transition-base), box-shadow var(--transition-base),
+              background-color var(--transition-base), border-color var(--transition-base);
 }
 
 .archive-card:hover {
@@ -450,6 +469,7 @@
   .projects-count-badge {
     width: 80px;
     height: 80px;
+    aspect-ratio: 1;
   }
 
   .projects-count-num {

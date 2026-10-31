@@ -11,9 +11,11 @@
     .filter(p => p.published)
     .sort((a, b) => a.projectOrder - b.projectOrder);
 
-  // Update the count badge
+  // Update the count badge only if it differs from pre-rendered value
   const countEl = document.getElementById("projects-count-num");
-  if (countEl) countEl.textContent = archived.length;
+  if (countEl && countEl.textContent !== String(archived.length)) {
+    countEl.textContent = archived.length;
+  }
 
   // If cards are not already pre-rendered in HTML, generate them dynamically
   if (!list.querySelector(".archive-card")) {
@@ -98,23 +100,24 @@
   const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = '0';
-        entry.target.style.transform = 'translateY(24px)';
-        entry.target.style.transition = `opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)`;
-        const delay = 0.05;
-        requestAnimationFrame(() => {
-          setTimeout(() => {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }, delay * 1000 * (Array.from(entry.target.parentNode.children).indexOf(entry.target) % 4));
-        });
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
         revealObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
 
+  const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const viewportHeight = window.innerHeight;
+
   document.querySelectorAll(".archive-card").forEach(card => {
-    card.style.opacity = '0';
+    // Only prepare scroll-reveal for cards that start below the initial viewport.
+    // Above-the-fold cards remain visible immediately to eliminate layout shift (CLS).
+    if (!isReducedMotion && card.getBoundingClientRect().top >= viewportHeight) {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(24px)';
+      card.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+    }
     revealObserver.observe(card);
   });
 })();
@@ -210,23 +213,32 @@ if (navToggle) {
 
 // ─── Mouse-Follow Glow ───
 (function initMouseGlow() {
+  // Skip on touch-primary devices (no mousemove, no value, just overhead)
+  if (window.matchMedia('(hover: none)').matches) return;
+
   const glow = document.createElement('div');
   glow.classList.add('mouse-glow');
   document.body.appendChild(glow);
 
   let mouseX = 0, mouseY = 0;
   let glowX = 0, glowY = 0;
+  let rafPending = false;
 
   document.addEventListener('mousemove', e => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-  });
+  }, { passive: true });
 
   function animateGlow() {
+    rafPending = false;
+    // Smooth lerp
     glowX += (mouseX - glowX) * 0.08;
     glowY += (mouseY - glowY) * 0.08;
-    glow.style.left = glowX + 'px';
-    glow.style.top = glowY + 'px';
+
+    // GPU-composited transform only — never touches top/left to avoid reflows
+    glow.style.transform = `translate3d(calc(${glowX}px - 50%), calc(${glowY}px - 50%), 0)`;
+
+    rafPending = true;
     requestAnimationFrame(animateGlow);
   }
 
