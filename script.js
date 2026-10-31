@@ -40,7 +40,7 @@
       const hasImage = project.imageStatus === "uploaded" && project.showImage === true && Boolean(project.imageUrl);
       const imageHtml = hasImage
         ? `\n            <div class="project-image-box">
-              <img src="${project.imageUrl}" alt="${plainTitle} preview" class="project-img" width="1440" height="810" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'" />
+              <img src="${project.imageUrl}" alt="${plainTitle} preview" class="project-img" width="800" height="450" loading="lazy" decoding="async" onerror="this.parentElement.style.display='none'" />
             </div>`
         : "";
 
