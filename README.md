@@ -1,7 +1,7 @@
 # Hemanth Sai Charagundla — AI & Data Portfolio
 
 <p align="center">
-  <img src="og-preview.png" alt="Hemanth Sai Charagundla Portfolio Preview" width="100%" />
+  <img src="og-preview.jpg" alt="Hemanth Sai Charagundla Portfolio Preview" width="100%" />
 </p>
 
 <p align="center">
