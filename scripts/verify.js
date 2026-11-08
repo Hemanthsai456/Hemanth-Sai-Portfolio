@@ -194,9 +194,9 @@ assert(!readme.includes('0.7988'), 'Typo R² = 0.7988 removed from README');
 // 7. Sitemap Check
 console.log('\n[7] Checking sitemap.xml...');
 const sitemap = fs.readFileSync(SITEMAP_FILE, 'utf8');
-const lastmodCount = (sitemap.match(/<lastmod>2026-10-21<\/lastmod>/g) || []).length;
-assert(lastmodCount === 2, `sitemap.xml has <lastmod>2026-10-21</lastmod> for both pages (found: ${lastmodCount})`);
-assert(!sitemap.includes('2026-09-06'), 'Stale sitemap timestamp removed');
+const lastmodCount = (sitemap.match(/<lastmod>2026-11-08<\/lastmod>/g) || []).length;
+assert(lastmodCount === 2, `sitemap.xml has <lastmod>2026-11-08</lastmod> for both pages (found: ${lastmodCount})`);
+assert(!sitemap.includes('2026-10-21'), 'Stale sitemap timestamp removed');
 
 // 8. Unchanged Files Integrity
 console.log('\n[8] Checking Untouched Integrity...');
