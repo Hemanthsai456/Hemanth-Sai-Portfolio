@@ -1,0 +1,33 @@
+/* TEAM */
+  Developer & Designer: Hemanth Sai Charagundla
+  Role: Artificial Intelligence and Data Science Student
+  Site: https://hemanth-sai-portfolio.vercel.app/
+  Location: Hyderabad, Telangana, India
+  Contact: hemanthsai.ch456@gmail.com
+  GitHub: https://github.com/Hemanthsai456
+  LinkedIn: https://www.linkedin.com/in/hemanthsai456/
+  LeetCode: https://leetcode.com/u/hemanth_sai/
+
+/* ACADEMIC & TRAINING */
+  University: Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad
+  Degree: B.E. in Artificial Intelligence and Data Science (Expected Graduation: 2028)
+  Industry Training: Evernorth (Cigna) x CBIT AI/ML Training Program (2026)
+
+/* THANKS */
+  Open Source Community
+  Chaitanya Bharathi Institute of Technology (CBIT)
+  Evernorth Health Services (Cigna)
+  Lucide Icons (https://lucide.dev)
+  tsParticles (https://particles.js.org)
+  Fontshare (Geist font) & Google Fonts (Space Grotesk, Inter, IBM Plex Mono)
+
+/* SITE */
+  Last update: 2026/11/08
+  Language: English / en-US
+  Doctype: HTML5
+  Standards: HTML5, CSS3, ES6+ JavaScript, Schema.org JSON-LD, WCAG 2.1 AA
+  Components: Glassmorphism Dark UI, tsParticles 2.12.0, Lucide Icons 1.70.0
+  Typography: Space Grotesk, Inter, IBM Plex Mono, Geist
+  Software & Tools: Visual Studio Code, Git, Node.js, Vercel
+  Architecture: Static Site with Build-Time Pre-rendering (scripts/build.js)
+

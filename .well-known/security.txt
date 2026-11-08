@@ -1,0 +1,10 @@
+# RFC 9116 Security Disclosure Contact for Hemanth Sai Portfolio
+Contact: mailto:hemanthsai.ch456@gmail.com
+Contact: https://github.com/Hemanthsai456/Hemanth-Sai-Portfolio/security
+Contact: https://www.linkedin.com/in/hemanthsai456/
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://hemanth-sai-portfolio.vercel.app/.well-known/security.txt
+Policy: https://github.com/Hemanthsai456/Hemanth-Sai-Portfolio
+Acknowledgments: https://github.com/Hemanthsai456/Hemanth-Sai-Portfolio
+
