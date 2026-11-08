@@ -78,7 +78,7 @@ const PROJECTS = [
         "16.3M+ Records",
         "7 Years Data",
         "8 Dimensions &amp; 1 Fact Table",
-        "8 Page Dashboard for Each Domain",
+        "8-Page Dashboard for Each Domain",
         "11 Analytics Views",
         "4 Materialized Views",
       ],
@@ -343,7 +343,7 @@ const PROJECTS = [
       highlights: [
         "Next.js Front-End",
         "AI Powered",
-        "Authenthication",
+        "Authentication",
         "Easy Investment Suggestions",
         "Risk Intelligence",
         "Education Workflows",
