@@ -47,72 +47,71 @@
 - Repository: https://github.com/Hemanthsai456/Multimodal-Cold-Start-Movie-Recommender
 - Live Demo: https://hemanth-cold-start-user-based-movie-recommendation.streamlit.app/
 
-### 4. Data Center Resource Analytics
-- Role: Data Analytics & Predictive Modeling (personal project)
-- Results: 2.75M+ server telemetry records; physics-based heat, cooling-water and evaporative-water modeling; Linear Regression with leakage-prone features removed (held-out R² 0.9798, RMSE 0.013)
-- Tech Stack: Python, Pandas, NumPy, Scikit-Learn, Plotly
-- Repository: https://github.com/Hemanthsai456/Data-Center-Resource-Analytics
-
-### 5. NIDHI — AI Investor Super App
+### 4. NIDHI — AI Investor Super App
 - Role: Full Stack & AI (personal project)
 - Results: multi-asset portfolio tracker (stocks, mutual funds, REITs, InvITs, bonds); portfolio health, diversification and liquidity scores; Gemini assistant grounded in user holdings; Firebase authentication with email verification
 - Tech Stack: TypeScript, React, FastAPI, PostgreSQL, Firebase Auth, Gemini API
 - Repository: https://github.com/Hemanthsai456/NIDHI
 - Live Demo: https://nidhiapp.vercel.app
 
-### 6. Human Decision Intelligence
+### 5. Human Decision Intelligence
 - Role: Statistical Analysis & Explainable AI (personal project)
 - Results: 105,000 held-out decisions on the CPC18 dataset; 70.95% test accuracy; ROC-AUC 0.7906 for the final model; GLM, GAM, Random Forest and XGBoost compared; SHAP and LIME explanations
 - Tech Stack: R, Shiny, Statistical Modeling, PCA, XGBoost, SHAP, LIME, Behavioral Clustering
 - Repository: https://github.com/Hemanthsai456/Human-Decision-Intelligence
 
-### 7. Anime & Manga Recommendation Analytics
+### 6. Data Center Resource Analytics
+- Role: Data Analytics & Predictive Modeling (personal project)
+- Results: 2.75M+ server telemetry records; physics-based heat, cooling-water and evaporative-water modeling; Linear Regression with leakage-prone features removed (held-out R² 0.9798, RMSE 0.013)
+- Tech Stack: Python, Pandas, NumPy, Scikit-Learn, Plotly
+- Repository: https://github.com/Hemanthsai456/Data-Center-Resource-Analytics
+
+### 7. ProfilePulse — Privacy-First GitHub Profile Analytics
+- Role: Backend (personal project, beta)
+- Results: badge service for GitHub profile READMEs using GitHub Camo proxy hits; daily-rotating HMAC visitor keys; no stored IPs or User-Agent strings; 30-day retention; 23 automated tests
+- Tech Stack: Python, FastAPI, PostgreSQL, Docker, Render, pytest
+- Repository: https://github.com/Hemanthsai456/ProfilePulse
+
+### 8. Anime & Manga Recommendation Analytics
 - Role: Recommendation Systems & Analytics (personal project)
 - Results: hybrid recommender (TF-IDF, cosine similarity, IMDb-weighted ratings, popularity); Power BI and Plotly dashboards; multi-page Streamlit app
 - Tech Stack: Python, Pandas, Power BI, TF-IDF, Cosine Similarity, Streamlit
 - Repository: https://github.com/Hemanthsai456/Anime-Manga-Recommendation-Analytics
 - Live Demo: https://hemanth-anime-manga-analytics-recommendation-system.streamlit.app/
 
-### 8. NLP Hate Speech Classifier
+### 9. NLP Hate Speech Classifier
 - Role: Natural Language Processing (personal project)
 - Results: TF-IDF and Logistic Regression text classifier with confidence scores, served through a Streamlit app
 - Tech Stack: Python, NLP, TF-IDF, Scikit-Learn, Streamlit, Logistic Regression
 - Repository: https://github.com/Hemanthsai456/NLP-Hate-Speech-Classifier
 - Live Demo: https://hemanth-hate-speech-detection.streamlit.app/
 
-### 9. Public Transport Analytics Dashboard
+### 10. Public Transport Analytics Dashboard
 - Role: Business Intelligence (personal project, synthetic dataset)
 - Results: Power BI dashboard covering revenue, profit, fuel efficiency and maintenance cost by bus type and route
 - Tech Stack: Power BI, DAX, Power Query, Data Visualization
 - Repository: https://github.com/Hemanthsai456/Public-Transport-Analytics-Dashboard
 
-### 10. StudIQ — Intelligent Study Platform (team project)
-- Role: Frontend developer, Smart India Hackathon 2025 team project
-- Results: responsive frontend UI; backend free-trial database expired, so the repository contains the UI only
-- Tech Stack: HTML, CSS, JavaScript
-- Repository: https://github.com/Hemanthsai456/StudIQ-Frontend-SIH2025
-
-### 11. BunkRide — Real-Time Ride-Sharing Platform (team project)
-- Role: Team project
-- Results: real-time ride-booking web app with live tracking via Google Maps API and Socket.IO
-- Tech Stack: React, Node.js, Express, Socket.IO, Google Maps API, GPS Tracking
-- Repository: https://github.com/Hemanthsai456/bunkride
-
-### 12. Hemanth Sai Portfolio
+### 11. Hemanth Sai Portfolio
 - Role: Web Development & Interactive UI
 - Tech Stack: HTML5, CSS3, JavaScript, tsParticles, Lucide Icons
 - Repository: https://github.com/Hemanthsai456/Hemanth-Sai-Portfolio
 - Live Site: https://hemanth-sai-portfolio.vercel.app/
 
-### 13. ProfilePulse — Privacy-First GitHub Profile Analytics
-- Role: Backend (personal project, beta)
-- Results: badge service for GitHub profile READMEs using GitHub Camo proxy hits; daily-rotating HMAC visitor keys; no stored IPs or User-Agent strings; 30-day retention; 23 automated tests
-- Tech Stack: Python, FastAPI, PostgreSQL, Docker, Render, pytest
-- Repository: https://github.com/Hemanthsai456/ProfilePulse
+### 12. StudIQ — Intelligent Study Platform (team project)
+- Role: Frontend developer, Smart India Hackathon 2025 team project
+- Results: responsive frontend UI; backend free-trial database expired, so the repository contains the UI only
+- Tech Stack: HTML, CSS, JavaScript
+- Repository: https://github.com/Hemanthsai456/StudIQ-Frontend-SIH2025
+
+### 13. BunkRide — Real-Time Ride-Sharing Platform (team project)
+- Role: Team project
+- Results: real-time ride-booking web app with live tracking via Google Maps API and Socket.IO
+- Tech Stack: React, Node.js, Express, Socket.IO, Google Maps API, GPS Tracking
+- Repository: https://github.com/Hemanthsai456/bunkride
 
 ### 14. Air Canvas — Touchless Drawing with Computer Vision
 - Role: Computer vision (personal learning project)
 - Results: webcam-based mid-air drawing with pinch gesture hysteresis, 1-Euro filtering and Bézier smoothing; unit tests for filter and gesture logic
 - Tech Stack: Python, OpenCV, MediaPipe, pytest
 - Repository: https://github.com/Hemanthsai456/air-canvas
-

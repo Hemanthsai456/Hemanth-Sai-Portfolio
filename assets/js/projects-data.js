@@ -523,7 +523,7 @@ const PROJECTS = [
     featured: false,
     featuredOrder: null,
     featuredData: null,
-    projectOrder: 7,
+    projectOrder: 8,
     description:
       "End-to-end analytics project on anime and manga data: exploratory analysis, interactive Plotly and Power BI dashboards, and a hybrid recommender that combines TF-IDF content similarity, cosine similarity, IMDb-weighted ratings and popularity, with an explainability module. Delivered as a multi-page Streamlit app.",
     github:
@@ -557,7 +557,7 @@ const PROJECTS = [
     featured: false,
     featuredOrder: null,
     featuredData: null,
-    projectOrder: 8,
+    projectOrder: 9,
     description:
       "End-to-end NLP pipeline that classifies text as hate speech or not, using custom preprocessing, TF-IDF vectorization and Logistic Regression. Served through a Streamlit app that returns the prediction with a confidence score and probability distribution.",
     github:
@@ -590,7 +590,7 @@ const PROJECTS = [
     featured: false,
     featuredOrder: null,
     featuredData: null,
-    projectOrder: 9,
+    projectOrder: 10,
     description:
       "Interactive Power BI dashboard for public transport operations, built on a synthetic dataset. It tracks revenue, profit, fuel efficiency and maintenance cost by bus type and route, with an executive overview, a route map and KPI tracking.",
     github:
@@ -622,7 +622,7 @@ const PROJECTS = [
     featured: false,
     featuredOrder: null,
     featuredData: null,
-    projectOrder: 10,
+    projectOrder: 11,
     description:
       "Personal portfolio built with plain HTML, CSS and JavaScript. Data-driven project pages are rendered from a single source file with a build script and automated checks, with responsive layouts, scroll-reveal animations and structured data for search engines.",
     github:
@@ -653,7 +653,7 @@ const PROJECTS = [
     featured: false,
     featuredOrder: null,
     featuredData: null,
-    projectOrder: 11,
+    projectOrder: 12,
     description:
       "Frontend for a study-platform concept built with a team for Smart India Hackathon 2025. Responsive interface for organizing learning and navigating study sections. The original backend's free-trial database has expired, so the repository holds the UI only.",
     github:
@@ -685,7 +685,7 @@ const PROJECTS = [
     featured: false,
     featuredOrder: null,
     featuredData: null,
-    projectOrder: 12,
+    projectOrder: 13,
     description:
       "Real-time ride-booking web app built with React, Node.js, Express and Socket.IO. Uses the Google Maps API for live driver tracking and ride management.",
     github:
@@ -716,7 +716,7 @@ const PROJECTS = [
     featured: false,
     featuredOrder: null,
     featuredData: null,
-    projectOrder: 13,
+    projectOrder: 7,
     description:
       "Privacy-first analytics service that gives GitHub profile READMEs honest visitor badges by counting GitHub Camo proxy requests. Built with FastAPI and PostgreSQL, using daily-rotating HMAC visitor keys, no stored IPs or User-Agent strings, 30-day retention and a rate limiter. Containerized with Docker with a Render deployment config. Currently in beta with a small group of users.",
     github:
