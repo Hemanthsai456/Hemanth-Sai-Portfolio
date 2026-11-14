@@ -82,7 +82,7 @@
   },
   "mainEntity": {
     "@type": "ItemList",
-    "numberOfItems": 12,
+    "numberOfItems": 14,
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -91,7 +91,7 @@
         "item": {
           "@type": "SoftwareSourceCode",
           "name": "SPARCS Healthcare & Business Intelligence System",
-          "description": "Designed a robust, multi-stage PostgreSQL data warehouse utilizing a Star Schema (8 dimensions, 1 fact table) with custom materialized views and automated ETL scripts. Streamlined queries across 16.3M+ healthcare records spanning 7 years, reducing report latency and enabling self-service clinical operations analytics via Power BI.",
+          "description": "Built a layered PostgreSQL data warehouse (staging, data-quality validation, ETL, star schema with 8 dimensions and 1 fact table) over 16.3M+ NYS SPARCS hospital discharge records spanning 7 years. Added 11 analytics views, 6 materialized views and EXPLAIN ANALYZE-driven tuning, and an 8-page Power BI dashboard for self-service clinical and financial analysis.",
           "programmingLanguage": [
             "PostgreSQL",
             "Power BI",
@@ -112,7 +112,7 @@
         "item": {
           "@type": "SoftwareSourceCode",
           "name": "Medical Inventory Forecasting & Decision Support System",
-          "description": "Developed a decision support system evaluating 14 machine learning algorithms — Gradient Boosting achieved R² = 0.7978 — with SHAP for model explainability and K-Means for demand clustering. Delivered a Streamlit dashboard enabling real-time demand forecasting and stock optimization, transforming complex ML predictions into actionable clinical inventory decisions.",
+          "description": "Built an end-to-end ML decision-support system for medical inventory demand. Benchmarked 14 models and ensembles, selected a tuned Gradient Boosting model, explained predictions with SHAP, and segmented inventory with K-Means. Deployed as a multi-page Streamlit app that flags inventory risk and recommends procurement actions.",
           "programmingLanguage": [
             "Python",
             "Scikit-Learn",
@@ -133,7 +133,7 @@
         "item": {
           "@type": "SoftwareSourceCode",
           "name": "Multimodal Cold-Start Movie Recommender",
-          "description": "Developed a multimodal movie recommendation system combining Neural Collaborative Filtering with CLIP poster embeddings and VGGish trailer-audio embeddings to address the cold-start problem. Evaluated personalized Top-N recommendation and rating prediction models, including a dedicated cold-start model for completely unseen movies.",
+          "description": "Built a multimodal movie recommender that combines Neural Collaborative Filtering with CLIP poster embeddings and VGGish trailer-audio embeddings to handle the cold-start problem. On 2,107 movies unseen during training it cut RMSE by about 21% versus a global-mean baseline, and it supports personalized Top-N recommendations.",
           "programmingLanguage": [
             "Python",
             "TensorFlow",
@@ -154,14 +154,14 @@
         "item": {
           "@type": "SoftwareSourceCode",
           "name": "NIDHI — AI Investor Super App",
-          "description": "Engineered a comprehensive portfolio manager using Next.js with a reactive state architecture, integrating AI recommendation models for real-time risk evaluation. Delivered an intuitive investor cockpit with interactive dashboards, offering retail users institution-grade portfolio intelligence and personalized financial education.",
+          "description": "Full-stack AI investor app for Indian retail investors. A React and TypeScript front end and FastAPI backend with PostgreSQL unify stocks, mutual funds, REITs and bonds, compute portfolio health and diversification scores, and power a Gemini assistant grounded in each user's holdings. Includes Firebase authentication with email verification and a learning center.",
           "programmingLanguage": [
             "TypeScript",
             "React",
-            "Next.js",
-            "AI Recommender",
-            "Authentication",
-            "Risk Intelligence"
+            "FastAPI",
+            "PostgreSQL",
+            "Firebase Auth",
+            "Gemini API"
           ],
           "codeRepository": "https://github.com/Hemanthsai456/NIDHI",
           "url": "https://nidhiapp.vercel.app"
@@ -174,7 +174,7 @@
         "item": {
           "@type": "SoftwareSourceCode",
           "name": "Human Decision Intelligence: Understanding Human Choices Under Risk & Ambiguity",
-          "description": "Developed a research-driven human decision intelligence system investigating choices under risk and ambiguity through statistical modeling, PCA, behavioral clustering, and XGBoost. Evaluated predictive performance using classification metrics and incorporated SHAP and LIME to interpret model predictions and identify influential decision-related features.",
+          "description": "Research-style data science project on the CPC18 dataset. Combined mixed-effects statistical modeling, PCA and behavioral clustering with GLM, GAM, Random Forest and XGBoost models, and used SHAP and LIME to explain predictions. The final model reached 70.95% test accuracy and 0.79 ROC-AUC on 105,000 held-out decisions.",
           "programmingLanguage": [
             "R",
             "Shiny",
@@ -196,7 +196,7 @@
         "item": {
           "@type": "SoftwareSourceCode",
           "name": "Data Center Resource Analytics: Cooling Demand, Electricity & Water Requirement Analysis",
-          "description": "Analyzed 2.75M+ data center telemetry records to understand electricity consumption, heat generation, cooling demand, and water requirements. Combined exploratory data analysis, feature engineering, physics-based thermal modeling, and predictive modeling, achieving R² = 0.9798 and RMSE = 0.0138.",
+          "description": "Analyzed 2.75M+ data center telemetry records to quantify how workload and power translate into heat, cooling-water flow and evaporative water demand. Combined EDA, feature engineering and physics-based thermal modeling with a Linear Regression model that reached R² of 0.98 after leakage-prone features were removed.",
           "programmingLanguage": [
             "Python",
             "Pandas",
@@ -215,7 +215,7 @@
         "item": {
           "@type": "SoftwareSourceCode",
           "name": "Anime & Manga Recommendation Analytics",
-          "description": "Designed a hybrid content-based recommendation engine utilizing TF-IDF, Cosine Similarity, and popularity-weighted ranking algorithms. Built an interactive analytics dashboard in Power BI displaying user consumption patterns and recommendation coverage, providing highly personalized titles with reduced latency.",
+          "description": "End-to-end analytics project on anime and manga data: exploratory analysis, interactive Plotly and Power BI dashboards, and a hybrid recommender that combines TF-IDF content similarity, cosine similarity, IMDb-weighted ratings and popularity, with an explainability module. Delivered as a multi-page Streamlit app.",
           "programmingLanguage": [
             "Python",
             "Pandas",
@@ -236,7 +236,7 @@
         "item": {
           "@type": "SoftwareSourceCode",
           "name": "NLP Hate Speech Classifier",
-          "description": "Built an end-to-end NLP classification pipeline featuring custom regex tokenizers, TF-IDF vectorization, and optimized classification models. Deployed the model via an interactive Streamlit interface, allowing real-time text moderation and content filtering with high precision.",
+          "description": "End-to-end NLP pipeline that classifies text as hate speech or not, using custom preprocessing, TF-IDF vectorization and Logistic Regression. Served through a Streamlit app that returns the prediction with a confidence score and probability distribution.",
           "programmingLanguage": [
             "Python",
             "NLP",
@@ -256,7 +256,7 @@
         "item": {
           "@type": "SoftwareSourceCode",
           "name": "Public Transport Analytics Dashboard",
-          "description": "Built an interactive Power BI dashboard to analyze public transport data, uncover operational patterns, track key performance indicators, and present transportation insights through clear and interactive visualizations.",
+          "description": "Interactive Power BI dashboard for public transport operations, built on a synthetic dataset. It tracks revenue, profit, fuel efficiency and maintenance cost by bus type and route, with an executive overview, a route map and KPI tracking.",
           "programmingLanguage": [
             "Power BI",
             "Data Visualization",
@@ -275,7 +275,7 @@
         "item": {
           "@type": "SoftwareSourceCode",
           "name": "Hemanth Sai Portfolio",
-          "description": "Designed and built a premium personal portfolio website with a dark glassmorphism aesthetic, animated particle backgrounds, 3D card tilt effects, and smooth scroll-reveal animations. Crafted to showcase work in AI, data engineering, analytics, and full-stack development with production-level attention to design quality and performance.",
+          "description": "Personal portfolio built with plain HTML, CSS and JavaScript. Data-driven project pages are rendered from a single source file with a build script and automated checks, with responsive layouts, scroll-reveal animations and structured data for search engines.",
           "programmingLanguage": [
             "HTML",
             "CSS",
@@ -295,14 +295,11 @@
         "item": {
           "@type": "SoftwareSourceCode",
           "name": "StudIQ — Intelligent Study Platform",
-          "description": "Developed an intelligent study platform designed to help students organize, track, and optimize their learning workflows. Integrated smart scheduling, progress tracking, and resource management features built with a modern full-stack architecture to create a seamless academic productivity experience.",
+          "description": "Frontend for a study-platform concept built with a team for Smart India Hackathon 2025. Responsive interface for organizing learning and navigating study sections. The original backend's free-trial database has expired, so the repository holds the UI only.",
           "programmingLanguage": [
-            "JavaScript",
-            "React",
-            "Node.js",
-            "PostgreSQL",
-            "REST APIs",
-            "Full Stack"
+            "HTML",
+            "CSS",
+            "JavaScript"
           ],
           "codeRepository": "https://github.com/Hemanthsai456/StudIQ-Frontend-SIH2025",
           "url": "https://github.com/Hemanthsai456/StudIQ-Frontend-SIH2025"
@@ -315,7 +312,7 @@
         "item": {
           "@type": "SoftwareSourceCode",
           "name": "BunkRide — Real-Time Ride-Sharing Platform",
-          "description": "Developed a real-time ride-sharing web application integrated with Google Maps API and Socket.IO for live driver-passenger matchmaking and interactive GPS tracking. Provided a seamless platform for automated matchmaking and real-time transit coordination, reducing transit costs and improving ride coordination efficiency.",
+          "description": "Real-time ride-booking web app built with React, Node.js, Express and Socket.IO. Uses the Google Maps API for live driver tracking and ride management.",
           "programmingLanguage": [
             "React",
             "Node.js",
@@ -324,8 +321,48 @@
             "Google Maps API",
             "GPS Tracking"
           ],
-          "codeRepository": "https://github.com/srujangandla/bunkride",
-          "url": "https://github.com/srujangandla/bunkride"
+          "codeRepository": "https://github.com/Hemanthsai456/bunkride",
+          "url": "https://github.com/Hemanthsai456/bunkride"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "name": "ProfilePulse — Privacy-First GitHub Profile Analytics",
+        "item": {
+          "@type": "SoftwareSourceCode",
+          "name": "ProfilePulse — Privacy-First GitHub Profile Analytics",
+          "description": "Privacy-first analytics service that gives GitHub profile READMEs honest visitor badges by counting GitHub Camo proxy requests. Built with FastAPI and PostgreSQL, using daily-rotating HMAC visitor keys, no stored IPs or User-Agent strings, 30-day retention and a rate limiter. Containerized with Docker with a Render deployment config. Currently in beta with a small group of users.",
+          "programmingLanguage": [
+            "Python",
+            "FastAPI",
+            "PostgreSQL",
+            "Docker",
+            "Render",
+            "pytest"
+          ],
+          "codeRepository": "https://github.com/Hemanthsai456/ProfilePulse",
+          "url": "https://github.com/Hemanthsai456/ProfilePulse"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "name": "Air Canvas — Touchless Drawing with Computer Vision",
+        "item": {
+          "@type": "SoftwareSourceCode",
+          "name": "Air Canvas — Touchless Drawing with Computer Vision",
+          "description": "Touchless drawing app that turns a webcam into a mid-air canvas using OpenCV and MediaPipe hand tracking. Uses a pinch-to-draw gesture with hysteresis, a 1-Euro filter and Bézier smoothing for steady strokes, several input and background modes, and unit tests for the filter and gesture logic.",
+          "programmingLanguage": [
+            "Python",
+            "OpenCV",
+            "MediaPipe",
+            "1-Euro Filter",
+            "Bézier Curves",
+            "pytest"
+          ],
+          "codeRepository": "https://github.com/Hemanthsai456/air-canvas",
+          "url": "https://github.com/Hemanthsai456/air-canvas"
         }
       }
     ]
@@ -397,7 +434,7 @@
       </div>
 
       <div class="projects-count-badge">
-        <span class="projects-count-num" id="projects-count-num">12</span>
+        <span class="projects-count-num" id="projects-count-num">14</span>
         <span class="projects-count-label">Projects</span>
       </div>
     </div>
@@ -422,7 +459,7 @@
                 </div>
               </div>
               <p class="archive-desc">
-                Designed a robust, multi-stage PostgreSQL data warehouse utilizing a Star Schema (8 dimensions, 1 fact table) with custom materialized views and automated ETL scripts. Streamlined queries across 16.3M+ healthcare records spanning 7 years, reducing report latency and enabling self-service clinical operations analytics via Power BI.
+                Built a layered PostgreSQL data warehouse (staging, data-quality validation, ETL, star schema with 8 dimensions and 1 fact table) over 16.3M+ NYS SPARCS hospital discharge records spanning 7 years. Added 11 analytics views, 6 materialized views and EXPLAIN ANALYZE-driven tuning, and an 8-page Power BI dashboard for self-service clinical and financial analysis.
               </p>
               <div class="archive-stack">
                 <span>PostgreSQL</span>
@@ -454,7 +491,7 @@
                 </div>
               </div>
               <p class="archive-desc">
-                Developed a decision support system evaluating 14 machine learning algorithms — Gradient Boosting achieved R² = 0.7978 — with SHAP for model explainability and K-Means for demand clustering. Delivered a Streamlit dashboard enabling real-time demand forecasting and stock optimization, transforming complex ML predictions into actionable clinical inventory decisions.
+                Built an end-to-end ML decision-support system for medical inventory demand. Benchmarked 14 models and ensembles, selected a tuned Gradient Boosting model, explained predictions with SHAP, and segmented inventory with K-Means. Deployed as a multi-page Streamlit app that flags inventory risk and recommends procurement actions.
               </p>
               <div class="archive-stack">
                 <span>Python</span>
@@ -489,7 +526,7 @@
                 </div>
               </div>
               <p class="archive-desc">
-                Developed a multimodal movie recommendation system combining Neural Collaborative Filtering with CLIP poster embeddings and VGGish trailer-audio embeddings to address the cold-start problem. Evaluated personalized Top-N recommendation and rating prediction models, including a dedicated cold-start model for completely unseen movies.
+                Built a multimodal movie recommender that combines Neural Collaborative Filtering with CLIP poster embeddings and VGGish trailer-audio embeddings to handle the cold-start problem. On 2,107 movies unseen during training it cut RMSE by about 21% versus a global-mean baseline, and it supports personalized Top-N recommendations.
               </p>
               <div class="archive-stack">
                 <span>Python</span>
@@ -524,15 +561,15 @@
                 </div>
               </div>
               <p class="archive-desc">
-                Engineered a comprehensive portfolio manager using Next.js with a reactive state architecture, integrating AI recommendation models for real-time risk evaluation. Delivered an intuitive investor cockpit with interactive dashboards, offering retail users institution-grade portfolio intelligence and personalized financial education.
+                Full-stack AI investor app for Indian retail investors. A React and TypeScript front end and FastAPI backend with PostgreSQL unify stocks, mutual funds, REITs and bonds, compute portfolio health and diversification scores, and power a Gemini assistant grounded in each user's holdings. Includes Firebase authentication with email verification and a learning center.
               </p>
               <div class="archive-stack">
                 <span>TypeScript</span>
                 <span>React</span>
-                <span>Next.js</span>
-                <span>AI Recommender</span>
-                <span>Authentication</span>
-                <span>Risk Intelligence</span>
+                <span>FastAPI</span>
+                <span>PostgreSQL</span>
+                <span>Firebase Auth</span>
+                <span>Gemini API</span>
               </div>
               <div class="archive-links">
                 <a href="https://github.com/Hemanthsai456/NIDHI" target="_blank" class="btn-icon" id="github-nidhi" aria-label="GitHub repository for NIDHI — AI Investor Super App">
@@ -559,7 +596,7 @@
                 </div>
               </div>
               <p class="archive-desc">
-                Developed a research-driven human decision intelligence system investigating choices under risk and ambiguity through statistical modeling, PCA, behavioral clustering, and XGBoost. Evaluated predictive performance using classification metrics and incorporated SHAP and LIME to interpret model predictions and identify influential decision-related features.
+                Research-style data science project on the CPC18 dataset. Combined mixed-effects statistical modeling, PCA and behavioral clustering with GLM, GAM, Random Forest and XGBoost models, and used SHAP and LIME to explain predictions. The final model reached 70.95% test accuracy and 0.79 ROC-AUC on 105,000 held-out decisions.
               </p>
               <div class="archive-stack">
                 <span>R</span>
@@ -592,7 +629,7 @@
                 </div>
               </div>
               <p class="archive-desc">
-                Analyzed 2.75M+ data center telemetry records to understand electricity consumption, heat generation, cooling demand, and water requirements. Combined exploratory data analysis, feature engineering, physics-based thermal modeling, and predictive modeling, achieving R² = 0.9798 and RMSE = 0.0138.
+                Analyzed 2.75M+ data center telemetry records to quantify how workload and power translate into heat, cooling-water flow and evaporative water demand. Combined EDA, feature engineering and physics-based thermal modeling with a Linear Regression model that reached R² of 0.98 after leakage-prone features were removed.
               </p>
               <div class="archive-stack">
                 <span>Python</span>
@@ -622,7 +659,7 @@
                 </div>
               </div>
               <p class="archive-desc">
-                Designed a hybrid content-based recommendation engine utilizing TF-IDF, Cosine Similarity, and popularity-weighted ranking algorithms. Built an interactive analytics dashboard in Power BI displaying user consumption patterns and recommendation coverage, providing highly personalized titles with reduced latency.
+                End-to-end analytics project on anime and manga data: exploratory analysis, interactive Plotly and Power BI dashboards, and a hybrid recommender that combines TF-IDF content similarity, cosine similarity, IMDb-weighted ratings and popularity, with an explainability module. Delivered as a multi-page Streamlit app.
               </p>
               <div class="archive-stack">
                 <span>Python</span>
@@ -657,7 +694,7 @@
                 </div>
               </div>
               <p class="archive-desc">
-                Built an end-to-end NLP classification pipeline featuring custom regex tokenizers, TF-IDF vectorization, and optimized classification models. Deployed the model via an interactive Streamlit interface, allowing real-time text moderation and content filtering with high precision.
+                End-to-end NLP pipeline that classifies text as hate speech or not, using custom preprocessing, TF-IDF vectorization and Logistic Regression. Served through a Streamlit app that returns the prediction with a confidence score and probability distribution.
               </p>
               <div class="archive-stack">
                 <span>Python</span>
@@ -687,11 +724,11 @@
                 <h2 class="archive-title">Public Transport Analytics Dashboard</h2>
                 <div class="archive-badges">
                 <span class="archive-badge badge-purple">Analytics</span>
-                <span class="archive-badge badge-blue">Data Engineering</span>
+                <span class="archive-badge badge-blue">Business Intelligence</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Built an interactive Power BI dashboard to analyze public transport data, uncover operational patterns, track key performance indicators, and present transportation insights through clear and interactive visualizations.
+                Interactive Power BI dashboard for public transport operations, built on a synthetic dataset. It tracks revenue, profit, fuel efficiency and maintenance cost by bus type and route, with an executive overview, a route map and KPI tracking.
               </p>
               <div class="archive-stack">
                 <span>Power BI</span>
@@ -721,7 +758,7 @@
                 </div>
               </div>
               <p class="archive-desc">
-                Designed and built a premium personal portfolio website with a dark glassmorphism aesthetic, animated particle backgrounds, 3D card tilt effects, and smooth scroll-reveal animations. Crafted to showcase work in AI, data engineering, analytics, and full-stack development with production-level attention to design quality and performance.
+                Personal portfolio built with plain HTML, CSS and JavaScript. Data-driven project pages are rendered from a single source file with a build script and automated checks, with responsive layouts, scroll-reveal animations and structured data for search engines.
               </p>
               <div class="archive-stack">
                 <span>HTML</span>
@@ -750,20 +787,17 @@
               <div class="archive-header">
                 <h2 class="archive-title">StudIQ — Intelligent Study Platform</h2>
                 <div class="archive-badges">
-                <span class="archive-badge badge-purple">Full Stack</span>
-                <span class="archive-badge badge-blue">EdTech</span>
+                <span class="archive-badge badge-purple">Frontend</span>
+                <span class="archive-badge badge-blue">Team Project</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Developed an intelligent study platform designed to help students organize, track, and optimize their learning workflows. Integrated smart scheduling, progress tracking, and resource management features built with a modern full-stack architecture to create a seamless academic productivity experience.
+                Frontend for a study-platform concept built with a team for Smart India Hackathon 2025. Responsive interface for organizing learning and navigating study sections. The original backend's free-trial database has expired, so the repository holds the UI only.
               </p>
               <div class="archive-stack">
+                <span>HTML</span>
+                <span>CSS</span>
                 <span>JavaScript</span>
-                <span>React</span>
-                <span>Node.js</span>
-                <span>PostgreSQL</span>
-                <span>REST APIs</span>
-                <span>Full Stack</span>
               </div>
               <div class="archive-links">
                 <a href="https://github.com/Hemanthsai456/StudIQ-Frontend-SIH2025" target="_blank" class="btn-icon" id="github-studiq" aria-label="GitHub repository for StudIQ — Intelligent Study Platform">
@@ -782,11 +816,11 @@
                 <h2 class="archive-title">BunkRide — Real-Time Ride-Sharing Platform</h2>
                 <div class="archive-badges">
                 <span class="archive-badge badge-purple">Full Stack</span>
-                <span class="archive-badge badge-blue">Real-Time</span>
+                <span class="archive-badge badge-blue">Team Project</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Developed a real-time ride-sharing web application integrated with Google Maps API and Socket.IO for live driver-passenger matchmaking and interactive GPS tracking. Provided a seamless platform for automated matchmaking and real-time transit coordination, reducing transit costs and improving ride coordination efficiency.
+                Real-time ride-booking web app built with React, Node.js, Express and Socket.IO. Uses the Google Maps API for live driver tracking and ride management.
               </p>
               <div class="archive-stack">
                 <span>React</span>
@@ -797,7 +831,69 @@
                 <span>GPS Tracking</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/srujangandla/bunkride" target="_blank" class="btn-icon" id="github-bunkride" aria-label="GitHub repository for BunkRide — Real-Time Ride-Sharing Platform">
+                <a href="https://github.com/Hemanthsai456/bunkride" target="_blank" class="btn-icon" id="github-bunkride" aria-label="GitHub repository for BunkRide — Real-Time Ride-Sharing Platform">
+                  <i data-lucide="github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="archive-card" id="project-13">
+          <div class="card-glow"></div>
+          <div class="archive-card-inner">
+            <div class="archive-number">13</div>
+            <div class="archive-body">
+              <div class="archive-header">
+                <h2 class="archive-title">ProfilePulse — Privacy-First GitHub Profile Analytics</h2>
+                <div class="archive-badges">
+                <span class="archive-badge badge-purple">Backend</span>
+                <span class="archive-badge badge-blue">Privacy-First</span>
+                </div>
+              </div>
+              <p class="archive-desc">
+                Privacy-first analytics service that gives GitHub profile READMEs honest visitor badges by counting GitHub Camo proxy requests. Built with FastAPI and PostgreSQL, using daily-rotating HMAC visitor keys, no stored IPs or User-Agent strings, 30-day retention and a rate limiter. Containerized with Docker with a Render deployment config. Currently in beta with a small group of users.
+              </p>
+              <div class="archive-stack">
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>PostgreSQL</span>
+                <span>Docker</span>
+                <span>Render</span>
+                <span>pytest</span>
+              </div>
+              <div class="archive-links">
+                <a href="https://github.com/Hemanthsai456/ProfilePulse" target="_blank" class="btn-icon" id="github-profilepulse" aria-label="GitHub repository for ProfilePulse — Privacy-First GitHub Profile Analytics">
+                  <i data-lucide="github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="archive-card" id="project-14">
+          <div class="card-glow"></div>
+          <div class="archive-card-inner">
+            <div class="archive-number">14</div>
+            <div class="archive-body">
+              <div class="archive-header">
+                <h2 class="archive-title">Air Canvas — Touchless Drawing with Computer Vision</h2>
+                <div class="archive-badges">
+                <span class="archive-badge badge-purple">Computer Vision</span>
+                <span class="archive-badge badge-blue">Real-Time</span>
+                </div>
+              </div>
+              <p class="archive-desc">
+                Touchless drawing app that turns a webcam into a mid-air canvas using OpenCV and MediaPipe hand tracking. Uses a pinch-to-draw gesture with hysteresis, a 1-Euro filter and Bézier smoothing for steady strokes, several input and background modes, and unit tests for the filter and gesture logic.
+              </p>
+              <div class="archive-stack">
+                <span>Python</span>
+                <span>OpenCV</span>
+                <span>MediaPipe</span>
+                <span>1-Euro Filter</span>
+                <span>Bézier Curves</span>
+                <span>pytest</span>
+              </div>
+              <div class="archive-links">
+                <a href="https://github.com/Hemanthsai456/air-canvas" target="_blank" class="btn-icon" id="github-air-canvas" aria-label="GitHub repository for Air Canvas — Touchless Drawing with Computer Vision">
                   <i data-lucide="github"></i> GitHub
                 </a>
               </div>

@@ -1,97 +1,118 @@
 # Hemanth Sai Charagundla
 
-> Artificial Intelligence and Data Science student at Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad, with a technical focus on machine learning, data engineering, business intelligence, and full-stack development.
+> Artificial Intelligence and Data Science student at Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad (CGPA 8.80/10). Seeking internships in data science, data analytics, machine learning engineering and data engineering.
 
 ## Profile & Contact
 - Website: https://hemanth-sai-portfolio.vercel.app/
 - Projects Archive: https://hemanth-sai-portfolio.vercel.app/projects/
 - GitHub: https://github.com/Hemanthsai456
 - LinkedIn: https://www.linkedin.com/in/hemanthsai456/
-- LeetCode: https://leetcode.com/u/hemanth_sai/
+- LeetCode: https://leetcode.com/u/Hemanthsai456/
+- Resume (PDF): https://hemanth-sai-portfolio.vercel.app/assets/Hemanth_Sai_resume.pdf
 
 ## Education
-- Degree: Artificial Intelligence and Data Science
-- Institution: Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad, India
+- Degree: B.E. Artificial Intelligence and Data Science (5th semester), CBIT, Hyderabad, India
+- CGPA: 8.80 / 10
+
+## Target Roles
+- Data Scientist, Data Analyst, Machine Learning Engineer, Data Engineer (internships)
 
 ## Technical Specializations
-- Machine Learning & Deep Learning: Scikit-Learn, TensorFlow, PyTorch, XGBoost, LightGBM, Neural Collaborative Filtering, CLIP, VGGish, SHAP, LIME
-- Data Engineering & Databases: PostgreSQL, Star Schema design, ETL pipelines, Materialized Views, PL/pgSQL, Data Warehousing
-- Business Intelligence & Analytics: Microsoft Power BI, DAX, Power Query, Statistical Modeling, PCA, Exploratory Data Analysis
-- Full-Stack & Deployment: Python, JavaScript, TypeScript, React, Next.js, Streamlit, HTML5/CSS3, REST APIs, Git, Vercel
+- Data Science & Machine Learning: Scikit-Learn, XGBoost, TensorFlow, NLP, recommendation systems (Neural Collaborative Filtering), CLIP and VGGish embeddings, SHAP and LIME explainability, PCA and clustering, statistical and mixed-effects modeling
+- Data Engineering & Databases: PostgreSQL, star-schema dimensional modeling, ETL pipelines with audit logging, data-quality validation, materialized views, PL/pgSQL, query optimization
+- Analytics & Business Intelligence: Power BI (DAX, Power Query), Tableau, Excel, SQL analytics, Plotly, exploratory data analysis, interactive dashboards
+- Full Stack & Deployment: Python, TypeScript, JavaScript, React, Next.js, Node.js, FastAPI, REST APIs, Streamlit, Docker, Vercel, Firebase Authentication
+- Languages: Python, SQL, R, C++, Java
 
 ## Verified Portfolio Projects
 
 ### 1. SPARCS Healthcare & Business Intelligence System
-- Domain: Data Engineering & Business Intelligence
-- Metrics: 16.3M+ records spanning 7 years, Star Schema (8 dimensions, 1 fact table), 11 analytics views, 4 materialized views
+- Role: Data Engineering & Business Intelligence (personal project)
+- Results: 16.3M+ inpatient discharge records across 7 years; PostgreSQL star schema with 8 dimensions and 1 fact table; 11 analytics views; 6 materialized views; 8-page Power BI dashboard
 - Tech Stack: PostgreSQL, Power BI, ETL, Star Schema, SQL Analytics, Materialized Views, PL/pgSQL
 - Repository: https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform
 - Documentation: https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform/tree/main/DOCS
 
 ### 2. Medical Inventory Forecasting & Decision Support System
-- Domain: Machine Learning & Healthcare Analytics
-- Metrics: 14 ML models evaluated; Gradient Boosting achieved R² = 0.7978; K-Means demand clustering; SHAP explainability
+- Role: Machine Learning & Healthcare Analytics (personal project)
+- Results: 14 regression models and ensembles benchmarked; tuned Gradient Boosting selected (R² 0.7978 on test, RMSE 9.692); SHAP explainability; K-Means inventory segmentation; deployed Streamlit app
 - Tech Stack: Python, Scikit-Learn, SHAP, Streamlit, XGBoost, K-Means, Gradient Boosting
 - Repository: https://github.com/Hemanthsai456/Medical-Inventory-Forecasting-Decision-Support-System
 - Live Demo: https://hemanthsai-medical-inventory-decision-support.streamlit.app/
 
 ### 3. Multimodal Cold-Start Movie Recommender
-- Domain: Multimodal AI & Recommendation Systems
-- Metrics: 19,232 multimodal movies, cold-start RMSE = 0.8843
-- Tech Stack: Python, TensorFlow, CLIP (visual embeddings), VGGish (audio embeddings), Neural Collaborative Filtering, MovieLens
+- Role: Recommendation Systems & Multimodal AI (personal project)
+- Results: 19,232 multimodal movies (MovieLens 20M); 2,107 test movies unseen in training; cold-start RMSE 0.8843, about 21% lower than a global-mean baseline on the same subset
+- Tech Stack: Python, TensorFlow, CLIP (poster embeddings), VGGish (audio embeddings), Neural Collaborative Filtering, MovieLens
 - Repository: https://github.com/Hemanthsai456/Multimodal-Cold-Start-Movie-Recommender
 - Live Demo: https://hemanth-cold-start-user-based-movie-recommendation.streamlit.app/
 
-### 4. NIDHI — AI Investor Super App
-- Domain: Full Stack & AI Financial Intelligence
-- Metrics: Risk evaluation intelligence, personalized investment workflows
-- Tech Stack: TypeScript, React, Next.js, AI Recommender, Authentication, Risk Intelligence
+### 4. Data Center Resource Analytics
+- Role: Data Analytics & Predictive Modeling (personal project)
+- Results: 2.75M+ server telemetry records; physics-based heat, cooling-water and evaporative-water modeling; Linear Regression with leakage-prone features removed (held-out R² 0.9798, RMSE 0.013)
+- Tech Stack: Python, Pandas, NumPy, Scikit-Learn, Plotly
+- Repository: https://github.com/Hemanthsai456/Data-Center-Resource-Analytics
+
+### 5. NIDHI — AI Investor Super App
+- Role: Full Stack & AI (personal project)
+- Results: multi-asset portfolio tracker (stocks, mutual funds, REITs, InvITs, bonds); portfolio health, diversification and liquidity scores; Gemini assistant grounded in user holdings; Firebase authentication with email verification
+- Tech Stack: TypeScript, React, FastAPI, PostgreSQL, Firebase Auth, Gemini API
 - Repository: https://github.com/Hemanthsai456/NIDHI
 - Live Demo: https://nidhiapp.vercel.app
 
-### 5. Human Decision Intelligence: Choices Under Risk & Ambiguity
-- Domain: Behavioral Analytics & Explainable AI
-- Metrics: 105,000 test observations, 70.95% accuracy, ROC-AUC = 0.791
+### 6. Human Decision Intelligence
+- Role: Statistical Analysis & Explainable AI (personal project)
+- Results: 105,000 held-out decisions on the CPC18 dataset; 70.95% test accuracy; ROC-AUC 0.7906 for the final model; GLM, GAM, Random Forest and XGBoost compared; SHAP and LIME explanations
 - Tech Stack: R, Shiny, Statistical Modeling, PCA, XGBoost, SHAP, LIME, Behavioral Clustering
 - Repository: https://github.com/Hemanthsai456/Human-Decision-Intelligence
 
-### 6. AI Thermal Telemetry Modeling for Data Center Infrastructure
-- Domain: Predictive Modeling & Thermal Physics
-- Metrics: 2.75M+ telemetry records, R² = 0.9798, RMSE = 0.0138
-- Tech Stack: Python, Scikit-Learn, Feature Engineering, Thermal Modeling, Telemetry Analytics
-- Repository: https://github.com/Hemanthsai456/ai-thermal-telemetry-modeling
-
 ### 7. Anime & Manga Recommendation Analytics
-- Domain: Recommendation Systems & Analytics
-- Metrics: Hybrid content-based recommendation (TF-IDF + Cosine Similarity + popularity weighting)
+- Role: Recommendation Systems & Analytics (personal project)
+- Results: hybrid recommender (TF-IDF, cosine similarity, IMDb-weighted ratings, popularity); Power BI and Plotly dashboards; multi-page Streamlit app
 - Tech Stack: Python, Pandas, Power BI, TF-IDF, Cosine Similarity, Streamlit
 - Repository: https://github.com/Hemanthsai456/Anime-Manga-Recommendation-Analytics
 - Live Demo: https://hemanth-anime-manga-analytics-recommendation-system.streamlit.app/
 
 ### 8. NLP Hate Speech Classifier
-- Domain: Natural Language Processing
+- Role: Natural Language Processing (personal project)
+- Results: TF-IDF and Logistic Regression text classifier with confidence scores, served through a Streamlit app
 - Tech Stack: Python, NLP, TF-IDF, Scikit-Learn, Streamlit, Logistic Regression
 - Repository: https://github.com/Hemanthsai456/NLP-Hate-Speech-Classifier
 - Live Demo: https://hemanth-hate-speech-detection.streamlit.app/
 
 ### 9. Public Transport Analytics Dashboard
-- Domain: Business Intelligence & Transportation Analytics
-- Tech Stack: Power BI, Data Visualization, Dashboard Design, DAX, Power Query
+- Role: Business Intelligence (personal project, synthetic dataset)
+- Results: Power BI dashboard covering revenue, profit, fuel efficiency and maintenance cost by bus type and route
+- Tech Stack: Power BI, DAX, Power Query, Data Visualization
 - Repository: https://github.com/Hemanthsai456/Public-Transport-Analytics-Dashboard
 
-### 10. StudIQ — Intelligent Study Platform
-- Domain: Full-Stack Web Development & EdTech
-- Tech Stack: JavaScript, React, Node.js, PostgreSQL, REST APIs
+### 10. StudIQ — Intelligent Study Platform (team project)
+- Role: Frontend developer, Smart India Hackathon 2025 team project
+- Results: responsive frontend UI; backend free-trial database expired, so the repository contains the UI only
+- Tech Stack: HTML, CSS, JavaScript
 - Repository: https://github.com/Hemanthsai456/StudIQ-Frontend-SIH2025
 
-### 11. BunkRide — Real-Time Ride-Sharing Platform
-- Domain: Full-Stack Web Development & Real-Time Transit
+### 11. BunkRide — Real-Time Ride-Sharing Platform (team project)
+- Role: Team project
+- Results: real-time ride-booking web app with live tracking via Google Maps API and Socket.IO
 - Tech Stack: React, Node.js, Express, Socket.IO, Google Maps API, GPS Tracking
-- Repository: https://github.com/srujangandla/bunkride
+- Repository: https://github.com/Hemanthsai456/bunkride
 
 ### 12. Hemanth Sai Portfolio
-- Domain: Web Development & Interactive UI
-- Tech Stack: HTML5, CSS3, Modern JavaScript, tsParticles, Lucide Icons
+- Role: Web Development & Interactive UI
+- Tech Stack: HTML5, CSS3, JavaScript, tsParticles, Lucide Icons
 - Repository: https://github.com/Hemanthsai456/Hemanth-Sai-Portfolio
 - Live Site: https://hemanth-sai-portfolio.vercel.app/
+
+### 13. ProfilePulse — Privacy-First GitHub Profile Analytics
+- Role: Backend (personal project, beta)
+- Results: badge service for GitHub profile READMEs using GitHub Camo proxy hits; daily-rotating HMAC visitor keys; no stored IPs or User-Agent strings; 30-day retention; 23 automated tests
+- Tech Stack: Python, FastAPI, PostgreSQL, Docker, Render, pytest
+- Repository: https://github.com/Hemanthsai456/ProfilePulse
+
+### 14. Air Canvas — Touchless Drawing with Computer Vision
+- Role: Computer vision (personal learning project)
+- Results: webcam-based mid-air drawing with pinch gesture hysteresis, 1-Euro filtering and Bézier smoothing; unit tests for filter and gesture logic
+- Tech Stack: Python, OpenCV, MediaPipe, pytest
+- Repository: https://github.com/Hemanthsai456/air-canvas
 

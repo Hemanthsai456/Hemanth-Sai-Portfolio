@@ -18,7 +18,7 @@
  *  featuredOrder – sort key for homepage grid (lower = first)
  *  featuredData  – extra fields used only when rendering on homepage
  *    .icon           lucide icon name for the project-icon-box
- *    .metric         text for the project-metric badge
+ *    .metric         text for the project-metric badge (a headline outcome, not a raw R²)
  *    .titleShort     shorter title for the card heading
  *    .descriptionHtml full HTML description (Problem/Solution/Impact)
  *    .highlights     array of bullet strings
@@ -32,11 +32,15 @@
  *  liveLabel     – button label override (default: "Live Demo")
  *
  *  published     – only true items are rendered on either page
+ *
+ * Every metric below is taken from the project's own README or results
+ * files. Where a model score is cited, its baseline or scope is named so
+ * it reads as a result, not a bare number.
  */
 
 const PROJECTS = [
 
-  // ── 1: SPARCS Healthcare & BI ───────────────────────────────
+  // ── 1: SPARCS Healthcare & BI (Data Engineering) ─────────────
   {
     id: "sparcs",
     title: "SPARCS Healthcare &amp; Business Intelligence System",
@@ -66,21 +70,21 @@ const PROJECTS = [
 
     featuredData: {
       icon: "database",
-      metric: "16.3M+ Records",
+      metric: "16.3M+ Records Warehoused",
       titleShort: "SPARCS Healthcare &amp; BI System",
 
       descriptionHtml:
-        "<strong>Problem:</strong> Healthcare analysis often struggles with siloed, raw transactional data, making it difficult to extract multi-year clinical and financial trends efficiently.<br />" +
-        "<strong>Solution:</strong> Designed a robust, multi-stage PostgreSQL data warehouse utilizing a Star Schema (8 dimensions, 1 fact table) with custom materialized views and automated ETL scripts.<br />" +
-        "<strong>Impact:</strong> Streamlined queries across 16.3M+ records spanning 7 years, reducing report latency and enabling self-service clinical operations analytics via Power BI.",
+        "<strong>Problem:</strong> Public hospital discharge data arrives as separate yearly files, which makes multi-year clinical and financial trends slow and inconsistent to analyze.<br />" +
+        "<strong>Solution:</strong> Built a layered PostgreSQL warehouse (staging → data-quality validation → ETL → star schema) with 8 dimensions and 1 fact table, plus analytics views and materialized views for heavy aggregations.<br />" +
+        "<strong>Impact:</strong> One governed source of truth across 7 years of records, feeding an 8-page Power BI dashboard for hospital, patient, clinical and financial analysis.",
 
       highlights: [
-        "16.3M+ Records",
-        "7 Years Data",
-        "8 Dimensions &amp; 1 Fact Table",
-        "8-Page Dashboard for Each Domain",
-        "11 Analytics Views",
-        "4 Materialized Views",
+        "16.3M+ discharge records across 7 years",
+        "Star schema: 8 dimensions, 1 fact table",
+        "ETL with audit logging and post-load validation",
+        "11 analytics views, 6 materialized views",
+        "EXPLAIN ANALYZE-driven query tuning",
+        "8-page Power BI dashboard",
       ],
 
       stackShort: [
@@ -111,7 +115,7 @@ const PROJECTS = [
     projectOrder: 1,
 
     description:
-      "Designed a robust, multi-stage PostgreSQL data warehouse utilizing a Star Schema (8 dimensions, 1 fact table) with custom materialized views and automated ETL scripts. Streamlined queries across 16.3M+ healthcare records spanning 7 years, reducing report latency and enabling self-service clinical operations analytics via Power BI.",
+      "Built a layered PostgreSQL data warehouse (staging, data-quality validation, ETL, star schema with 8 dimensions and 1 fact table) over 16.3M+ NYS SPARCS hospital discharge records spanning 7 years. Added 11 analytics views, 6 materialized views and EXPLAIN ANALYZE-driven tuning, and an 8-page Power BI dashboard for self-service clinical and financial analysis.",
 
     github:
       "https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform",
@@ -122,7 +126,7 @@ const PROJECTS = [
   },
 
 
-  // ── 2: Medical Inventory Forecasting ───────────────────────────
+  // ── 2: Medical Inventory Forecasting (ML) ───────────────────
   {
     id: "medical-inventory",
     title: "Medical Inventory Forecasting &amp; Decision Support System",
@@ -151,19 +155,21 @@ const PROJECTS = [
 
     featuredData: {
       icon: "trending-up",
-      metric: "R\u00B2 = 0.7978",
+      metric: "14 Models → Live App",
       titleShort: "Medical Inventory Forecasting &amp; Decision Support System",
 
       descriptionHtml:
-        "<strong>Problem:</strong> Inefficient medical inventory tracking leads to critical stockouts of life-saving medicines or costly overstocking wastes.<br />" +
-        "<strong>Solution:</strong> Developed a decision support system evaluating 14 machine learning algorithms (Gradient Boosting achieved R&sup2; = 0.7978) with SHAP for model explainability and K-Means for demand clustering.<br />" +
-        "<strong>Impact:</strong> Delivered a Streamlit dashboard enabling real-time demand forecasting and stock optimization, transforming complex ML predictions into actionable clinical inventory decisions.",
+        "<strong>Problem:</strong> Medical inventory is planned by hand, so hospitals either overstock (tying up capital) or run short on life-saving stock.<br />" +
+        "<strong>Solution:</strong> Benchmarked 14 regression models and ensembles, selected a tuned Gradient Boosting model, explained its predictions with SHAP, and segmented items with K-Means for procurement planning.<br />" +
+        "<strong>Impact:</strong> Shipped as a deployed multi-page Streamlit app that flags inventory risk and recommends procurement actions, with every prediction logged to a Google Sheet audit trail.",
 
       highlights: [
-        "14 Models Evaluated",
-        "R&sup2; = 0.7978",
-        "SHAP Explainability",
-        "Streamlit Deployment",
+        "14 models benchmarked and tuned",
+        "SHAP global and per-prediction explanations",
+        "K-Means inventory segmentation",
+        "Demand and inventory-risk flags",
+        "Procurement recommendation logic",
+        "Live Streamlit app with audit logging",
       ],
 
       stackShort: [
@@ -199,33 +205,26 @@ const PROJECTS = [
     },
 
     projectOrder: 2,
-
     description:
-      "Developed a decision support system evaluating 14 machine learning algorithms — Gradient Boosting achieved R\u00B2 = 0.7978 — with SHAP for model explainability and K-Means for demand clustering. Delivered a Streamlit dashboard enabling real-time demand forecasting and stock optimization, transforming complex ML predictions into actionable clinical inventory decisions.",
-
+      "Built an end-to-end ML decision-support system for medical inventory demand. Benchmarked 14 models and ensembles, selected a tuned Gradient Boosting model, explained predictions with SHAP, and segmented inventory with K-Means. Deployed as a multi-page Streamlit app that flags inventory risk and recommends procurement actions.",
     github:
       "https://github.com/Hemanthsai456/Medical-Inventory-Forecasting-Decision-Support-System",
-
     live:
       "https://hemanthsai-medical-inventory-decision-support.streamlit.app/",
-
     liveLabel: "Live Demo",
-
     published: true,
   },
 
 
-  // ── 3: Cold-Start Multimodal Movie Recommendation ────────────────
+  // ── 3: Cold-Start Multimodal Movie Recommendation (ML / Recsys) ──
   {
     id: "movie-recommendation",
     title:
       "Multimodal Cold-Start Movie Recommender",
-
     badges: [
       { label: "Recommendation Systems", color: "purple" },
       { label: "Multimodal AI", color: "blue" },
     ],
-
     techStack: [
       "Python",
       "TensorFlow",
@@ -235,40 +234,33 @@ const PROJECTS = [
       "Multimodal Learning",
       "MovieLens",
     ],
-
     imageUrl: "assets/project-images/Cold Start Movie Recommendation.webp",
     imageStatus: "uploaded",
     showImage: true,
-
     featured: true,
     featuredOrder: 3,
-
     featuredData: {
       icon: "clapperboard",
-      metric: "Cold-Start RMSE = 0.8843",
+      metric: "21% Lower Cold-Start RMSE",
       titleShort: "Multimodal Cold-Start Movie Recommender",
-
       descriptionHtml:
-        "<strong>Problem:</strong> Traditional collaborative filtering struggles with new movies that have little or no interaction history, creating a fundamental cold-start problem in recommendation systems.<br />" +
-        "<strong>Solution:</strong> Developed a multimodal recommendation system combining Neural Collaborative Filtering with CLIP poster embeddings and VGGish trailer-audio embeddings to incorporate visual and audio content into movie recommendations.<br />" +
-        "<strong>Impact:</strong> Built and evaluated personalized Top-N recommendation and rating prediction models, including a dedicated cold-start model capable of recommending completely unseen movies using multimodal content representations.",
-
+        "<strong>Problem:</strong> Collaborative filtering cannot rate movies that have little or no interaction history, so new releases are invisible to the recommender.<br />" +
+        "<strong>Solution:</strong> Combined Neural Collaborative Filtering with CLIP poster embeddings and VGGish trailer-audio embeddings, plus a dedicated cold-start model that recommends movies never seen in training.<br />" +
+        "<strong>Impact:</strong> On 2,107 movies unseen during training, the cold-start model reduced RMSE by about 21% against a global-mean baseline on the same test subset, and the overall multimodal model improved on a user-and-movie bias baseline.",
       highlights: [
-        "19,232 Multimodal Movies",
-        "CLIP Poster Embeddings",
-        "VGGish Audio Embeddings",
+        "19,232 multimodal movies (MovieLens 20M)",
+        "2,107 test movies unseen in training",
+        "CLIP poster and VGGish audio embeddings",
         "Neural Collaborative Filtering",
-        "Cold-Start Recommendation",
-        "Top-N Personalization",
+        "Dedicated cold-start model",
+        "Top-N personalized recommendations",
       ],
-
       stackShort: [
         "Python",
         "TensorFlow",
         "CLIP",
         "VGGish",
       ],
-
       links: [
         {
           label: "GitHub",
@@ -287,75 +279,61 @@ const PROJECTS = [
         },
       ],
     },
-
     projectOrder: 3,
-
     description:
-      "Developed a multimodal movie recommendation system combining Neural Collaborative Filtering with CLIP poster embeddings and VGGish trailer-audio embeddings to address the cold-start problem. Evaluated personalized Top-N recommendation and rating prediction models, including a dedicated cold-start model for completely unseen movies.",
-
+      "Built a multimodal movie recommender that combines Neural Collaborative Filtering with CLIP poster embeddings and VGGish trailer-audio embeddings to handle the cold-start problem. On 2,107 movies unseen during training it cut RMSE by about 21% versus a global-mean baseline, and it supports personalized Top-N recommendations.",
     github:
       "https://github.com/Hemanthsai456/Multimodal-Cold-Start-Movie-Recommender",
-
     live:
       "https://hemanth-cold-start-user-based-movie-recommendation.streamlit.app/",
-
     liveLabel: "Live Demo",
-
     published: true,
   },
 
-  // ── 4: NIDHI ───────────────────────────────────────────────────
+
+  // ── 4: NIDHI (Full Stack + AI) ────────────────────────────────
   {
     id: "nidhi",
-    title: "NIDHI \u2014 AI Investor Super App",
-
+    title: "NIDHI — AI Investor Super App",
     badges: [
       { label: "Full Stack", color: "purple" },
       { label: "AI", color: "blue" },
     ],
-
     techStack: [
       "TypeScript",
       "React",
-      "Next.js",
-      "AI Recommender",
-      "Authentication",
-      "Risk Intelligence"
+      "FastAPI",
+      "PostgreSQL",
+      "Firebase Auth",
+      "Gemini API"
     ],
-
     imageUrl: "assets/project-images/NIDHI.webp",
     imageStatus: "uploaded",
     showImage: true,
-
     featured: true,
     featuredOrder: 4,
-
     featuredData: {
       icon: "wallet",
-      metric: "Risk Intelligence",
+      metric: "Full-Stack + GenAI",
       titleShort: "NIDHI AI Investor Super App",
-
       descriptionHtml:
-        "<strong>Problem:</strong> Individual retail investors lack access to unified portfolio analysis, real-time risk insights, and personalized, data-backed financial guidance.<br />" +
-        "<strong>Solution:</strong> Engineered a comprehensive portfolio manager using Next.js with a reactive state architecture, integrating AI recommendation models for real-time risk evaluation.<br />" +
-        "<strong>Impact:</strong> Delivered an intuitive investor cockpit with interactive dashboards, offering retail users institution-grade portfolio intelligence and personalized financial education.",
-
+        "<strong>Problem:</strong> Indian retail investors hold stocks, mutual funds, REITs and bonds across several platforms, with no single view of risk, diversification or liquidity.<br />" +
+        "<strong>Solution:</strong> Built a full-stack app in React and TypeScript with a FastAPI backend and PostgreSQL. It aggregates holdings from CSV import or simulated broker connections, computes health, diversification and liquidity scores, and runs a Gemini assistant grounded in the user's own portfolio.<br />" +
+        "<strong>Impact:</strong> Deployed as a live web app with Firebase authentication, email verification, persistent chat history and a learning center for new investors.",
       highlights: [
-        "Next.js Front-End",
-        "AI Powered",
-        "Authentication",
-        "Easy Investment Suggestions",
-        "Risk Intelligence",
-        "Education Workflows",
+        "Unified multi-asset portfolio tracker",
+        "Health, diversification and liquidity scores",
+        "Gemini assistant grounded in holdings",
+        "Firebase auth with email verification",
+        "FastAPI backend, PostgreSQL database",
+        "Live frontend and public API docs",
       ],
-
       stackShort: [
         "TypeScript",
         "React",
-        "Next.js",
-        "AI Recommender"
+        "FastAPI",
+        "PostgreSQL"
       ],
-
       links: [
         {
           label: "GitHub",
@@ -373,35 +351,27 @@ const PROJECTS = [
         },
       ],
     },
-
     projectOrder: 4,
-
     description:
-      "Engineered a comprehensive portfolio manager using Next.js with a reactive state architecture, integrating AI recommendation models for real-time risk evaluation. Delivered an intuitive investor cockpit with interactive dashboards, offering retail users institution-grade portfolio intelligence and personalized financial education.",
-
+      "Full-stack AI investor app for Indian retail investors. A React and TypeScript front end and FastAPI backend with PostgreSQL unify stocks, mutual funds, REITs and bonds, compute portfolio health and diversification scores, and power a Gemini assistant grounded in each user's holdings. Includes Firebase authentication with email verification and a learning center.",
     github:
       "https://github.com/Hemanthsai456/NIDHI",
-
     live:
       "https://nidhiapp.vercel.app",
-
     liveLabel: "Live Demo",
-
     published: true,
   },
 
-  // ── 5: Human Decision Intelligence ─────────────────────────────
+
+  // ── 5: Human Decision Intelligence (Data Science / Stats) ──────
   {
     id: "human-decision-intelligence",
-
     title: "Human Decision Intelligence: Understanding Human Choices Under Risk &amp; Ambiguity",
-
     badges: [
       { label: "Statistical Analysis", color: "purple" },
       { label: "Explainable AI", color: "blue" },
       { label: "Behavioral Analytics", color: "purple" },
     ],
-
     techStack: [
       "R",
       "Shiny",
@@ -412,40 +382,33 @@ const PROJECTS = [
       "LIME",
       "Behavioral Clustering",
     ],
-
     imageUrl: "assets/project-images/Human_Decision_Intelligence Dashboard.webp",
     imageStatus: "uploaded",
     showImage: true,
-
     featured: true,
     featuredOrder: 5,
-
     featuredData: {
       icon: "brain-circuit",
-      metric: "ROC-AUC = 0.791",
+      metric: "105K Decisions Modeled",
       titleShort: "Human Decision Intelligence",
-
       descriptionHtml:
-        "<strong>Problem:</strong> Understanding how people make decisions under risk and ambiguity requires more than observing choices; it requires identifying behavioral patterns, evaluating predictive relationships, and interpreting the factors associated with decision outcomes.<br />" +
-        "<strong>Solution:</strong> Developed a research-driven decision intelligence system using statistical analysis, logistic modeling, PCA, behavioral clustering, and XGBoost to investigate human decision-making patterns. Integrated SHAP and LIME explainability techniques to interpret model predictions and identify influential decision-related features.<br />" +
-        "<strong>Impact:</strong> Combined statistical evidence, predictive evaluation, behavioral segmentation, and explainable machine learning into an interactive analytical workflow for investigating human choices under uncertainty.",
-
+        "<strong>Problem:</strong> Observing how people choose under risk and ambiguity does not explain which factors drive those choices, or whether they can be predicted.<br />" +
+        "<strong>Solution:</strong> Ran mixed-effects statistical modeling, PCA and behavioral clustering on the CPC18 dataset, then compared GLM, GAM, Random Forest and XGBoost, with SHAP and LIME for explanations.<br />" +
+        "<strong>Impact:</strong> The final model reached 70.95% test accuracy and 0.79 ROC-AUC on 105,000 held-out decisions, and the findings are packaged as an R Markdown report series and a Shiny app.",
       highlights: [
-        "70.95% Test Accuracy",
-        "ROC-AUC = 0.791",
-        "105,000 Test Observations",
-        "PCA & Behavioral Clustering",
-        "SHAP & LIME Explainability",
-        "Statistical Hypothesis Analysis",
+        "105,000 held-out test decisions",
+        "70.95% test accuracy, 0.79 ROC-AUC",
+        "GLM, GAM, Random Forest and XGBoost compared",
+        "PCA and behavioral clustering",
+        "SHAP and LIME explanations",
+        "Mixed-effects statistical analysis",
       ],
-
       stackShort: [
         "R",
         "Statistical Modeling",
         "XGBoost",
         "SHAP",
       ],
-
       links: [
         {
           label: "GitHub",
@@ -463,32 +426,25 @@ const PROJECTS = [
         },
       ],
     },
-
     projectOrder: 5,
-
     description:
-      "Developed a research-driven human decision intelligence system investigating choices under risk and ambiguity through statistical modeling, PCA, behavioral clustering, and XGBoost. Evaluated predictive performance using classification metrics and incorporated SHAP and LIME to interpret model predictions and identify influential decision-related features.",
-
+      "Research-style data science project on the CPC18 dataset. Combined mixed-effects statistical modeling, PCA and behavioral clustering with GLM, GAM, Random Forest and XGBoost models, and used SHAP and LIME to explain predictions. The final model reached 70.95% test accuracy and 0.79 ROC-AUC on 105,000 held-out decisions.",
     github:
       "https://github.com/Hemanthsai456/Human-Decision-Intelligence",
-
     live: null,
-
     published: true,
   },
 
-  // ── 6: Data Center Cooling, Electricity & Water Analysis ───────
+
+  // ── 6: Data Center Resource Analytics (Data Science / Analytics) ──
   {
     id: "data-center-cooling",
-
     title:
       "Data Center Resource Analytics: Cooling Demand, Electricity &amp; Water Requirement Analysis",
-
     badges: [
       { label: "Data Analytics", color: "purple" },
       { label: "Predictive Modeling", color: "blue" },
     ],
-
     techStack: [
       "Python",
       "Pandas",
@@ -496,40 +452,33 @@ const PROJECTS = [
       "Scikit-Learn",
       "Physics-Based Modeling"
     ],
-
     imageUrl: "assets/project-images/Data_Center_Analytics.webp",
     imageStatus: "uploaded",
     showImage: true,
-
     featured: true,
     featuredOrder: 6,
-
     featuredData: {
       icon: "server",
-      metric: "R² = 0.9798",
+      metric: "2.75M+ Telemetry Rows",
       titleShort: "Data Center Resource Analytics",
-
       descriptionHtml:
-        "\<strong>Problem:\</strong> Data centers consume substantial electricity and require continuous cooling, creating significant thermal and water-resource requirements that are difficult to understand from raw telemetry alone.\<br />" +
-        "\<strong>Solution:\</strong> Analyzed 2.75M+ telemetry records using data profiling, EDA, feature engineering, physics-based thermal modeling, and predictive modeling to quantify electricity, heat, cooling, and water requirements. The predictive model achieved an R&sup2; of 0.9798 with an RMSE of 0.0138.\<br />" +
-        "\<strong>Impact:\</strong> Connected computing workload with physical infrastructure requirements, providing a data-driven framework for understanding cooling demand, electricity consumption, heat load, and water requirements.",
-
+        "<strong>Problem:</strong> Data centers use large amounts of electricity and water for cooling, but the raw sensor telemetry does not show how workload turns into heat and water demand.<br />" +
+        "<strong>Solution:</strong> Profiled and cleaned 2.7M+ server readings, engineered workload and thermal features, and combined thermodynamic relationships (heat load, cooling-water flow, evaporative water) with a Linear Regression model after removing leakage-prone features.<br />" +
+        "<strong>Impact:</strong> Produced a data-driven framework linking computing workload to electricity, heat and cooling-water requirements, with the model reaching R² of 0.98 on held-out data.",
       highlights: [
-        "2.75M+ Telemetry Records",
-        "R&sup2; = 0.9798",
-        "RMSE = 0.0138",
-        "Electricity &amp; Heat Load Analysis",
-        "Cooling-Water Requirement Modeling",
-        "Physics-Based Modeling",
+        "2.75M+ telemetry records profiled",
+        "Physics-based heat and water modeling",
+        "Leakage-free feature design",
+        "Hour-of-day cyclical encoding",
+        "Held-out R² of 0.98 (RMSE 0.013)",
+        "Correlation checks independent of the model",
       ],
-
       stackShort: [
         "Python",
         "Pandas",
         "Scikit-Learn",
         "Plotly"
       ],
-
       links: [
         {
           label: "GitHub",
@@ -540,32 +489,25 @@ const PROJECTS = [
         },
       ],
     },
-
     projectOrder: 6,
-
     description:
-      "Analyzed 2.75M+ data center telemetry records to understand electricity consumption, heat generation, cooling demand, and water requirements. Combined exploratory data analysis, feature engineering, physics-based thermal modeling, and predictive modeling, achieving R² = 0.9798 and RMSE = 0.0138.",
-
+      "Analyzed 2.75M+ data center telemetry records to quantify how workload and power translate into heat, cooling-water flow and evaporative water demand. Combined EDA, feature engineering and physics-based thermal modeling with a Linear Regression model that reached R² of 0.98 after leakage-prone features were removed.",
     github:
       "https://github.com/Hemanthsai456/Data-Center-Resource-Analytics",
-
     live: null,
-
     published: true,
   },
 
-  // ── 7: Anime & Manga ───────────────────────────────────────────
+
+  // ── 7: Anime & Manga (Archive) ─────────────────────────────────
   {
     id: "anime",
-
     title:
       "Anime &amp; Manga Recommendation Analytics",
-
     badges: [
       { label: "Machine Learning", color: "purple" },
       { label: "Analytics", color: "blue" },
     ],
-
     techStack: [
       "Python",
       "Pandas",
@@ -575,86 +517,32 @@ const PROJECTS = [
       "Streamlit",
       "Recommendation Engine"
     ],
-
     imageUrl: null,
     imageStatus: "not_uploaded",
     showImage: false,
-
     featured: false,
-    featuredOrder: 7,
-
-    featuredData: {
-      icon: "sparkles",
-      metric: "Hybrid Filtering",
-      titleShort: "Anime Recommendation Engine",
-
-      descriptionHtml:
-        "<strong>Problem:</strong> Standard content discovery on entertainment platforms suffers from cold-start issues and basic filtering, causing user churn.<br />" +
-        "<strong>Solution:</strong> Designed a hybrid content-based recommendation engine utilizing TF-IDF, Cosine Similarity, and popularity-weighted ranking algorithms.<br />" +
-        "<strong>Impact:</strong> Built an interactive analytics dashboard in Power BI displaying user consumption patterns and recommendation coverage, providing highly personalized titles with reduced latency.",
-
-      highlights: [
-        "Recommendation Engine",
-        "Content based filtering",
-        "Cosine Similarity",
-        "Dashboard Design",
-        "Power BI Analytics",
-        "Hybrid Popularity",
-      ],
-
-      stackShort: [
-        "Python",
-        "Pandas",
-        "Power BI",
-        "Cosine Similarity"
-      ],
-
-      links: [
-        {
-          label: "Code",
-          href: "https://github.com/Hemanthsai456/Anime-Manga-Recommendation-Analytics",
-          cls: "btn-icon",
-          icon: "github",
-          ariaLabel: "GitHub"
-        },
-        {
-          label: "Live Demo",
-          href: "https://hemanth-anime-manga-analytics-recommendation-system.streamlit.app/",
-          cls: "btn-icon",
-          icon: "external-link",
-          ariaLabel: "Live Demo"
-        },
-      ],
-    },
-
+    featuredOrder: null,
+    featuredData: null,
     projectOrder: 7,
-
     description:
-      "Designed a hybrid content-based recommendation engine utilizing TF-IDF, Cosine Similarity, and popularity-weighted ranking algorithms. Built an interactive analytics dashboard in Power BI displaying user consumption patterns and recommendation coverage, providing highly personalized titles with reduced latency.",
-
+      "End-to-end analytics project on anime and manga data: exploratory analysis, interactive Plotly and Power BI dashboards, and a hybrid recommender that combines TF-IDF content similarity, cosine similarity, IMDb-weighted ratings and popularity, with an explainability module. Delivered as a multi-page Streamlit app.",
     github:
       "https://github.com/Hemanthsai456/Anime-Manga-Recommendation-Analytics",
-
     live:
       "https://hemanth-anime-manga-analytics-recommendation-system.streamlit.app/",
-
     liveLabel: "Live Demo",
-
     published: true,
   },
 
 
-  // ── 8: Hate Speech Detection ───────────────────────────────────
+  // ── 8: NLP Hate Speech Classifier (Archive) ───────────────────
   {
     id: "hate-speech",
-
     title: "NLP Hate Speech Classifier",
-
     badges: [
       { label: "NLP", color: "purple" },
       { label: "Machine Learning", color: "blue" },
     ],
-
     techStack: [
       "Python",
       "NLP",
@@ -663,84 +551,32 @@ const PROJECTS = [
       "Streamlit",
       "Logistic Regression"
     ],
-
     imageUrl: null,
     imageStatus: "not_uploaded",
     showImage: false,
-
     featured: false,
     featuredOrder: null,
-
-    featuredData: {
-      icon: "shield-alert",
-      metric: "NLP Classify",
-      titleShort: "NLP Hate Speech Classifier",
-
-      descriptionHtml:
-        "<strong>Problem:</strong> Online platforms struggle with toxic behavior and hate speech, requiring automated, low-latency moderating solutions.<br />" +
-        "<strong>Solution:</strong> Built an end-to-end NLP classification pipeline featuring custom regex tokenizers, TF-IDF vectorization, and optimized classification models.<br />" +
-        "<strong>Impact:</strong> Deployed the model via an interactive Streamlit interface, allowing real-time text moderation and content filtering with high precision.",
-
-      highlights: [
-        "NLP Classification",
-        "Preprocessing Pipeline",
-        "Logistic Regression",
-        "Streamlit Dashboard",
-      ],
-
-      stackShort: [
-        "NLP",
-        "TF-IDF",
-        "Scikit-learn",
-        "Streamlit"
-      ],
-
-      links: [
-        {
-          label: "Code",
-          href: "https://github.com/Hemanthsai456/NLP-Hate-Speech-Classifier",
-          cls: "btn-icon",
-          icon: "github",
-          ariaLabel: "GitHub"
-        },
-        {
-          label: "Live Demo",
-          href: "https://hemanth-hate-speech-detection.streamlit.app/",
-          cls: "btn-icon",
-          icon: "external-link",
-          ariaLabel: "Live Demo"
-        },
-      ],
-    },
-
+    featuredData: null,
     projectOrder: 8,
-
     description:
-      "Built an end-to-end NLP classification pipeline featuring custom regex tokenizers, TF-IDF vectorization, and optimized classification models. Deployed the model via an interactive Streamlit interface, allowing real-time text moderation and content filtering with high precision.",
-
+      "End-to-end NLP pipeline that classifies text as hate speech or not, using custom preprocessing, TF-IDF vectorization and Logistic Regression. Served through a Streamlit app that returns the prediction with a confidence score and probability distribution.",
     github:
       "https://github.com/Hemanthsai456/NLP-Hate-Speech-Classifier",
-
     live:
       "https://hemanth-hate-speech-detection.streamlit.app/",
-
     liveLabel: "Live Demo",
-
     published: true,
   },
 
 
-  // ── 9: Public Transport Analytics ─────────────────────────────
+  // ── 9: Public Transport Analytics (Archive) ──────────────────
   {
     id: "transport",
-
     title: "Public Transport Analytics Dashboard",
-
     badges: [
       { label: "Analytics", color: "purple" },
-      { label: "Data Engineering", color: "blue" },
+      { label: "Business Intelligence", color: "blue" },
     ],
-
     techStack: [
       "Power BI",
       "Data Visualization",
@@ -748,40 +584,30 @@ const PROJECTS = [
       "DAX",
       "Power Query"
     ],
-
     imageUrl: null,
     imageStatus: "not_uploaded",
     showImage: false,
-
     featured: false,
     featuredOrder: null,
     featuredData: null,
-
     projectOrder: 9,
-
     description:
-      "Built an interactive Power BI dashboard to analyze public transport data, uncover operational patterns, track key performance indicators, and present transportation insights through clear and interactive visualizations.",
-
+      "Interactive Power BI dashboard for public transport operations, built on a synthetic dataset. It tracks revenue, profit, fuel efficiency and maintenance cost by bus type and route, with an executive overview, a route map and KPI tracking.",
     github:
       "https://github.com/Hemanthsai456/Public-Transport-Analytics-Dashboard",
-
     live: null,
-
     published: true,
   },
 
 
-  // ── 10: Portfolio ───────────────────────────────────────────────
+  // ── 10: Portfolio (Archive) ──────────────────────────────────
   {
     id: "portfolio",
-
     title: "Hemanth Sai Portfolio",
-
     badges: [
       { label: "Web Development", color: "purple" },
       { label: "Design", color: "blue" },
     ],
-
     techStack: [
       "HTML",
       "CSS",
@@ -790,85 +616,61 @@ const PROJECTS = [
       "Lucide Icons",
       "Glassmorphism"
     ],
-
     imageUrl: null,
     imageStatus: "not_uploaded",
     showImage: false,
-
     featured: false,
     featuredOrder: null,
     featuredData: null,
-
     projectOrder: 10,
-
     description:
-      "Designed and built a premium personal portfolio website with a dark glassmorphism aesthetic, animated particle backgrounds, 3D card tilt effects, and smooth scroll-reveal animations. Crafted to showcase work in AI, data engineering, analytics, and full-stack development with production-level attention to design quality and performance.",
-
+      "Personal portfolio built with plain HTML, CSS and JavaScript. Data-driven project pages are rendered from a single source file with a build script and automated checks, with responsive layouts, scroll-reveal animations and structured data for search engines.",
     github:
       "https://github.com/Hemanthsai456/Hemanth-Sai-Portfolio",
-
     live:
       "https://hemanth-sai-portfolio.vercel.app/",
-
     liveLabel: "Live Site",
-
     published: true,
   },
 
 
-  // ── 11: StudIQ ─────────────────────────────────────────────────
+  // ── 11: StudIQ (Archive, team project) ───────────────────────
   {
     id: "studiq",
-
-    title: "StudIQ \u2014 Intelligent Study Platform",
-
+    title: "StudIQ — Intelligent Study Platform",
     badges: [
-      { label: "Full Stack", color: "purple" },
-      { label: "EdTech", color: "blue" },
+      { label: "Frontend", color: "purple" },
+      { label: "Team Project", color: "blue" },
     ],
-
     techStack: [
-      "JavaScript",
-      "React",
-      "Node.js",
-      "PostgreSQL",
-      "REST APIs",
-      "Full Stack"
+      "HTML",
+      "CSS",
+      "JavaScript"
     ],
-
     imageUrl: null,
     imageStatus: "not_uploaded",
     showImage: false,
-
     featured: false,
     featuredOrder: null,
     featuredData: null,
-
     projectOrder: 11,
-
     description:
-      "Developed an intelligent study platform designed to help students organize, track, and optimize their learning workflows. Integrated smart scheduling, progress tracking, and resource management features built with a modern full-stack architecture to create a seamless academic productivity experience.",
-
+      "Frontend for a study-platform concept built with a team for Smart India Hackathon 2025. Responsive interface for organizing learning and navigating study sections. The original backend's free-trial database has expired, so the repository holds the UI only.",
     github:
       "https://github.com/Hemanthsai456/StudIQ-Frontend-SIH2025",
-
     live: null,
-
     published: true,
   },
 
 
-  // ── 12: BunkRide ───────────────────────────────────────────────
+  // ── 12: BunkRide (Archive, team project) ─────────────────────
   {
     id: "bunkride",
-
-    title: "BunkRide \u2014 Real-Time Ride-Sharing Platform",
-
+    title: "BunkRide — Real-Time Ride-Sharing Platform",
     badges: [
       { label: "Full Stack", color: "purple" },
-      { label: "Real-Time", color: "blue" },
+      { label: "Team Project", color: "blue" },
     ],
-
     techStack: [
       "React",
       "Node.js",
@@ -877,26 +679,81 @@ const PROJECTS = [
       "Google Maps API",
       "GPS Tracking"
     ],
-
     imageUrl: null,
     imageStatus: "not_uploaded",
     showImage: false,
-
     featured: false,
     featuredOrder: null,
     featuredData: null,
-
     projectOrder: 12,
-
     description:
-      "Developed a real-time ride-sharing web application integrated with Google Maps API and Socket.IO for live driver-passenger matchmaking and interactive GPS tracking. Provided a seamless platform for automated matchmaking and real-time transit coordination, reducing transit costs and improving ride coordination efficiency.",
-
+      "Real-time ride-booking web app built with React, Node.js, Express and Socket.IO. Uses the Google Maps API for live driver tracking and ride management.",
     github:
-      "https://github.com/srujangandla/bunkride",
-
+      "https://github.com/Hemanthsai456/bunkride",
     live: null,
-
     published: true,
   },
 
+  // ── 13: ProfilePulse (Archive, beta) ─────────────────────────
+  {
+    id: "profilepulse",
+    title: "ProfilePulse \u2014 Privacy-First GitHub Profile Analytics",
+    badges: [
+      { label: "Backend", color: "purple" },
+      { label: "Privacy-First", color: "blue" },
+    ],
+    techStack: [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "Render",
+      "pytest"
+    ],
+    imageUrl: null,
+    imageStatus: "not_uploaded",
+    showImage: false,
+    featured: false,
+    featuredOrder: null,
+    featuredData: null,
+    projectOrder: 13,
+    description:
+      "Privacy-first analytics service that gives GitHub profile READMEs honest visitor badges by counting GitHub Camo proxy requests. Built with FastAPI and PostgreSQL, using daily-rotating HMAC visitor keys, no stored IPs or User-Agent strings, 30-day retention and a rate limiter. Containerized with Docker with a Render deployment config. Currently in beta with a small group of users.",
+    github:
+      "https://github.com/Hemanthsai456/ProfilePulse",
+    live: null,
+    published: true,
+  },
+
+
+  // ── 14: Air Canvas (Archive, toy / learning project) ──────────
+  {
+    id: "air-canvas",
+    title: "Air Canvas \u2014 Touchless Drawing with Computer Vision",
+    badges: [
+      { label: "Computer Vision", color: "purple" },
+      { label: "Real-Time", color: "blue" },
+    ],
+    techStack: [
+      "Python",
+      "OpenCV",
+      "MediaPipe",
+      "1-Euro Filter",
+      "Bézier Curves",
+      "pytest"
+    ],
+    imageUrl: null,
+    imageStatus: "not_uploaded",
+    showImage: false,
+    featured: false,
+    featuredOrder: null,
+    featuredData: null,
+    projectOrder: 14,
+    description:
+      "Touchless drawing app that turns a webcam into a mid-air canvas using OpenCV and MediaPipe hand tracking. Uses a pinch-to-draw gesture with hysteresis, a 1-Euro filter and Bézier smoothing for steady strokes, several input and background modes, and unit tests for the filter and gesture logic.",
+    github:
+      "https://github.com/Hemanthsai456/air-canvas",
+    live: null,
+    published: true,
+  },
 ];
