@@ -50,7 +50,6 @@
       article.className = "archive-card";
       article.id = `project-${num}`;
       article.innerHTML = `
-            <div class="card-glow"></div>
             <div class="archive-card-inner">
               <div class="archive-number">${num}</div>
               <div class="archive-body">
@@ -78,23 +77,6 @@
 
   // Re-initialise lucide icons for the freshly created elements
   if (typeof lucide !== "undefined") lucide.createIcons();
-
-  // ─── Card Spotlight Tracking & Tilt (attached after render) ───
-  document.querySelectorAll(".archive-card").forEach(card => {
-    card.addEventListener("mousemove", e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty("--mouse-x", `${x}px`);
-      card.style.setProperty("--mouse-y", `${y}px`);
-      const rotateX = (y / rect.height - 0.5) * 2.5;
-      const rotateY = (x / rect.width - 0.5) * -2.5;
-      card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
-    });
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "perspective(1200px) rotateX(0) rotateY(0) translateY(0)";
-    });
-  });
 
   // ─── Scroll Reveal for Archive Cards (attached after render) ───
   const revealObserver = new IntersectionObserver(entries => {

@@ -168,7 +168,7 @@ assert(scriptJs.includes('lucide.createIcons()'), 'script.js initializes Lucide 
 
 assert(projectsJs.includes('!list.querySelector(".archive-card")'), 'projects.js guards against duplicate card rendering');
 assert(projectsJs.includes('lucide.createIcons()'), 'projects.js initializes Lucide icons unconditionally');
-assert(projectsJs.includes('.archive-card') && projectsJs.includes('addEventListener("mousemove"'), 'projects.js attaches 3D tilt tracking');
+assert(projectsJs.includes('.archive-card') && !projectsJs.includes('perspective('), 'projects.js leaves archive card transform clean without 3D tilt');
 assert(projectsJs.includes('revealObserver.observe(card)'), 'projects.js attaches scroll reveal observer');
 
 // 5. Build Script Idempotency Check

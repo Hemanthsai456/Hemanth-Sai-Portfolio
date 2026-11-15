@@ -393,11 +393,6 @@
   <!-- Ambient Noise Overlay -->
   <div class="noise-overlay"></div>
 
-  <!-- Glowing Background Orbs -->
-  <div class="glow-orb purple-orb"></div>
-  <div class="glow-orb blue-orb"></div>
-  <div class="glow-orb main-center-orb"></div>
-
   <div id="particles"></div>
 
   <!-- NAVBAR -->
@@ -450,23 +445,19 @@
       <div class="archive-list" id="archive-list">
         <!-- PRE-RENDERED-ARCHIVE-PROJECTS-START -->
         <article class="archive-card" id="project-01">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">01</div>
             <div class="archive-body">
               <div class="archive-header">
                 <h2 class="archive-title">SPARCS Healthcare &amp; Business Intelligence System</h2>
                 <div class="archive-badges">
-                  <span class="archive-badge badge-purple">Data Engineering</span>
-                  <span class="archive-badge badge-purple">Business Intelligence</span>
-                  <span class="archive-badge badge-blue">Analytics</span>
+                <span class="archive-badge badge-purple">Data Engineering</span>
+                <span class="archive-badge badge-purple">Business Intelligence</span>
+                <span class="archive-badge badge-blue">Analytics</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Built a layered PostgreSQL data warehouse (staging, data-quality validation, ETL, star schema with 8
-                dimensions and 1 fact table) over 16.3M+ NYS SPARCS hospital discharge records spanning 7 years. Added
-                11 analytics views, 6 materialized views and EXPLAIN ANALYZE-driven tuning, and an 8-page Power BI
-                dashboard for self-service clinical and financial analysis.
+                Built a layered PostgreSQL data warehouse (staging, data-quality validation, ETL, star schema with 8 dimensions and 1 fact table) over 16.3M+ NYS SPARCS hospital discharge records spanning 7 years. Added 11 analytics views, 6 materialized views and EXPLAIN ANALYZE-driven tuning, and an 8-page Power BI dashboard for self-service clinical and financial analysis.
               </p>
               <div class="archive-stack">
                 <span>PostgreSQL</span>
@@ -478,9 +469,7 @@
                 <span>PL/pgSQL</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform" target="_blank"
-                  class="btn-icon" id="github-sparcs"
-                  aria-label="GitHub repository for SPARCS Healthcare & Business Intelligence System">
+                <a href="https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform" target="_blank" class="btn-icon" id="github-sparcs" aria-label="GitHub repository for SPARCS Healthcare & Business Intelligence System">
                   <i data-lucide="github"></i> GitHub
                 </a>
               </div>
@@ -488,22 +477,18 @@
           </div>
         </article>
         <article class="archive-card" id="project-02">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">02</div>
             <div class="archive-body">
               <div class="archive-header">
                 <h2 class="archive-title">Medical Inventory Forecasting &amp; Decision Support System</h2>
                 <div class="archive-badges">
-                  <span class="archive-badge badge-purple">Machine Learning</span>
-                  <span class="archive-badge badge-blue">Healthcare</span>
+                <span class="archive-badge badge-purple">Machine Learning</span>
+                <span class="archive-badge badge-blue">Healthcare</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Built an end-to-end ML decision-support system for medical inventory demand. Benchmarked 14 models and
-                ensembles, selected a tuned Gradient Boosting model, explained predictions with SHAP, and segmented
-                inventory with K-Means. Deployed as a multi-page Streamlit app that flags inventory risk and recommends
-                procurement actions.
+                Built an end-to-end ML decision-support system for medical inventory demand. Benchmarked 14 models and ensembles, selected a tuned Gradient Boosting model, explained predictions with SHAP, and segmented inventory with K-Means. Deployed as a multi-page Streamlit app that flags inventory risk and recommends procurement actions.
               </p>
               <div class="archive-stack">
                 <span>Python</span>
@@ -515,14 +500,10 @@
                 <span>Gradient Boosting</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/Hemanthsai456/Medical-Inventory-Forecasting-Decision-Support-System"
-                  target="_blank" class="btn-icon" id="github-medical-inventory"
-                  aria-label="GitHub repository for Medical Inventory Forecasting & Decision Support System">
+                <a href="https://github.com/Hemanthsai456/Medical-Inventory-Forecasting-Decision-Support-System" target="_blank" class="btn-icon" id="github-medical-inventory" aria-label="GitHub repository for Medical Inventory Forecasting & Decision Support System">
                   <i data-lucide="github"></i> GitHub
                 </a>
-                <a href="https://hemanthsai-medical-inventory-decision-support.streamlit.app/" target="_blank"
-                  class="btn-icon btn-live" id="live-medical-inventory"
-                  aria-label="Live Demo for Medical Inventory Forecasting & Decision Support System">
+                <a href="https://hemanthsai-medical-inventory-decision-support.streamlit.app/" target="_blank" class="btn-icon btn-live" id="live-medical-inventory" aria-label="Live Demo for Medical Inventory Forecasting & Decision Support System">
                   <i data-lucide="external-link"></i> Live Demo
                 </a>
               </div>
@@ -530,22 +511,18 @@
           </div>
         </article>
         <article class="archive-card" id="project-03">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">03</div>
             <div class="archive-body">
               <div class="archive-header">
                 <h2 class="archive-title">Multimodal Cold-Start Movie Recommender</h2>
                 <div class="archive-badges">
-                  <span class="archive-badge badge-purple">Recommendation Systems</span>
-                  <span class="archive-badge badge-blue">Multimodal AI</span>
+                <span class="archive-badge badge-purple">Recommendation Systems</span>
+                <span class="archive-badge badge-blue">Multimodal AI</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Built a multimodal movie recommender that combines Neural Collaborative Filtering with CLIP poster
-                embeddings and VGGish trailer-audio embeddings to handle the cold-start problem. On 2,107 movies unseen
-                during training it cut RMSE by about 21% versus a global-mean baseline, and it supports personalized
-                Top-N recommendations.
+                Built a multimodal movie recommender that combines Neural Collaborative Filtering with CLIP poster embeddings and VGGish trailer-audio embeddings to handle the cold-start problem. On 2,107 movies unseen during training it cut RMSE by about 21% versus a global-mean baseline, and it supports personalized Top-N recommendations.
               </p>
               <div class="archive-stack">
                 <span>Python</span>
@@ -557,14 +534,10 @@
                 <span>MovieLens</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/Hemanthsai456/Multimodal-Cold-Start-Movie-Recommender" target="_blank"
-                  class="btn-icon" id="github-movie-recommendation"
-                  aria-label="GitHub repository for Multimodal Cold-Start Movie Recommender">
+                <a href="https://github.com/Hemanthsai456/Multimodal-Cold-Start-Movie-Recommender" target="_blank" class="btn-icon" id="github-movie-recommendation" aria-label="GitHub repository for Multimodal Cold-Start Movie Recommender">
                   <i data-lucide="github"></i> GitHub
                 </a>
-                <a href="https://hemanth-cold-start-user-based-movie-recommendation.streamlit.app/" target="_blank"
-                  class="btn-icon btn-live" id="live-movie-recommendation"
-                  aria-label="Live Demo for Multimodal Cold-Start Movie Recommender">
+                <a href="https://hemanth-cold-start-user-based-movie-recommendation.streamlit.app/" target="_blank" class="btn-icon btn-live" id="live-movie-recommendation" aria-label="Live Demo for Multimodal Cold-Start Movie Recommender">
                   <i data-lucide="external-link"></i> Live Demo
                 </a>
               </div>
@@ -572,22 +545,18 @@
           </div>
         </article>
         <article class="archive-card" id="project-04">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">04</div>
             <div class="archive-body">
               <div class="archive-header">
                 <h2 class="archive-title">NIDHI - AI Investor Super App</h2>
                 <div class="archive-badges">
-                  <span class="archive-badge badge-purple">Full Stack</span>
-                  <span class="archive-badge badge-blue">AI</span>
+                <span class="archive-badge badge-purple">Full Stack</span>
+                <span class="archive-badge badge-blue">AI</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Full-stack AI investor app for Indian retail investors. A React and TypeScript front end and FastAPI
-                backend with PostgreSQL unify stocks, mutual funds, REITs and bonds, compute portfolio health and
-                diversification scores, and power a Gemini assistant grounded in each user's holdings. Includes Firebase
-                authentication with email verification and a learning center.
+                Full-stack AI investor app for Indian retail investors. A React and TypeScript front end and FastAPI backend with PostgreSQL unify stocks, mutual funds, REITs and bonds, compute portfolio health and diversification scores, and power a Gemini assistant grounded in each user's holdings. Includes Firebase authentication with email verification and a learning center.
               </p>
               <div class="archive-stack">
                 <span>TypeScript</span>
@@ -598,12 +567,10 @@
                 <span>Gemini API</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/Hemanthsai456/NIDHI" target="_blank" class="btn-icon" id="github-nidhi"
-                  aria-label="GitHub repository for NIDHI - AI Investor Super App">
+                <a href="https://github.com/Hemanthsai456/NIDHI" target="_blank" class="btn-icon" id="github-nidhi" aria-label="GitHub repository for NIDHI - AI Investor Super App">
                   <i data-lucide="github"></i> GitHub
                 </a>
-                <a href="https://nidhiapp.vercel.app" target="_blank" class="btn-icon btn-live" id="live-nidhi"
-                  aria-label="Live Demo for NIDHI - AI Investor Super App">
+                <a href="https://nidhiapp.vercel.app" target="_blank" class="btn-icon btn-live" id="live-nidhi" aria-label="Live Demo for NIDHI - AI Investor Super App">
                   <i data-lucide="external-link"></i> Live Demo
                 </a>
               </div>
@@ -611,24 +578,19 @@
           </div>
         </article>
         <article class="archive-card" id="project-05">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">05</div>
             <div class="archive-body">
               <div class="archive-header">
-                <h2 class="archive-title">Human Decision Intelligence: Understanding Human Choices Under Risk &amp;
-                  Ambiguity</h2>
+                <h2 class="archive-title">Human Decision Intelligence: Understanding Human Choices Under Risk &amp; Ambiguity</h2>
                 <div class="archive-badges">
-                  <span class="archive-badge badge-purple">Statistical Analysis</span>
-                  <span class="archive-badge badge-blue">Explainable AI</span>
-                  <span class="archive-badge badge-purple">Behavioral Analytics</span>
+                <span class="archive-badge badge-purple">Statistical Analysis</span>
+                <span class="archive-badge badge-blue">Explainable AI</span>
+                <span class="archive-badge badge-purple">Behavioral Analytics</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Research-style data science project on the CPC18 dataset. Combined mixed-effects statistical modeling,
-                PCA and behavioral clustering with GLM, GAM, Random Forest and XGBoost models, and used SHAP and LIME to
-                explain predictions. The final model reached 70.95% test accuracy and 0.79 ROC-AUC on 105,000 held-out
-                decisions.
+                Research-style data science project on the CPC18 dataset. Combined mixed-effects statistical modeling, PCA and behavioral clustering with GLM, GAM, Random Forest and XGBoost models, and used SHAP and LIME to explain predictions. The final model reached 70.95% test accuracy and 0.79 ROC-AUC on 105,000 held-out decisions.
               </p>
               <div class="archive-stack">
                 <span>R</span>
@@ -641,9 +603,7 @@
                 <span>Behavioral Clustering</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/Hemanthsai456/Human-Decision-Intelligence" target="_blank" class="btn-icon"
-                  id="github-human-decision-intelligence"
-                  aria-label="GitHub repository for Human Decision Intelligence: Understanding Human Choices Under Risk & Ambiguity">
+                <a href="https://github.com/Hemanthsai456/Human-Decision-Intelligence" target="_blank" class="btn-icon" id="github-human-decision-intelligence" aria-label="GitHub repository for Human Decision Intelligence: Understanding Human Choices Under Risk & Ambiguity">
                   <i data-lucide="github"></i> GitHub
                 </a>
               </div>
@@ -651,23 +611,18 @@
           </div>
         </article>
         <article class="archive-card" id="project-06">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">06</div>
             <div class="archive-body">
               <div class="archive-header">
-                <h2 class="archive-title">Data Center Resource Analytics: Cooling Demand, Electricity &amp; Water
-                  Requirement Analysis</h2>
+                <h2 class="archive-title">Data Center Resource Analytics: Cooling Demand, Electricity &amp; Water Requirement Analysis</h2>
                 <div class="archive-badges">
-                  <span class="archive-badge badge-purple">Data Analytics</span>
-                  <span class="archive-badge badge-blue">Predictive Modeling</span>
+                <span class="archive-badge badge-purple">Data Analytics</span>
+                <span class="archive-badge badge-blue">Predictive Modeling</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Analyzed 2.75M+ data center telemetry records to quantify how workload and power translate into heat,
-                cooling-water flow and evaporative water demand. Combined EDA, feature engineering and physics-based
-                thermal modeling with a Linear Regression model that reached R² of 0.98 after leakage-prone features
-                were removed.
+                Analyzed 2.75M+ data center telemetry records to quantify how workload and power translate into heat, cooling-water flow and evaporative water demand. Combined EDA, feature engineering and physics-based thermal modeling with a Linear Regression model that reached R² of 0.98 after leakage-prone features were removed.
               </p>
               <div class="archive-stack">
                 <span>Python</span>
@@ -677,9 +632,7 @@
                 <span>Physics-Based Modeling</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/Hemanthsai456/Data-Center-Resource-Analytics" target="_blank"
-                  class="btn-icon" id="github-data-center-cooling"
-                  aria-label="GitHub repository for Data Center Resource Analytics: Cooling Demand, Electricity & Water Requirement Analysis">
+                <a href="https://github.com/Hemanthsai456/Data-Center-Resource-Analytics" target="_blank" class="btn-icon" id="github-data-center-cooling" aria-label="GitHub repository for Data Center Resource Analytics: Cooling Demand, Electricity & Water Requirement Analysis">
                   <i data-lucide="github"></i> GitHub
                 </a>
               </div>
@@ -687,22 +640,18 @@
           </div>
         </article>
         <article class="archive-card" id="project-07">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">07</div>
             <div class="archive-body">
               <div class="archive-header">
                 <h2 class="archive-title">ProfilePulse - Privacy-First GitHub Profile Analytics</h2>
                 <div class="archive-badges">
-                  <span class="archive-badge badge-purple">Backend</span>
-                  <span class="archive-badge badge-blue">Privacy-First</span>
+                <span class="archive-badge badge-purple">Backend</span>
+                <span class="archive-badge badge-blue">Privacy-First</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Privacy-first analytics service that gives GitHub profile READMEs honest visitor badges by counting
-                GitHub Camo proxy requests. Built with FastAPI and PostgreSQL, using daily-rotating HMAC visitor keys,
-                no stored IPs or User-Agent strings, 30-day retention and a rate limiter. Containerized with Docker with
-                a Render deployment config. Currently in beta with a small group of users.
+                Privacy-first analytics service that gives GitHub profile READMEs honest visitor badges by counting GitHub Camo proxy requests. Built with FastAPI and PostgreSQL, using daily-rotating HMAC visitor keys, no stored IPs or User-Agent strings, 30-day retention and a rate limiter. Containerized with Docker with a Render deployment config. Currently in beta with a small group of users.
               </p>
               <div class="archive-stack">
                 <span>Python</span>
@@ -713,9 +662,7 @@
                 <span>pytest</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/Hemanthsai456/ProfilePulse" target="_blank" class="btn-icon"
-                  id="github-profilepulse"
-                  aria-label="GitHub repository for ProfilePulse - Privacy-First GitHub Profile Analytics">
+                <a href="https://github.com/Hemanthsai456/ProfilePulse" target="_blank" class="btn-icon" id="github-profilepulse" aria-label="GitHub repository for ProfilePulse - Privacy-First GitHub Profile Analytics">
                   <i data-lucide="github"></i> GitHub
                 </a>
               </div>
@@ -723,22 +670,18 @@
           </div>
         </article>
         <article class="archive-card" id="project-08">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">08</div>
             <div class="archive-body">
               <div class="archive-header">
                 <h2 class="archive-title">Anime &amp; Manga Recommendation Analytics</h2>
                 <div class="archive-badges">
-                  <span class="archive-badge badge-purple">Machine Learning</span>
-                  <span class="archive-badge badge-blue">Analytics</span>
+                <span class="archive-badge badge-purple">Machine Learning</span>
+                <span class="archive-badge badge-blue">Analytics</span>
                 </div>
               </div>
               <p class="archive-desc">
-                End-to-end analytics project on anime and manga data: exploratory analysis, interactive Plotly and Power
-                BI dashboards, and a hybrid recommender that combines TF-IDF content similarity, cosine similarity,
-                IMDb-weighted ratings and popularity, with an explainability module. Delivered as a multi-page Streamlit
-                app.
+                End-to-end analytics project on anime and manga data: exploratory analysis, interactive Plotly and Power BI dashboards, and a hybrid recommender that combines TF-IDF content similarity, cosine similarity, IMDb-weighted ratings and popularity, with an explainability module. Delivered as a multi-page Streamlit app.
               </p>
               <div class="archive-stack">
                 <span>Python</span>
@@ -750,14 +693,10 @@
                 <span>Recommendation Engine</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/Hemanthsai456/Anime-Manga-Recommendation-Analytics" target="_blank"
-                  class="btn-icon" id="github-anime"
-                  aria-label="GitHub repository for Anime & Manga Recommendation Analytics">
+                <a href="https://github.com/Hemanthsai456/Anime-Manga-Recommendation-Analytics" target="_blank" class="btn-icon" id="github-anime" aria-label="GitHub repository for Anime & Manga Recommendation Analytics">
                   <i data-lucide="github"></i> GitHub
                 </a>
-                <a href="https://hemanth-anime-manga-analytics-recommendation-system.streamlit.app/" target="_blank"
-                  class="btn-icon btn-live" id="live-anime"
-                  aria-label="Live Demo for Anime & Manga Recommendation Analytics">
+                <a href="https://hemanth-anime-manga-analytics-recommendation-system.streamlit.app/" target="_blank" class="btn-icon btn-live" id="live-anime" aria-label="Live Demo for Anime & Manga Recommendation Analytics">
                   <i data-lucide="external-link"></i> Live Demo
                 </a>
               </div>
@@ -765,21 +704,18 @@
           </div>
         </article>
         <article class="archive-card" id="project-09">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">09</div>
             <div class="archive-body">
               <div class="archive-header">
                 <h2 class="archive-title">NLP Hate Speech Classifier</h2>
                 <div class="archive-badges">
-                  <span class="archive-badge badge-purple">NLP</span>
-                  <span class="archive-badge badge-blue">Machine Learning</span>
+                <span class="archive-badge badge-purple">NLP</span>
+                <span class="archive-badge badge-blue">Machine Learning</span>
                 </div>
               </div>
               <p class="archive-desc">
-                End-to-end NLP pipeline that classifies text as hate speech or not, using custom preprocessing, TF-IDF
-                vectorization and Logistic Regression. Served through a Streamlit app that returns the prediction with a
-                confidence score and probability distribution.
+                End-to-end NLP pipeline that classifies text as hate speech or not, using custom preprocessing, TF-IDF vectorization and Logistic Regression. Served through a Streamlit app that returns the prediction with a confidence score and probability distribution.
               </p>
               <div class="archive-stack">
                 <span>Python</span>
@@ -790,12 +726,10 @@
                 <span>Logistic Regression</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/Hemanthsai456/NLP-Hate-Speech-Classifier" target="_blank" class="btn-icon"
-                  id="github-hate-speech" aria-label="GitHub repository for NLP Hate Speech Classifier">
+                <a href="https://github.com/Hemanthsai456/NLP-Hate-Speech-Classifier" target="_blank" class="btn-icon" id="github-hate-speech" aria-label="GitHub repository for NLP Hate Speech Classifier">
                   <i data-lucide="github"></i> GitHub
                 </a>
-                <a href="https://hemanth-hate-speech-detection.streamlit.app/" target="_blank" class="btn-icon btn-live"
-                  id="live-hate-speech" aria-label="Live Demo for NLP Hate Speech Classifier">
+                <a href="https://hemanth-hate-speech-detection.streamlit.app/" target="_blank" class="btn-icon btn-live" id="live-hate-speech" aria-label="Live Demo for NLP Hate Speech Classifier">
                   <i data-lucide="external-link"></i> Live Demo
                 </a>
               </div>
@@ -803,21 +737,18 @@
           </div>
         </article>
         <article class="archive-card" id="project-10">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">10</div>
             <div class="archive-body">
               <div class="archive-header">
                 <h2 class="archive-title">Public Transport Analytics Dashboard</h2>
                 <div class="archive-badges">
-                  <span class="archive-badge badge-purple">Analytics</span>
-                  <span class="archive-badge badge-blue">Business Intelligence</span>
+                <span class="archive-badge badge-purple">Analytics</span>
+                <span class="archive-badge badge-blue">Business Intelligence</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Interactive Power BI dashboard for public transport operations, built on a synthetic dataset. It tracks
-                revenue, profit, fuel efficiency and maintenance cost by bus type and route, with an executive overview,
-                a route map and KPI tracking.
+                Interactive Power BI dashboard for public transport operations, built on a synthetic dataset. It tracks revenue, profit, fuel efficiency and maintenance cost by bus type and route, with an executive overview, a route map and KPI tracking.
               </p>
               <div class="archive-stack">
                 <span>Power BI</span>
@@ -827,9 +758,7 @@
                 <span>Power Query</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/Hemanthsai456/Public-Transport-Analytics-Dashboard" target="_blank"
-                  class="btn-icon" id="github-transport"
-                  aria-label="GitHub repository for Public Transport Analytics Dashboard">
+                <a href="https://github.com/Hemanthsai456/Public-Transport-Analytics-Dashboard" target="_blank" class="btn-icon" id="github-transport" aria-label="GitHub repository for Public Transport Analytics Dashboard">
                   <i data-lucide="github"></i> GitHub
                 </a>
               </div>
@@ -837,21 +766,18 @@
           </div>
         </article>
         <article class="archive-card" id="project-11">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">11</div>
             <div class="archive-body">
               <div class="archive-header">
                 <h2 class="archive-title">Hemanth Sai Portfolio</h2>
                 <div class="archive-badges">
-                  <span class="archive-badge badge-purple">Web Development</span>
-                  <span class="archive-badge badge-blue">Design</span>
+                <span class="archive-badge badge-purple">Web Development</span>
+                <span class="archive-badge badge-blue">Design</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Personal portfolio built with plain HTML, CSS and JavaScript. Data-driven project pages are rendered
-                from a single source file with a build script and automated checks, with responsive layouts,
-                scroll-reveal animations and structured data for search engines.
+                Personal portfolio built with plain HTML, CSS and JavaScript. Data-driven project pages are rendered from a single source file with a build script and automated checks, with responsive layouts, scroll-reveal animations and structured data for search engines.
               </p>
               <div class="archive-stack">
                 <span>HTML</span>
@@ -862,12 +788,10 @@
                 <span>Glassmorphism</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/Hemanthsai456/Hemanth-Sai-Portfolio" target="_blank" class="btn-icon"
-                  id="github-portfolio" aria-label="GitHub repository for Hemanth Sai Portfolio">
+                <a href="https://github.com/Hemanthsai456/Hemanth-Sai-Portfolio" target="_blank" class="btn-icon" id="github-portfolio" aria-label="GitHub repository for Hemanth Sai Portfolio">
                   <i data-lucide="github"></i> GitHub
                 </a>
-                <a href="https://hemanth-sai-portfolio.vercel.app/" target="_blank" class="btn-icon btn-live"
-                  id="live-portfolio" aria-label="Live Site for Hemanth Sai Portfolio">
+                <a href="https://hemanth-sai-portfolio.vercel.app/" target="_blank" class="btn-icon btn-live" id="live-portfolio" aria-label="Live Site for Hemanth Sai Portfolio">
                   <i data-lucide="external-link"></i> Live Site
                 </a>
               </div>
@@ -875,21 +799,18 @@
           </div>
         </article>
         <article class="archive-card" id="project-12">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">12</div>
             <div class="archive-body">
               <div class="archive-header">
                 <h2 class="archive-title">StudIQ - Intelligent Study Platform</h2>
                 <div class="archive-badges">
-                  <span class="archive-badge badge-purple">Frontend</span>
-                  <span class="archive-badge badge-blue">Team Project</span>
+                <span class="archive-badge badge-purple">Frontend</span>
+                <span class="archive-badge badge-blue">Team Project</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Frontend for a study-platform concept built with a team for Smart India Hackathon 2025. Responsive
-                interface for organizing learning and navigating study sections. The original backend's free-trial
-                database has expired, so the repository holds the UI only.
+                Frontend for a study-platform concept built with a team for Smart India Hackathon 2025. Responsive interface for organizing learning and navigating study sections. The original backend's free-trial database has expired, so the repository holds the UI only.
               </p>
               <div class="archive-stack">
                 <span>HTML</span>
@@ -897,8 +818,7 @@
                 <span>JavaScript</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/Hemanthsai456/StudIQ-Frontend-SIH2025" target="_blank" class="btn-icon"
-                  id="github-studiq" aria-label="GitHub repository for StudIQ - Intelligent Study Platform">
+                <a href="https://github.com/Hemanthsai456/StudIQ-Frontend-SIH2025" target="_blank" class="btn-icon" id="github-studiq" aria-label="GitHub repository for StudIQ - Intelligent Study Platform">
                   <i data-lucide="github"></i> GitHub
                 </a>
               </div>
@@ -906,20 +826,18 @@
           </div>
         </article>
         <article class="archive-card" id="project-13">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">13</div>
             <div class="archive-body">
               <div class="archive-header">
                 <h2 class="archive-title">BunkRide - Real-Time Ride-Sharing Platform</h2>
                 <div class="archive-badges">
-                  <span class="archive-badge badge-purple">Full Stack</span>
-                  <span class="archive-badge badge-blue">Team Project</span>
+                <span class="archive-badge badge-purple">Full Stack</span>
+                <span class="archive-badge badge-blue">Team Project</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Real-time ride-booking web app built with React, Node.js, Express and Socket.IO. Uses the Google Maps
-                API for live driver tracking and ride management.
+                Real-time ride-booking web app built with React, Node.js, Express and Socket.IO. Uses the Google Maps API for live driver tracking and ride management.
               </p>
               <div class="archive-stack">
                 <span>React</span>
@@ -930,8 +848,7 @@
                 <span>GPS Tracking</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/Hemanthsai456/bunkride" target="_blank" class="btn-icon"
-                  id="github-bunkride" aria-label="GitHub repository for BunkRide - Real-Time Ride-Sharing Platform">
+                <a href="https://github.com/Hemanthsai456/bunkride" target="_blank" class="btn-icon" id="github-bunkride" aria-label="GitHub repository for BunkRide - Real-Time Ride-Sharing Platform">
                   <i data-lucide="github"></i> GitHub
                 </a>
               </div>
@@ -939,21 +856,18 @@
           </div>
         </article>
         <article class="archive-card" id="project-14">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">14</div>
             <div class="archive-body">
               <div class="archive-header">
                 <h2 class="archive-title">Air Canvas - Touchless Drawing with Computer Vision</h2>
                 <div class="archive-badges">
-                  <span class="archive-badge badge-purple">Computer Vision</span>
-                  <span class="archive-badge badge-blue">Real-Time</span>
+                <span class="archive-badge badge-purple">Computer Vision</span>
+                <span class="archive-badge badge-blue">Real-Time</span>
                 </div>
               </div>
               <p class="archive-desc">
-                Touchless drawing app that turns a webcam into a mid-air canvas using OpenCV and MediaPipe hand
-                tracking. Uses a pinch-to-draw gesture with hysteresis, a 1-Euro filter and Bézier smoothing for steady
-                strokes, several input and background modes, and unit tests for the filter and gesture logic.
+                Touchless drawing app that turns a webcam into a mid-air canvas using OpenCV and MediaPipe hand tracking. Uses a pinch-to-draw gesture with hysteresis, a 1-Euro filter and Bézier smoothing for steady strokes, several input and background modes, and unit tests for the filter and gesture logic.
               </p>
               <div class="archive-stack">
                 <span>Python</span>
@@ -964,9 +878,7 @@
                 <span>pytest</span>
               </div>
               <div class="archive-links">
-                <a href="https://github.com/Hemanthsai456/air-canvas" target="_blank" class="btn-icon"
-                  id="github-air-canvas"
-                  aria-label="GitHub repository for Air Canvas - Touchless Drawing with Computer Vision">
+                <a href="https://github.com/Hemanthsai456/air-canvas" target="_blank" class="btn-icon" id="github-air-canvas" aria-label="GitHub repository for Air Canvas - Touchless Drawing with Computer Vision">
                   <i data-lucide="github"></i> GitHub
                 </a>
               </div>

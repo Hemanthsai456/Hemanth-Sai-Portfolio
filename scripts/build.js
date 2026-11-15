@@ -70,7 +70,6 @@ function buildFeaturedCardsHtml(projects) {
       : '';
 
     return `        <div class="project-card">
-          <div class="card-glow"></div>
           <div class="project-header">
             <div class="project-icon-box"><i data-lucide="${fd.icon}"></i></div>
             <span class="project-metric">${fd.metric}</span>
@@ -125,7 +124,6 @@ function buildArchiveCardsHtml(projects) {
     }
 
     return `        <article class="archive-card" id="project-${num}">
-          <div class="card-glow"></div>
           <div class="archive-card-inner">
             <div class="archive-number">${num}</div>
             <div class="archive-body">

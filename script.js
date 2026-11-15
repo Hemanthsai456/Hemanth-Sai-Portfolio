@@ -47,7 +47,6 @@
       const card = document.createElement("div");
       card.className = "project-card";
       card.innerHTML = `
-            <div class="card-glow"></div>
             <div class="project-header">
               <div class="project-icon-box"><i data-lucide="${fd.icon}"></i></div>
               <span class="project-metric">${fd.metric}</span>
@@ -198,28 +197,6 @@ const barObserver = new IntersectionObserver(entries => {
 bars.forEach(bar => {
   bar.style.width = "0";
   barObserver.observe(bar);
-});
-
-// ================= 3D CARD TILT EFFECT & SPOTLIGHT =================
-document.querySelectorAll(".project-card, .glass-card, .skill-card, .contact-form").forEach(card => {
-  card.addEventListener("mousemove", e => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    // Set custom properties for spotlight tracking
-    card.style.setProperty("--mouse-x", `${x}px`);
-    card.style.setProperty("--mouse-y", `${y}px`);
-
-    const rotateX = (y / rect.height - 0.5) * 4;
-    const rotateY = (x / rect.width - 0.5) * -4;
-
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "perspective(1000px) rotateX(0) rotateY(0) translateY(0)";
-  });
 });
 
 // ================= MOUSE-FOLLOW GLOW =================

@@ -697,7 +697,7 @@ const PROJECTS = [
   // ── 13: ProfilePulse (Archive, beta) ─────────────────────────
   {
     id: "profilepulse",
-    title: "ProfilePulse \u2014 Privacy-First GitHub Profile Analytics",
+    title: "ProfilePulse - Privacy-First GitHub Profile Analytics",
     badges: [
       { label: "Backend", color: "purple" },
       { label: "Privacy-First", color: "blue" },
@@ -729,7 +729,7 @@ const PROJECTS = [
   // ── 14: Air Canvas (Archive, toy / learning project) ──────────
   {
     id: "air-canvas",
-    title: "Air Canvas \u2014 Touchless Drawing with Computer Vision",
+    title: "Air Canvas - Touchless Drawing with Computer Vision",
     badges: [
       { label: "Computer Vision", color: "purple" },
       { label: "Real-Time", color: "blue" },
