@@ -1,12 +1,12 @@
 /* ═══════════════════════════════════════════════════════════════
    KAMEHAMEHA SCROLL PROGRESS BAR
-   Isolated prototype — zero coupling to existing portfolio styles.
+   Isolated prototype - zero coupling to existing portfolio styles.
    All custom properties live on #kh-bar and cascade down.
    ═══════════════════════════════════════════════════════════════ */
 
 /* ─── Root defaults ───────────────────────────────────────────── */
 #kh-bar {
-  /* Scroll-driven state — set by JS */
+  /* Scroll-driven state - set by JS */
   --kh-t: 0;
   --kh-charge: 0;
   /* 0→1 during 0–40% scroll      */
@@ -94,7 +94,7 @@
   /* Subtle lean set by JS transform */
   transform-origin: bottom center;
 
-  /* No CSS transition — JS drives frame by frame */
+  /* No CSS transition - JS drives frame by frame */
 }
 
 
@@ -139,7 +139,7 @@
 }
 
 #kh-goku-wrap::before {
-  /* Upper streak — electric cyan */
+  /* Upper streak - electric cyan */
   right: -4px;
   top: 28%;
   width: calc(6px + var(--kh-charge) * 22px);
@@ -149,7 +149,7 @@
 }
 
 #kh-goku-wrap::after {
-  /* Lower streak — violet */
+  /* Lower streak - violet */
   right: -3px;
   bottom: 30%;
   width: calc(5px + var(--kh-charge) * 16px);
@@ -206,7 +206,7 @@
   isolation: isolate;
 }
 
-/* Outer corona — wide soft glow above/below the beam */
+/* Outer corona - wide soft glow above/below the beam */
 #kh-beam::before {
   content: '';
   position: absolute;

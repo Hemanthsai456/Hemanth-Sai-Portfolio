@@ -150,7 +150,8 @@ document.querySelectorAll("section").forEach(sec => {
 const roles = [
   " AI Engineer ",
   " Machine Learning Engineer ",
-  " Data Engineer & Analyst "
+  " Data & Business Analyst ",
+  " Data Engineer"
 ];
 let roleIndex = 0;
 let charIndex = 0;
@@ -245,7 +246,7 @@ document.querySelectorAll(".project-card, .glass-card, .skill-card, .contact-for
     glowX += (mouseX - glowX) * 0.08;
     glowY += (mouseY - glowY) * 0.08;
 
-    // GPU-composited transform only — never touches top/left
+    // GPU-composited transform only - never touches top/left
     glow.style.transform = `translate3d(calc(${glowX}px - 50%), calc(${glowY}px - 50%), 0)`;
 
     rafPending = true;

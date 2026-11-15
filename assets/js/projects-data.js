@@ -294,7 +294,7 @@ const PROJECTS = [
   // ── 4: NIDHI (Full Stack + AI) ────────────────────────────────
   {
     id: "nidhi",
-    title: "NIDHI — AI Investor Super App",
+    title: "NIDHI - AI Investor Super App",
     badges: [
       { label: "Full Stack", color: "purple" },
       { label: "AI", color: "blue" },
@@ -637,7 +637,7 @@ const PROJECTS = [
   // ── 11: StudIQ (Archive, team project) ───────────────────────
   {
     id: "studiq",
-    title: "StudIQ — Intelligent Study Platform",
+    title: "StudIQ - Intelligent Study Platform",
     badges: [
       { label: "Frontend", color: "purple" },
       { label: "Team Project", color: "blue" },
@@ -666,7 +666,7 @@ const PROJECTS = [
   // ── 12: BunkRide (Archive, team project) ─────────────────────
   {
     id: "bunkride",
-    title: "BunkRide — Real-Time Ride-Sharing Platform",
+    title: "BunkRide - Real-Time Ride-Sharing Platform",
     badges: [
       { label: "Full Stack", color: "purple" },
       { label: "Team Project", color: "blue" },

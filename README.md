@@ -1,4 +1,4 @@
-# Hemanth Sai Charagundla — AI & Data Portfolio
+# Hemanth Sai Charagundla - AI & Data Portfolio
 
 <p align="center">
   <img src="og-preview.jpg" alt="Hemanth Sai Charagundla Portfolio Preview" width="100%" />
@@ -25,7 +25,7 @@
 
 I'm **Hemanth Sai Charagundla**, an Artificial Intelligence & Data Science student at **Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad**.
 
-I build practical, end-to-end systems across **data engineering, machine learning, analytics, and full-stack development** — with a focus on turning real-world data and problems into usable technical solutions.
+I build practical, end-to-end systems across **data engineering, machine learning, analytics, and full-stack development** - with a focus on turning real-world data and problems into usable technical solutions.
 
 My work ranges from multi-year healthcare data warehouses and ML decision-support systems to recommendation engines and full-stack applications.
 
@@ -61,7 +61,7 @@ The project evaluates **14 machine learning models**, with Gradient Boosting ach
 
 ---
 
-### NIDHI — AI Investor Super App
+### NIDHI - AI Investor Super App
 
 Full-stack investment platform designed to bring portfolio management, financial analytics, risk intelligence, education, and AI-assisted investment guidance into a unified application.
 
@@ -79,10 +79,10 @@ Built with a modern Next.js architecture and interactive financial workflows aim
 
 The portfolio brings together my strongest work across:
 
-- **Data Engineering** — relational modeling, ETL pipelines, dimensional warehouses, query optimization, and analytical data layers
-- **Machine Learning** — predictive modeling, model evaluation, explainability, clustering, NLP, and recommendation systems
-- **Data Analytics** — SQL analytics, exploratory analysis, Power BI, Tableau, and interactive dashboards
-- **Full-Stack Development** — React, Next.js, TypeScript, Node.js, APIs, and real-time web applications
+- **Data Engineering** - relational modeling, ETL pipelines, dimensional warehouses, query optimization, and analytical data layers
+- **Machine Learning** - predictive modeling, model evaluation, explainability, clustering, NLP, and recommendation systems
+- **Data Analytics** - SQL analytics, exploratory analysis, Power BI, Tableau, and interactive dashboards
+- **Full-Stack Development** - React, Next.js, TypeScript, Node.js, APIs, and real-time web applications
 
 Each featured project links to its dedicated repository or deployed application for deeper technical details.
 

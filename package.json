@@ -2,7 +2,7 @@
   "name": "hemanth-sai-portfolio",
   "version": "2.1.0",
   "private": true,
-  "description": "Portfolio of Hemanth Sai Charagundla — Artificial Intelligence & Data Science",
+  "description": "Portfolio of Hemanth Sai Charagundla - Artificial Intelligence & Data Science",
   "scripts": {
     "build": "node scripts/build.js",
     "verify": "node scripts/verify.js"

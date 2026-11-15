@@ -235,7 +235,7 @@ if (navToggle) {
     glowX += (mouseX - glowX) * 0.08;
     glowY += (mouseY - glowY) * 0.08;
 
-    // GPU-composited transform only — never touches top/left to avoid reflows
+    // GPU-composited transform only - never touches top/left to avoid reflows
     glow.style.transform = `translate3d(calc(${glowX}px - 50%), calc(${glowY}px - 50%), 0)`;
 
     rafPending = true;

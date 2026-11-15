@@ -1,7 +1,7 @@
 /**
  * KAMEHAMEHA SCROLL PROGRESS
  * ════════════════════════════════════════════════════════════
- * Isolated module — no external deps, no global pollution.
+ * Isolated module - no external deps, no global pollution.
  * Attach to any page:
  *   <link rel="stylesheet" href="scroll-progress.css">
  *   <script src="scroll-progress.js"></script>
@@ -20,7 +20,7 @@
   const goku = document.getElementById('kh-goku');
   const impact = document.getElementById('kh-impact');
 
-  // Debug overlay (optional — present in demo, absent in production)
+  // Debug overlay (optional - present in demo, absent in production)
   const debugT = document.getElementById('kh-debug-t');
   const debugPhase = document.getElementById('kh-debug-phase');
 
@@ -76,7 +76,7 @@
   /**
    * t = scroll progress 0.0 → 1.0
    *
-   * Phase mapping (no discrete steps — purely continuous):
+   * Phase mapping (no discrete steps - purely continuous):
    *
    *   0.00 → 0.40  CHARGE  charge builds from 0 → 1
    *   0.35 → 1.00  FIRE    beam extends from 0 → full width

@@ -81,7 +81,7 @@ assert(orderCorrect, 'Featured projects appear in exact featuredOrder order');
 
 // Canonical, title, description, OG
 assert(indexHtml.includes('<link rel="canonical" href="https://hemanth-sai-portfolio.vercel.app/" />'), 'Canonical URL is correct');
-assert(indexHtml.includes('<title>Hemanth Sai Charagundla — Artificial Intelligence &amp; Data Science Student | CBIT</title>'), 'Title tag is present');
+assert(indexHtml.includes('<title>Hemanth Sai Charagundla - Artificial Intelligence &amp; Data Science Student | CBIT</title>'), 'Title tag is present');
 assert(indexHtml.includes('property="og:url" content="https://hemanth-sai-portfolio.vercel.app/"'), 'OG URL tag is present');
 
 // Accurate Project Section Description
@@ -152,7 +152,7 @@ assert(archiveOrderCorrect, 'Archive projects appear in exact projectOrder order
 
 // Canonical & Title
 assert(archiveHtml.includes('<link rel="canonical" href="https://hemanth-sai-portfolio.vercel.app/projects/" />'), 'Archive canonical URL is correct');
-assert(archiveHtml.includes('<title>All Projects — Hemanth Sai Charagundla</title>'), 'Archive title tag is correct');
+assert(archiveHtml.includes('<title>All Projects - Hemanth Sai Charagundla</title>'), 'Archive title tag is correct');
 
 // Footer author standardized
 assert(archiveHtml.includes('&copy; 2026 Hemanth Sai Charagundla. All rights reserved.'), 'Archive footer standardized to Hemanth Sai Charagundla');

@@ -218,7 +218,7 @@ function buildArchiveJsonLd(projects) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "All Projects — Hemanth Sai Charagundla",
+    "name": "All Projects - Hemanth Sai Charagundla",
     "description": "A full archive of machine learning, data analytics, business intelligence, and data engineering projects by Hemanth Sai Charagundla.",
     "url": "https://hemanth-sai-portfolio.vercel.app/projects/",
     "author": {
