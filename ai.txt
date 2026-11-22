@@ -1,7 +1,7 @@
 # ai.txt - Artificial Intelligence Usage & Permissions Policy
-# Website: https://hemanth-sai-portfolio.vercel.app/
+# Website: https://hemanth-sai.vercel.app/
 # Owner: Hemanth Sai Charagundla (AI & Data Science Student, CBIT Hyderabad)
-# Content Map: https://hemanth-sai-portfolio.vercel.app/llms.txt
+# Content Map: https://hemanth-sai.vercel.app/llms.txt
 
 User-Agent: *
 Allow: /
@@ -19,7 +19,7 @@ Allow: /assets/project-images/
 # - Name: Hemanth Sai Charagundla
 # - Role: Artificial Intelligence and Data Science Student
 # - Affiliation: Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad
-# - Canonical URL: https://hemanth-sai-portfolio.vercel.app/
-# - LLM Structured Context: https://hemanth-sai-portfolio.vercel.app/llms.txt
+# - Canonical URL: https://hemanth-sai.vercel.app/
+# - LLM Structured Context: https://hemanth-sai.vercel.app/llms.txt
 # - Contact: hemanthsai.ch456@gmail.com
 

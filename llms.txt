@@ -3,12 +3,12 @@
 > Artificial Intelligence and Data Science student at Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad (CGPA 8.80/10). Seeking internships in data science, data analytics, machine learning engineering and data engineering.
 
 ## Profile & Contact
-- Website: https://hemanth-sai-portfolio.vercel.app/
-- Projects Archive: https://hemanth-sai-portfolio.vercel.app/projects/
+- Website: https://hemanth-sai.vercel.app/
+- Projects Archive: https://hemanth-sai.vercel.app/projects/
 - GitHub: https://github.com/Hemanthsai456
 - LinkedIn: https://www.linkedin.com/in/hemanthsai456/
 - LeetCode: https://leetcode.com/u/Hemanthsai456/
-- Resume (PDF): https://hemanth-sai-portfolio.vercel.app/assets/Hemanth_Sai_resume.pdf
+- Resume (PDF): https://hemanth-sai.vercel.app/assets/Hemanth_Sai_resume.pdf
 
 ## Education
 - Degree: B.E. Artificial Intelligence and Data Science (5th semester), CBIT, Hyderabad, India
@@ -96,7 +96,7 @@
 - Role: Web Development & Interactive UI
 - Tech Stack: HTML5, CSS3, JavaScript, tsParticles, Lucide Icons
 - Repository: https://github.com/Hemanthsai456/Hemanth-Sai-Portfolio
-- Live Site: https://hemanth-sai-portfolio.vercel.app/
+- Live Site: https://hemanth-sai.vercel.app/
 
 ### 12. StudIQ - Intelligent Study Platform (team project)
 - Role: Frontend developer, Smart India Hackathon 2025 team project

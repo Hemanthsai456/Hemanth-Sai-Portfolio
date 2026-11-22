@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://hemanth-sai-portfolio.vercel.app/"><strong>Live Portfolio</strong></a>
+  <a href="https://hemanth-sai.vercel.app/"><strong>Live Portfolio</strong></a>
   &nbsp;•&nbsp;
   <a href="https://github.com/Hemanthsai456">GitHub</a>
   &nbsp;•&nbsp;
@@ -110,7 +110,7 @@ Deployed on **Vercel**.
 
 The website is the primary way to explore my work, projects, technical background, experience, and professional profiles.
 
-### [Visit hemanth-sai-portfolio.vercel.app →](https://hemanth-sai-portfolio.vercel.app/)
+### [Visit hemanth-sai.vercel.app →](https://hemanth-sai.vercel.app/)
 
 ---
 

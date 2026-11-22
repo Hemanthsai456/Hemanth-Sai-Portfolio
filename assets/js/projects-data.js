@@ -628,7 +628,7 @@ const PROJECTS = [
     github:
       "https://github.com/Hemanthsai456/Hemanth-Sai-Portfolio",
     live:
-      "https://hemanth-sai-portfolio.vercel.app/",
+      "https://hemanth-sai.vercel.app/",
     liveLabel: "Live Site",
     published: true,
   },

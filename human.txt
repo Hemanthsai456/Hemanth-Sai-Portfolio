@@ -1,7 +1,7 @@
 /* TEAM */
   Developer & Designer: Hemanth Sai Charagundla
   Role: Artificial Intelligence and Data Science Student
-  Site: https://hemanth-sai-portfolio.vercel.app/
+  Site: https://hemanth-sai.vercel.app/
   Location: Hyderabad, Telangana, India
   Contact: hemanthsai.ch456@gmail.com
   GitHub: https://github.com/Hemanthsai456

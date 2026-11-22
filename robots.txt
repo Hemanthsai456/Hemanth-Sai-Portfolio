@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hemanth-sai-portfolio.vercel.app/sitemap.xml
+Sitemap: https://hemanth-sai.vercel.app/sitemap.xml

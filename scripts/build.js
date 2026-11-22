@@ -218,11 +218,11 @@ function buildArchiveJsonLd(projects) {
     "@type": "CollectionPage",
     "name": "All Projects - Hemanth Sai Charagundla",
     "description": "A full archive of machine learning, data analytics, business intelligence, and data engineering projects by Hemanth Sai Charagundla.",
-    "url": "https://hemanth-sai-portfolio.vercel.app/projects/",
+    "url": "https://hemanth-sai.vercel.app/projects/",
     "author": {
       "@type": "Person",
       "name": "Hemanth Sai Charagundla",
-      "url": "https://hemanth-sai-portfolio.vercel.app/"
+      "url": "https://hemanth-sai.vercel.app/"
     },
     "mainEntity": {
       "@type": "ItemList",
