@@ -111,15 +111,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-menu a");
 
-window.addEventListener("scroll", () => {
+// Section positions are measured once (lazily, on first scroll) and re-measured
+// on resize/load/font load, instead of reading layout on every scroll event.
+let sectionMetrics = null;
+
+function measureSections() {
+  const offset = getScrollOffset();
+  sectionMetrics = Array.from(sections, section => ({
+    id: section.getAttribute("id"),
+    top: section.offsetTop - offset - 80,
+    height: section.offsetHeight
+  }));
+}
+
+function invalidateSectionMetrics() {
+  sectionMetrics = null;
+}
+
+let navTicking = false;
+
+function updateActiveNav() {
+  navTicking = false;
+  if (!sectionMetrics) measureSections();
+
   let current = "";
 
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - getScrollOffset() - 80;
-    const sectionHeight = section.offsetHeight;
-
-    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-      current = section.getAttribute("id");
+  sectionMetrics.forEach(m => {
+    if (scrollY >= m.top && scrollY < m.top + m.height) {
+      current = m.id;
     }
   });
 
@@ -129,7 +148,20 @@ window.addEventListener("scroll", () => {
       link.classList.add("active");
     }
   });
-});
+}
+
+window.addEventListener("scroll", () => {
+  if (!navTicking) {
+    navTicking = true;
+    requestAnimationFrame(updateActiveNav);
+  }
+}, { passive: true });
+
+window.addEventListener("resize", invalidateSectionMetrics);
+window.addEventListener("load", invalidateSectionMetrics);
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(invalidateSectionMetrics);
+}
 
 // ================= SCROLL REVEAL =================
 const observer = new IntersectionObserver(entries => {
@@ -140,7 +172,7 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.08 });
 
-document.querySelectorAll("section").forEach(sec => {
+document.querySelectorAll("section:not(.hero)").forEach(sec => {
   sec.classList.add("hidden");
   observer.observe(sec);
 });
@@ -210,15 +242,19 @@ bars.forEach(bar => {
 
   let mouseX = 0, mouseY = 0;
   let glowX = 0, glowY = 0;
-  let rafPending = false;
+  let glowRunning = false;
 
   document.addEventListener('mousemove', e => {
     mouseX = e.clientX;
     mouseY = e.clientY;
+    // Restart the loop only if it has stopped (glow had caught up with the cursor)
+    if (!glowRunning) {
+      glowRunning = true;
+      requestAnimationFrame(animateGlow);
+    }
   }, { passive: true });
 
   function animateGlow() {
-    rafPending = false;
     // Smooth lerp
     glowX += (mouseX - glowX) * 0.08;
     glowY += (mouseY - glowY) * 0.08;
@@ -226,15 +262,19 @@ bars.forEach(bar => {
     // GPU-composited transform only - never touches top/left
     glow.style.transform = `translate3d(calc(${glowX}px - 50%), calc(${glowY}px - 50%), 0)`;
 
-    rafPending = true;
-    requestAnimationFrame(animateGlow);
+    // Keep animating only while the glow is still moving toward the cursor
+    if (Math.abs(mouseX - glowX) > 0.1 || Math.abs(mouseY - glowY) > 0.1) {
+      requestAnimationFrame(animateGlow);
+    } else {
+      glowRunning = false;
+    }
   }
 
   animateGlow();
 })();
 
 // ================= PARTICLES (Space Theme) =================
-tsParticles.load("particles", {
+const startParticles = () => tsParticles.load("particles", {
   fpsLimit: 60,
   particles: {
     number: { value: 120, density: { enable: true, area: 1000 } },
@@ -282,6 +322,15 @@ tsParticles.load("particles", {
   },
   detectRetina: true
 });
+
+// Start particles once the browser is idle; skip for reduced-motion users
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(startParticles, { timeout: 2000 });
+  } else {
+    setTimeout(startParticles, 200);
+  }
+}
 
 // ===== NAVBAR SCROLL EFFECT & MOBILE MENU =====
 window.addEventListener("scroll", () => {

@@ -3,12 +3,12 @@
 > Artificial Intelligence and Data Science student at Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad (CGPA 8.80/10). Seeking internships in data science, data analytics, machine learning engineering and data engineering.
 
 ## Profile & Contact
-- Website: https://hemanth-sai.vercel.app/
-- Projects Archive: https://hemanth-sai.vercel.app/projects/
-- GitHub: https://github.com/Hemanthsai456
-- LinkedIn: https://www.linkedin.com/in/hemanthsai456/
-- LeetCode: https://leetcode.com/u/Hemanthsai456/
-- Resume (PDF): https://hemanth-sai.vercel.app/assets/Hemanth_Sai_resume.pdf
+- Website: [https://hemanth-sai.vercel.app/](https://hemanth-sai.vercel.app/)
+- Projects Archive: [https://hemanth-sai.vercel.app/projects/](https://hemanth-sai.vercel.app/projects/)
+- GitHub: [https://github.com/Hemanthsai456](https://github.com/Hemanthsai456)
+- LinkedIn: [https://www.linkedin.com/in/hemanthsai456/](https://www.linkedin.com/in/hemanthsai456/)
+- LeetCode: [https://leetcode.com/u/Hemanthsai456/](https://leetcode.com/u/Hemanthsai456/)
+- Resume (PDF): [https://hemanth-sai.vercel.app/assets/Hemanth_Sai_resume.pdf](https://hemanth-sai.vercel.app/assets/Hemanth_Sai_resume.pdf)
 
 ## Education
 - Degree: B.E. Artificial Intelligence and Data Science (5th semester), CBIT, Hyderabad, India
@@ -30,88 +30,88 @@
 - Role: Data Engineering & Business Intelligence (personal project)
 - Results: 16.3M+ inpatient discharge records across 7 years; PostgreSQL star schema with 8 dimensions and 1 fact table; 11 analytics views; 6 materialized views; 8-page Power BI dashboard
 - Tech Stack: PostgreSQL, Power BI, ETL, Star Schema, SQL Analytics, Materialized Views, PL/pgSQL
-- Repository: https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform
-- Documentation: https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform/tree/main/DOCS
+- Repository: [https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform](https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform)
+- Documentation: [https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform/tree/main/DOCS](https://github.com/Hemanthsai456/sparcs-healthcare-bi-platform/tree/main/DOCS)
 
 ### 2. Medical Inventory Forecasting & Decision Support System
 - Role: Machine Learning & Healthcare Analytics (personal project)
 - Results: 14 regression models and ensembles benchmarked; tuned Gradient Boosting selected (R² 0.7978 on test, RMSE 9.692); SHAP explainability; K-Means inventory segmentation; deployed Streamlit app
 - Tech Stack: Python, Scikit-Learn, SHAP, Streamlit, XGBoost, K-Means, Gradient Boosting
-- Repository: https://github.com/Hemanthsai456/Medical-Inventory-Forecasting-Decision-Support-System
-- Live Demo: https://hemanthsai-medical-inventory-decision-support.streamlit.app/
+- Repository: [https://github.com/Hemanthsai456/Medical-Inventory-Forecasting-Decision-Support-System](https://github.com/Hemanthsai456/Medical-Inventory-Forecasting-Decision-Support-System)
+- Live Demo: [https://hemanthsai-medical-inventory-decision-support.streamlit.app/](https://hemanthsai-medical-inventory-decision-support.streamlit.app/)
 
 ### 3. Multimodal Cold-Start Movie Recommender
 - Role: Recommendation Systems & Multimodal AI (personal project)
 - Results: 19,232 multimodal movies (MovieLens 20M); 2,107 test movies unseen in training; cold-start RMSE 0.8843, about 21% lower than a global-mean baseline on the same subset
 - Tech Stack: Python, TensorFlow, CLIP (poster embeddings), VGGish (audio embeddings), Neural Collaborative Filtering, MovieLens
-- Repository: https://github.com/Hemanthsai456/Multimodal-Cold-Start-Movie-Recommender
-- Live Demo: https://hemanth-cold-start-user-based-movie-recommendation.streamlit.app/
+- Repository: [https://github.com/Hemanthsai456/Multimodal-Cold-Start-Movie-Recommender](https://github.com/Hemanthsai456/Multimodal-Cold-Start-Movie-Recommender)
+- Live Demo: [https://hemanth-cold-start-user-based-movie-recommendation.streamlit.app/](https://hemanth-cold-start-user-based-movie-recommendation.streamlit.app/)
 
 ### 4. NIDHI - AI Investor Super App
 - Role: Full Stack & AI (personal project)
 - Results: multi-asset portfolio tracker (stocks, mutual funds, REITs, InvITs, bonds); portfolio health, diversification and liquidity scores; Gemini assistant grounded in user holdings; Firebase authentication with email verification
 - Tech Stack: TypeScript, React, FastAPI, PostgreSQL, Firebase Auth, Gemini API
-- Repository: https://github.com/Hemanthsai456/NIDHI
-- Live Demo: https://nidhiapp.vercel.app
+- Repository: [https://github.com/Hemanthsai456/NIDHI](https://github.com/Hemanthsai456/NIDHI)
+- Live Demo: [https://nidhiapp.vercel.app](https://nidhiapp.vercel.app)
 
 ### 5. Human Decision Intelligence
 - Role: Statistical Analysis & Explainable AI (personal project)
 - Results: 105,000 held-out decisions on the CPC18 dataset; 70.95% test accuracy; ROC-AUC 0.7906 for the final model; GLM, GAM, Random Forest and XGBoost compared; SHAP and LIME explanations
 - Tech Stack: R, Shiny, Statistical Modeling, PCA, XGBoost, SHAP, LIME, Behavioral Clustering
-- Repository: https://github.com/Hemanthsai456/Human-Decision-Intelligence
+- Repository: [https://github.com/Hemanthsai456/Human-Decision-Intelligence](https://github.com/Hemanthsai456/Human-Decision-Intelligence)
 
 ### 6. Data Center Resource Analytics
 - Role: Data Analytics & Predictive Modeling (personal project)
 - Results: 2.75M+ server telemetry records; physics-based heat, cooling-water and evaporative-water modeling; Linear Regression with leakage-prone features removed (held-out R² 0.9798, RMSE 0.013)
 - Tech Stack: Python, Pandas, NumPy, Scikit-Learn, Plotly
-- Repository: https://github.com/Hemanthsai456/Data-Center-Resource-Analytics
+- Repository: [https://github.com/Hemanthsai456/Data-Center-Resource-Analytics](https://github.com/Hemanthsai456/Data-Center-Resource-Analytics)
 
 ### 7. ProfilePulse - Privacy-First GitHub Profile Analytics
 - Role: Backend (personal project, beta)
 - Results: badge service for GitHub profile READMEs using GitHub Camo proxy hits; daily-rotating HMAC visitor keys; no stored IPs or User-Agent strings; 30-day retention; 23 automated tests
 - Tech Stack: Python, FastAPI, PostgreSQL, Docker, Render, pytest
-- Repository: https://github.com/Hemanthsai456/ProfilePulse
+- Repository: [https://github.com/Hemanthsai456/ProfilePulse](https://github.com/Hemanthsai456/ProfilePulse)
 
 ### 8. Anime & Manga Recommendation Analytics
 - Role: Recommendation Systems & Analytics (personal project)
 - Results: hybrid recommender (TF-IDF, cosine similarity, IMDb-weighted ratings, popularity); Power BI and Plotly dashboards; multi-page Streamlit app
 - Tech Stack: Python, Pandas, Power BI, TF-IDF, Cosine Similarity, Streamlit
-- Repository: https://github.com/Hemanthsai456/Anime-Manga-Recommendation-Analytics
-- Live Demo: https://hemanth-anime-manga-analytics-recommendation-system.streamlit.app/
+- Repository: [https://github.com/Hemanthsai456/Anime-Manga-Recommendation-Analytics](https://github.com/Hemanthsai456/Anime-Manga-Recommendation-Analytics)
+- Live Demo: [https://hemanth-anime-manga-analytics-recommendation-system.streamlit.app/](https://hemanth-anime-manga-analytics-recommendation-system.streamlit.app/)
 
 ### 9. NLP Hate Speech Classifier
 - Role: Natural Language Processing (personal project)
 - Results: TF-IDF and Logistic Regression text classifier with confidence scores, served through a Streamlit app
 - Tech Stack: Python, NLP, TF-IDF, Scikit-Learn, Streamlit, Logistic Regression
-- Repository: https://github.com/Hemanthsai456/NLP-Hate-Speech-Classifier
-- Live Demo: https://hemanth-hate-speech-detection.streamlit.app/
+- Repository: [https://github.com/Hemanthsai456/NLP-Hate-Speech-Classifier](https://github.com/Hemanthsai456/NLP-Hate-Speech-Classifier)
+- Live Demo: [https://hemanth-hate-speech-detection.streamlit.app/](https://hemanth-hate-speech-detection.streamlit.app/)
 
 ### 10. Public Transport Analytics Dashboard
 - Role: Business Intelligence (personal project, synthetic dataset)
 - Results: Power BI dashboard covering revenue, profit, fuel efficiency and maintenance cost by bus type and route
 - Tech Stack: Power BI, DAX, Power Query, Data Visualization
-- Repository: https://github.com/Hemanthsai456/Public-Transport-Analytics-Dashboard
+- Repository: [https://github.com/Hemanthsai456/Public-Transport-Analytics-Dashboard](https://github.com/Hemanthsai456/Public-Transport-Analytics-Dashboard)
 
 ### 11. Hemanth Sai Portfolio
 - Role: Web Development & Interactive UI
 - Tech Stack: HTML5, CSS3, JavaScript, tsParticles, Lucide Icons
-- Repository: https://github.com/Hemanthsai456/Hemanth-Sai-Portfolio
-- Live Site: https://hemanth-sai.vercel.app/
+- Repository: [https://github.com/Hemanthsai456/Hemanth-Sai-Portfolio](https://github.com/Hemanthsai456/Hemanth-Sai-Portfolio)
+- Live Site: [https://hemanth-sai.vercel.app/](https://hemanth-sai.vercel.app/)
 
 ### 12. StudIQ - Intelligent Study Platform (team project)
 - Role: Frontend developer, Smart India Hackathon 2025 team project
 - Results: responsive frontend UI; backend free-trial database expired, so the repository contains the UI only
 - Tech Stack: HTML, CSS, JavaScript
-- Repository: https://github.com/Hemanthsai456/StudIQ-Frontend-SIH2025
+- Repository: [https://github.com/Hemanthsai456/StudIQ-Frontend-SIH2025](https://github.com/Hemanthsai456/StudIQ-Frontend-SIH2025)
 
 ### 13. BunkRide - Real-Time Ride-Sharing Platform (team project)
 - Role: Team project
 - Results: real-time ride-booking web app with live tracking via Google Maps API and Socket.IO
 - Tech Stack: React, Node.js, Express, Socket.IO, Google Maps API, GPS Tracking
-- Repository: https://github.com/Hemanthsai456/bunkride
+- Repository: [https://github.com/Hemanthsai456/bunkride](https://github.com/Hemanthsai456/bunkride)
 
 ### 14. Air Canvas - Touchless Drawing with Computer Vision
 - Role: Computer vision (personal learning project)
 - Results: webcam-based mid-air drawing with pinch gesture hysteresis, 1-Euro filtering and Bézier smoothing; unit tests for filter and gesture logic
 - Tech Stack: Python, OpenCV, MediaPipe, pytest
-- Repository: https://github.com/Hemanthsai456/air-canvas
+- Repository: [https://github.com/Hemanthsai456/air-canvas](https://github.com/Hemanthsai456/air-canvas)

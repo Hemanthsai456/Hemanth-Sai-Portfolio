@@ -174,7 +174,18 @@
 
     applyState(smoothT);
 
-    rafId = requestAnimationFrame(tick);
+    // Keep looping only while the display value is still catching up to the
+    // scroll position; otherwise stop so an idle page does no per-frame work.
+    if (Math.abs(rawT - smoothT) > 0.0005) {
+      rafId = requestAnimationFrame(tick);
+    } else {
+      rafId = null;
+    }
+  }
+
+  // Start the loop if it is not already running
+  function requestTick() {
+    if (rafId === null) rafId = requestAnimationFrame(tick);
   }
 
   // ─── Passive scroll listener ─────────────────────────────────
@@ -184,11 +195,13 @@
    */
   window.addEventListener('scroll', function onScroll() {
     rawT = readScrollT();
+    requestTick();
   }, { passive: true });
 
   // Handle resize (document height may change)
   window.addEventListener('resize', function onResize() {
     rawT = readScrollT();
+    requestTick();
   }, { passive: true });
 
   // ─── Boot ────────────────────────────────────────────────────
@@ -196,6 +209,6 @@
   rawT = readScrollT();
   smoothT = rawT;
 
-  tick(); // start the loop
+  tick(); // render the initial state (keeps looping only if it needs to catch up)
 
 })();
